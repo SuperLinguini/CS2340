@@ -10,8 +10,21 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="tech.milind.cleanwatercrowdsourcing.MainActivity">
 
-    <TextView
+    <Button
+        android:text="Login"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Hello World!" />
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="109dp"
+        android:id="@+id/buttonLogin" />
+
+    <Button
+        android:text="Register"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/buttonLogin"
+        android:layout_alignEnd="@+id/buttonLogin"
+        android:layout_marginTop="58dp"
+        android:id="@+id/buttonRegister" />
+
 </RelativeLayout>
