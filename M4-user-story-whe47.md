@@ -1,4 +1,4 @@
-#itle: As a local environmentalist, I want to be able to submit a water report so that I can contribute to saving the environment.  
+##Title: As a local environmentalist, I want to be able to submit a water report so that I can contribute to saving the environment.  
 
 ##Tasks:
 - [ ] Create a welcome screen
