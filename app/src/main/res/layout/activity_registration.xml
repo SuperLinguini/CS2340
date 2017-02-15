@@ -8,48 +8,64 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
+    android:descendantFocusability="beforeDescendants"
+    android:focusableInTouchMode="true"
     tools:context="tech.milind.cleanwatercrowdsourcing.RegistrationActivity">
 
-    <EditText
+    <android.support.design.widget.TextInputLayout
+        android:id="@+id/input_register_username"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:inputType="textPassword"
-        android:ems="10"
-        android:layout_below="@+id/editTextUsername"
-        android:layout_alignStart="@+id/editTextUsername"
-        android:layout_marginTop="78dp"
-        android:id="@+id/editTextPassword"
-        android:hint="@string/password" />
-
-    <EditText
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:inputType="textPersonName"
-        android:ems="10"
-        android:layout_marginTop="68dp"
-        android:id="@+id/editTextUsername"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
-        android:hint="@string/username" />
+        android:layout_marginTop="68dp">
 
-    <Button
-        android:text="@string/register"
+        <EditText
+            android:id="@+id/editTextUsername"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:hint="@string/username"
+            android:inputType="textPersonName" />
+    </android.support.design.widget.TextInputLayout>
+
+    <android.support.design.widget.TextInputLayout
+        android:id="@+id/input_register_password"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="68dp"
+        android:layout_alignStart="@+id/input_register_username"
+        android:layout_below="@+id/input_register_username"
+        android:layout_marginTop="78dp">
+
+        <EditText
+            android:id="@+id/editTextPassword"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:hint="@string/password"
+            android:inputType="textPassword" />
+
+    </android.support.design.widget.TextInputLayout>
+
+    <Button
         android:id="@+id/buttonRegister"
-        android:onClick="onRegisterPressed"
-        android:layout_marginStart="45dp"
-        android:layout_below="@+id/editTextPassword"
-        android:layout_alignParentStart="true" />
-
-    <Button
-        android:text="@string/cancel"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/input_register_password"
+        android:layout_marginStart="45dp"
+        android:layout_marginTop="68dp"
+        android:onClick="onRegisterPressed"
+        android:text="@string/register" />
+
+    <Button
         android:id="@+id/buttonCancel"
-        android:onClick="onCancelPressed"
-        android:layout_marginEnd="41dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_alignBottom="@+id/buttonRegister"
-        android:layout_alignParentEnd="true" />
+        android:layout_alignParentEnd="true"
+        android:layout_marginEnd="41dp"
+        android:onClick="onCancelPressed"
+        android:text="@string/cancel" />
+
 </RelativeLayout>
