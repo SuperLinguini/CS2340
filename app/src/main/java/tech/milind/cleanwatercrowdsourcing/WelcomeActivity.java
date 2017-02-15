@@ -18,8 +18,8 @@ public class WelcomeActivity extends AppCompatActivity {
 
         register.setOnClickListener(new View.OnClickListener() {
             public void onClick(View view) {
-                Intent i = new Intent(WelcomeActivity.this, RegistrationActivity.class);
-                startActivity(i);
+//                Intent i = new Intent(WelcomeActivity.this, RegistrationActivity.class);
+//                startActivity(i);
             }
         });
 

@@ -13,17 +13,6 @@
     <EditText
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:inputType="textPassword"
-        android:ems="10"
-        android:layout_below="@+id/editTextUsername"
-        android:layout_alignStart="@+id/editTextUsername"
-        android:layout_marginTop="78dp"
-        android:id="@+id/editTextPassword"
-        android:hint="@string/password" />
-
-    <EditText
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
         android:inputType="textPersonName"
         android:ems="10"
         android:layout_marginTop="68dp"
@@ -31,6 +20,16 @@
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
         android:hint="@string/username" />
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="textPassword"
+        android:ems="10"
+        android:layout_below="@+id/editTextUsername"
+        android:layout_alignStart="@+id/editTextUsername"
+        android:layout_marginTop="78dp"
+        android:id="@+id/editTextPassword"
+        android:hint="@string/password" />
 
     <Button
         android:text="@string/login"
