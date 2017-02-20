@@ -1,4 +1,4 @@
-package tech.milind.cleanwatercrowdsourcing;
+package tech.milind.cleanwatercrowdsourcing.controllers;
 
 import android.app.AlertDialog;
 import android.content.DialogInterface;
@@ -7,6 +7,8 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
+
+import tech.milind.cleanwatercrowdsourcing.R;
 
 public class MainActivity extends AppCompatActivity {
 

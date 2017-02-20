@@ -1,4 +1,4 @@
-package tech.milind.cleanwatercrowdsourcing;
+package tech.milind.cleanwatercrowdsourcing.controllers;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -7,21 +7,26 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.Toast;
 
-public class LoginAcitivity extends AppCompatActivity {
+import tech.milind.cleanwatercrowdsourcing.R;
+import tech.milind.cleanwatercrowdsourcing.model.*;
+
+public class LoginActivity extends AppCompatActivity {
     EditText username;
     EditText password;
+    Accounts accounts;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
         username = (EditText) findViewById(R.id.editTextUsername);
         password = (EditText) findViewById(R.id.editTextPassword);
+        accounts = Accounts.getInstance();
     }
 
     protected void onSignInPressed(View view) {
-        if (username.getText().toString().equals("user") &&
-                password.getText().toString().equals("pass")) {
-            Intent i = new Intent(LoginAcitivity.this, MainActivity.class);
+
+        if (accounts.hasUser(username.getText().toString(), password.getText().toString())) {
+            Intent i = new Intent(LoginActivity.this, MainActivity.class);
             startActivity(i);
             finish();
         }

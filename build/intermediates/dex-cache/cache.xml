@@ -3,111 +3,138 @@
 
     <item
         is-multidex="true"
-        jar="C:\Users\kiran\AppData\Local\Android\sdk\extras\android\m2repository\com\android\support\support-annotations\25.1.0\support-annotations-25.1.0.jar"
+        jar="/Users/whe1996/Documents/school/cs_2340/project/app/build/intermediates/exploded-aar/com.android.support/recyclerview-v7/25.1.1/jars/classes.jar"
         jumboMode="true"
         optimize="true"
         revision="25.0.2"
-        sha1="64cb6b229a8bdfd907bc8dd46839a0053e4c018d">
-        <dex dex="C:\Users\kiran\Documents\Georgia_Tech\0_Semesters\Spring_2017\CS 2340\M4\CS2340\app\build\intermediates\transforms\dex\debug\folders\1000\10\support-annotations-25.1.0_65712a6088ee8b83f2ed3e0cc29d846180791e72\classes.dex" />
+        sha1="c9649557905bf7a80fca9e0d54cbcb7662627860">
+        <dex dex="/Users/whe1996/Documents/school/cs_2340/project/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-recyclerview-v7-25.1.1_1be07285a2ce5ca4243ee4279872d34f7d05ffb6/classes.dex" />
     </item>
     <item
         is-multidex="true"
-        jar="C:\Users\kiran\Documents\Georgia_Tech\0_Semesters\Spring_2017\CS 2340\M4\CS2340\app\build\intermediates\exploded-aar\com.android.support\appcompat-v7\25.1.0\jars\classes.jar"
+        jar="/Users/whe1996/Documents/school/cs_2340/project/app/build/intermediates/exploded-aar/com.android.support/support-media-compat/25.1.1/jars/classes.jar"
         jumboMode="true"
         optimize="true"
         revision="25.0.2"
-        sha1="1630658fbc2d222b988603c27b4a4249586fbfe7">
-        <dex dex="C:\Users\kiran\Documents\Georgia_Tech\0_Semesters\Spring_2017\CS 2340\M4\CS2340\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-appcompat-v7-25.1.0_8e566939c483206f76b3d5d6dc2c2edae43f0b92\classes.dex" />
+        sha1="7bde4c34162092e0a77e7f12dc85ed77c484cf5c">
+        <dex dex="/Users/whe1996/Documents/school/cs_2340/project/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-media-compat-25.1.1_14dab93d94303bdda32b1cfc978493972907b9d1/classes.dex" />
     </item>
     <item
         is-multidex="true"
-        jar="C:\Users\kiran\Documents\Georgia_Tech\0_Semesters\Spring_2017\CS 2340\M4\CS2340\app\build\intermediates\exploded-aar\com.android.support\support-compat\25.1.0\jars\classes.jar"
+        jar="/Users/whe1996/Documents/school/cs_2340/project/app/build/intermediates/exploded-aar/com.android.support/animated-vector-drawable/25.1.1/jars/classes.jar"
         jumboMode="true"
         optimize="true"
         revision="25.0.2"
-        sha1="ca3c7aa31e2726a400a6e552b93cb9f63c9a1e6d">
-        <dex dex="C:\Users\kiran\Documents\Georgia_Tech\0_Semesters\Spring_2017\CS 2340\M4\CS2340\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-support-compat-25.1.0_d82ac95334d8b403c5b80bbeca7bb88bb02c4f77\classes.dex" />
+        sha1="0d191c1a09e4892d059e5ce749e4ad4e08129e35">
+        <dex dex="/Users/whe1996/Documents/school/cs_2340/project/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-animated-vector-drawable-25.1.1_d1daf5d1e29b8fa736799468a618a5516881891c/classes.dex" />
     </item>
     <item
         is-multidex="true"
-        jar="C:\Users\kiran\Documents\Georgia_Tech\0_Semesters\Spring_2017\CS 2340\M4\CS2340\app\build\intermediates\incremental-runtime-classes\debug\instant-run.jar"
+        jar="/Users/whe1996/Documents/school/cs_2340/project/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/25.1.1/jars/classes.jar"
         jumboMode="true"
         optimize="true"
         revision="25.0.2"
-        sha1="66c0f4042f0d46b4ed64e2bb3819b52957e62369">
-        <dex dex="C:\Users\kiran\Documents\Georgia_Tech\0_Semesters\Spring_2017\CS 2340\M4\CS2340\app\build\intermediates\transforms\dex\debug\folders\1000\10\instant-run_2a479c25608367a35dc9624362b70283765dd921\classes.dex" />
+        sha1="ecb496cc08dd52551fc5ec6db3bc0632e95a89bb">
+        <dex dex="/Users/whe1996/Documents/school/cs_2340/project/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-appcompat-v7-25.1.1_40e114441c49740c11ce231569faac74211d24d8/classes.dex" />
     </item>
     <item
         is-multidex="true"
-        jar="C:\Users\kiran\Documents\Georgia_Tech\0_Semesters\Spring_2017\CS 2340\M4\CS2340\app\build\intermediates\incremental-classes\debug\instant-run-bootstrap.jar"
+        jar="/Users/whe1996/Documents/school/cs_2340/project/app/build/intermediates/exploded-aar/com.android.support/support-core-ui/25.1.1/jars/classes.jar"
         jumboMode="true"
         optimize="true"
         revision="25.0.2"
-        sha1="e8bfa3cd003b2e11c7ed8c97f537b4fe122bc3c7">
-        <dex dex="C:\Users\kiran\Documents\Georgia_Tech\0_Semesters\Spring_2017\CS 2340\M4\CS2340\app\build\intermediates\transforms\dex\debug\folders\1000\10\instant-run-bootstrap_9e04b5a094b67d95fc17153c8dbc4385101ae1aa\classes.dex" />
+        sha1="3e04ac8ca644ea7baddf6fdcf72e15c79e9df94a">
+        <dex dex="/Users/whe1996/Documents/school/cs_2340/project/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-core-ui-25.1.1_4d960d665e1cea4f36ec790d77f2d2066fed5f90/classes.dex" />
     </item>
     <item
         is-multidex="true"
-        jar="C:\Users\kiran\Documents\Georgia_Tech\0_Semesters\Spring_2017\CS 2340\M4\CS2340\app\build\intermediates\exploded-aar\com.android.support\support-media-compat\25.1.0\jars\classes.jar"
+        jar="/Users/whe1996/Documents/school/cs_2340/project/app/build/intermediates/exploded-aar/com.android.support/support-compat/25.1.1/jars/classes.jar"
         jumboMode="true"
         optimize="true"
         revision="25.0.2"
-        sha1="f02263e35e52668dd17b73bf961437e3d562b35f">
-        <dex dex="C:\Users\kiran\Documents\Georgia_Tech\0_Semesters\Spring_2017\CS 2340\M4\CS2340\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-support-media-compat-25.1.0_6e1a27cbde7a3c41a558261380cec4348b8932bf\classes.dex" />
+        sha1="02741d05d4b697fba5e279e9881aaa1da0ca7c7f">
+        <dex dex="/Users/whe1996/Documents/school/cs_2340/project/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-compat-25.1.1_e5b323f5d61751e1fd73430cd0ebf3de87d2723c/classes.dex" />
     </item>
     <item
         is-multidex="true"
-        jar="C:\Users\kiran\Documents\Georgia_Tech\0_Semesters\Spring_2017\CS 2340\M4\CS2340\app\build\intermediates\exploded-aar\com.android.support\support-core-utils\25.1.0\jars\classes.jar"
+        jar="/Users/whe1996/Documents/school/cs_2340/project/app/build/intermediates/exploded-aar/com.android.support/support-core-utils/25.1.1/jars/classes.jar"
         jumboMode="true"
         optimize="true"
         revision="25.0.2"
-        sha1="0a0ef86b7fa568a52bf6214a0326ca1f1d618da7">
-        <dex dex="C:\Users\kiran\Documents\Georgia_Tech\0_Semesters\Spring_2017\CS 2340\M4\CS2340\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-support-core-utils-25.1.0_fa1c27134440076aa17f6c4f6e01528186640360\classes.dex" />
+        sha1="0fb891e8f0cfba0513043a7bb357513d229ca2cd">
+        <dex dex="/Users/whe1996/Documents/school/cs_2340/project/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-core-utils-25.1.1_b9683eb4f21903f352308f30b83151e523cbd984/classes.dex" />
     </item>
     <item
         is-multidex="true"
-        jar="C:\Users\kiran\Documents\Georgia_Tech\0_Semesters\Spring_2017\CS 2340\M4\CS2340\app\build\intermediates\exploded-aar\com.android.support\support-core-ui\25.1.0\jars\classes.jar"
+        jar="/Users/whe1996/Documents/school/cs_2340/project/app/build/intermediates/exploded-aar/com.android.support/design/25.1.1/jars/classes.jar"
         jumboMode="true"
         optimize="true"
         revision="25.0.2"
-        sha1="aee64634871d88a419d59eb743c1258a60f19700">
-        <dex dex="C:\Users\kiran\Documents\Georgia_Tech\0_Semesters\Spring_2017\CS 2340\M4\CS2340\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-support-core-ui-25.1.0_9ed67cb9dd4c9927e35566f436b71b19aaefaed0\classes.dex" />
+        sha1="cd7951e04cfb9a8bf008d544a478d9a8d8192d38">
+        <dex dex="/Users/whe1996/Documents/school/cs_2340/project/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-design-25.1.1_262a90454a8d179f999c46f16a4aa3bf136f1633/classes.dex" />
     </item>
     <item
         is-multidex="true"
-        jar="C:\Users\kiran\Documents\Georgia_Tech\0_Semesters\Spring_2017\CS 2340\M4\CS2340\app\build\intermediates\exploded-aar\com.android.support\support-fragment\25.1.0\jars\classes.jar"
+        jar="/Users/whe1996/Documents/school/cs_2340/project/app/build/intermediates/incremental-classes/debug/instant-run-bootstrap.jar"
         jumboMode="true"
         optimize="true"
         revision="25.0.2"
-        sha1="2a53c4f3518116b8c6aee0e477233f0f7da8616f">
-        <dex dex="C:\Users\kiran\Documents\Georgia_Tech\0_Semesters\Spring_2017\CS 2340\M4\CS2340\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-support-fragment-25.1.0_e29f6a42022451694fcbd4e19154b08e4c03b364\classes.dex" />
+        sha1="a7c61c933f5cd831812ec0d853f3080e958caf72">
+        <dex dex="/Users/whe1996/Documents/school/cs_2340/project/app/build/intermediates/transforms/dex/debug/folders/1000/10/instant-run-bootstrap_a533064afa2f1a3e4141265b1ec37166b8eb1ef4/classes.dex" />
     </item>
     <item
         is-multidex="true"
-        jar="C:\Users\kiran\Documents\Georgia_Tech\0_Semesters\Spring_2017\CS 2340\M4\CS2340\app\build\intermediates\exploded-aar\com.android.support\animated-vector-drawable\25.1.0\jars\classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.2"
-        sha1="6fb6ac3e8d3b9013819920d9ea11f3803c4c0033">
-        <dex dex="C:\Users\kiran\Documents\Georgia_Tech\0_Semesters\Spring_2017\CS 2340\M4\CS2340\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-animated-vector-drawable-25.1.0_1c8f9f6b1495e01b45f3485012fadd0742acc2b6\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="C:\Users\kiran\Documents\Georgia_Tech\0_Semesters\Spring_2017\CS 2340\M4\CS2340\app\build\intermediates\exploded-aar\com.android.support\support-vector-drawable\25.1.0\jars\classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.2"
-        sha1="e79aa3d9a16f8c9f16377c0608de70a8f31e5d80">
-        <dex dex="C:\Users\kiran\Documents\Georgia_Tech\0_Semesters\Spring_2017\CS 2340\M4\CS2340\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-support-vector-drawable-25.1.0_6120c501ce03496790356262b4ec8f8d362eff71\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="C:\Users\kiran\Documents\Georgia_Tech\0_Semesters\Spring_2017\CS 2340\M4\CS2340\app\build\intermediates\exploded-aar\com.android.support\support-v4\25.1.0\jars\classes.jar"
+        jar="/Users/whe1996/Documents/school/cs_2340/project/app/build/intermediates/exploded-aar/com.android.support/support-v4/25.1.1/jars/classes.jar"
         jumboMode="true"
         optimize="true"
         revision="25.0.2"
         sha1="d7c42c80f6509b9ea4db28ca7859ffae08ec5741">
-        <dex dex="C:\Users\kiran\Documents\Georgia_Tech\0_Semesters\Spring_2017\CS 2340\M4\CS2340\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-support-v4-25.1.0_0e261873130377c777d7aedcf1ab35aded08a197\classes.dex" />
+        <dex dex="/Users/whe1996/Documents/school/cs_2340/project/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-v4-25.1.1_f7f64988f94f192bb0fc60edf9c10106f811e598/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/whe1996/Documents/school/cs_2340/project/app/build/intermediates/exploded-aar/com.android.support/transition/25.1.1/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="15b049fedbd8e3926bf99d9e45dfc9b2a1043bb9">
+        <dex dex="/Users/whe1996/Documents/school/cs_2340/project/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-transition-25.1.1_8907d9300b5a91086a1657b7f56aeff41f76d5cd/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/whe1996/Documents/school/cs_2340/project/app/build/intermediates/exploded-aar/com.android.support/support-vector-drawable/25.1.1/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="c03bf57f358aa10d253f21989e93bcf6014b3b17">
+        <dex dex="/Users/whe1996/Documents/school/cs_2340/project/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-vector-drawable-25.1.1_b8cd532752ee94d6a7cbdfb06fa1cdfcbd1d7301/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/whe1996/Library/Android/sdk/extras/android/m2repository/com/android/support/support-annotations/25.1.1/support-annotations-25.1.1.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="b59b6ee8d6ecc03e672d253800430343493a6ed8">
+        <dex dex="/Users/whe1996/Documents/school/cs_2340/project/app/build/intermediates/transforms/dex/debug/folders/1000/10/support-annotations-25.1.1_e9e88ddceeaf63144a93f7414eb2ebd492e863ef/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/whe1996/Documents/school/cs_2340/project/app/build/intermediates/incremental-runtime-classes/debug/instant-run.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="de2f4248b65071b8970c39e7fd6d1cba045daafa">
+        <dex dex="/Users/whe1996/Documents/school/cs_2340/project/app/build/intermediates/transforms/dex/debug/folders/1000/10/instant-run_29ac10f7f4c16dba209e0a72b691977cbe0b3122/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/whe1996/Documents/school/cs_2340/project/app/build/intermediates/exploded-aar/com.android.support/support-fragment/25.1.1/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="e2719c102dca3a7a5b02ce07f769362da6ddb4ab">
+        <dex dex="/Users/whe1996/Documents/school/cs_2340/project/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-fragment-25.1.1_f3f08c91b4fba9e2c7bf5fbdb6deb578f6296a23/classes.dex" />
     </item>
 
 </items>
