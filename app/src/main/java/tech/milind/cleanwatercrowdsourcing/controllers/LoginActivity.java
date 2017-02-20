@@ -13,19 +13,20 @@ import tech.milind.cleanwatercrowdsourcing.model.*;
 public class LoginActivity extends AppCompatActivity {
     EditText username;
     EditText password;
-    Accounts accounts;
+    Model model;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
         username = (EditText) findViewById(R.id.editTextUsername);
         password = (EditText) findViewById(R.id.editTextPassword);
-        accounts = Accounts.getInstance();
+        model = Model.getInstance();
     }
 
     protected void onSignInPressed(View view) {
-
-        if (accounts.hasUser(username.getText().toString(), password.getText().toString())) {
+        boolean isSuccessful = model.login(username.getText().toString(),
+                                password.getText().toString());
+        if (isSuccessful) {
             Intent i = new Intent(LoginActivity.this, MainActivity.class);
             startActivity(i);
             finish();

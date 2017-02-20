@@ -3,30 +3,12 @@
 
     <item
         is-multidex="true"
-        jar="/Users/whe1996/Documents/school/cs_2340/project/app/build/intermediates/exploded-aar/com.android.support/recyclerview-v7/25.1.1/jars/classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.2"
-        sha1="c9649557905bf7a80fca9e0d54cbcb7662627860">
-        <dex dex="/Users/whe1996/Documents/school/cs_2340/project/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-recyclerview-v7-25.1.1_1be07285a2ce5ca4243ee4279872d34f7d05ffb6/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
         jar="/Users/whe1996/Documents/school/cs_2340/project/app/build/intermediates/exploded-aar/com.android.support/support-media-compat/25.1.1/jars/classes.jar"
         jumboMode="true"
         optimize="true"
         revision="25.0.2"
         sha1="7bde4c34162092e0a77e7f12dc85ed77c484cf5c">
         <dex dex="/Users/whe1996/Documents/school/cs_2340/project/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-media-compat-25.1.1_14dab93d94303bdda32b1cfc978493972907b9d1/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/Users/whe1996/Documents/school/cs_2340/project/app/build/intermediates/exploded-aar/com.android.support/animated-vector-drawable/25.1.1/jars/classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.2"
-        sha1="0d191c1a09e4892d059e5ce749e4ad4e08129e35">
-        <dex dex="/Users/whe1996/Documents/school/cs_2340/project/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-animated-vector-drawable-25.1.1_d1daf5d1e29b8fa736799468a618a5516881891c/classes.dex" />
     </item>
     <item
         is-multidex="true"
@@ -48,15 +30,6 @@
     </item>
     <item
         is-multidex="true"
-        jar="/Users/whe1996/Documents/school/cs_2340/project/app/build/intermediates/exploded-aar/com.android.support/support-compat/25.1.1/jars/classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.2"
-        sha1="02741d05d4b697fba5e279e9881aaa1da0ca7c7f">
-        <dex dex="/Users/whe1996/Documents/school/cs_2340/project/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-compat-25.1.1_e5b323f5d61751e1fd73430cd0ebf3de87d2723c/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
         jar="/Users/whe1996/Documents/school/cs_2340/project/app/build/intermediates/exploded-aar/com.android.support/support-core-utils/25.1.1/jars/classes.jar"
         jumboMode="true"
         optimize="true"
@@ -75,12 +48,12 @@
     </item>
     <item
         is-multidex="true"
-        jar="/Users/whe1996/Documents/school/cs_2340/project/app/build/intermediates/incremental-classes/debug/instant-run-bootstrap.jar"
+        jar="/Users/whe1996/Documents/school/cs_2340/project/app/build/intermediates/exploded-aar/com.android.support/transition/25.1.1/jars/classes.jar"
         jumboMode="true"
         optimize="true"
         revision="25.0.2"
-        sha1="a7c61c933f5cd831812ec0d853f3080e958caf72">
-        <dex dex="/Users/whe1996/Documents/school/cs_2340/project/app/build/intermediates/transforms/dex/debug/folders/1000/10/instant-run-bootstrap_a533064afa2f1a3e4141265b1ec37166b8eb1ef4/classes.dex" />
+        sha1="15b049fedbd8e3926bf99d9e45dfc9b2a1043bb9">
+        <dex dex="/Users/whe1996/Documents/school/cs_2340/project/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-transition-25.1.1_8907d9300b5a91086a1657b7f56aeff41f76d5cd/classes.dex" />
     </item>
     <item
         is-multidex="true"
@@ -93,12 +66,39 @@
     </item>
     <item
         is-multidex="true"
-        jar="/Users/whe1996/Documents/school/cs_2340/project/app/build/intermediates/exploded-aar/com.android.support/transition/25.1.1/jars/classes.jar"
+        jar="/Users/whe1996/Documents/school/cs_2340/project/app/build/intermediates/exploded-aar/com.android.support/recyclerview-v7/25.1.1/jars/classes.jar"
         jumboMode="true"
         optimize="true"
         revision="25.0.2"
-        sha1="15b049fedbd8e3926bf99d9e45dfc9b2a1043bb9">
-        <dex dex="/Users/whe1996/Documents/school/cs_2340/project/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-transition-25.1.1_8907d9300b5a91086a1657b7f56aeff41f76d5cd/classes.dex" />
+        sha1="c9649557905bf7a80fca9e0d54cbcb7662627860">
+        <dex dex="/Users/whe1996/Documents/school/cs_2340/project/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-recyclerview-v7-25.1.1_1be07285a2ce5ca4243ee4279872d34f7d05ffb6/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/whe1996/Documents/school/cs_2340/project/app/build/intermediates/exploded-aar/com.android.support/animated-vector-drawable/25.1.1/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="0d191c1a09e4892d059e5ce749e4ad4e08129e35">
+        <dex dex="/Users/whe1996/Documents/school/cs_2340/project/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-animated-vector-drawable-25.1.1_d1daf5d1e29b8fa736799468a618a5516881891c/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/whe1996/Documents/school/cs_2340/project/app/build/intermediates/exploded-aar/com.android.support/support-compat/25.1.1/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="02741d05d4b697fba5e279e9881aaa1da0ca7c7f">
+        <dex dex="/Users/whe1996/Documents/school/cs_2340/project/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-compat-25.1.1_e5b323f5d61751e1fd73430cd0ebf3de87d2723c/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/whe1996/Documents/school/cs_2340/project/app/build/intermediates/incremental-classes/debug/instant-run-bootstrap.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="79255e03593ae8722818c8933b99938369a96bcc">
+        <dex dex="/Users/whe1996/Documents/school/cs_2340/project/app/build/intermediates/transforms/dex/debug/folders/1000/10/instant-run-bootstrap_a533064afa2f1a3e4141265b1ec37166b8eb1ef4/classes.dex" />
     </item>
     <item
         is-multidex="true"
@@ -124,7 +124,7 @@
         jumboMode="true"
         optimize="true"
         revision="25.0.2"
-        sha1="de2f4248b65071b8970c39e7fd6d1cba045daafa">
+        sha1="8ad12259f939c98b73630713e43a59f828f5a057">
         <dex dex="/Users/whe1996/Documents/school/cs_2340/project/app/build/intermediates/transforms/dex/debug/folders/1000/10/instant-run_29ac10f7f4c16dba209e0a72b691977cbe0b3122/classes.dex" />
     </item>
     <item
