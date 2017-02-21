@@ -18,6 +18,8 @@
         <activity android:name=".controllers.RegistrationActivity" />
         <activity android:name=".controllers.LoginActivity" />
         <activity android:name=".controllers.MainActivity"/>
+        <activity android:name=".controllers.ViewProfileActivity"/>
+        <activity android:name=".controllers.EditProfileActivity"/>
     </application>
 
 </manifest>

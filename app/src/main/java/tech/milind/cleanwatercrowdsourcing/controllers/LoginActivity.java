@@ -7,6 +7,8 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import java.util.NoSuchElementException;
+
 import tech.milind.cleanwatercrowdsourcing.R;
 import tech.milind.cleanwatercrowdsourcing.model.*;
 
@@ -24,14 +26,12 @@ public class LoginActivity extends AppCompatActivity {
     }
 
     protected void onSignInPressed(View view) {
-        boolean isSuccessful = model.login(username.getText().toString(),
-                                password.getText().toString());
-        if (isSuccessful) {
+        try {
+            model.login(username.getText().toString(), password.getText().toString());
             Intent i = new Intent(LoginActivity.this, MainActivity.class);
             startActivity(i);
             finish();
-        }
-        else {
+        } catch (NoSuchElementException e) {
             //throws error in the form of a toast
             Toast.makeText(this,"The username or password entered is incorrect. " +
                     "Please try again.", Toast.LENGTH_LONG).show();

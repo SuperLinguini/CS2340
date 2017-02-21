@@ -24,12 +24,13 @@ public class Security {
         }
     }
 
-    public boolean addUser(String username, String password) {
+    public User addUser(String username, String password) {
         if (userList.containsKey(username)) {
-            return false;
+            throw new NoSuchElementException("User already existed");
         }
-        userList.put(username, new User(username, password));
-        return true;
+        User newUser = new User(username, password);
+        userList.put(username, newUser);
+        return newUser;
     }
 
 

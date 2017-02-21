@@ -7,6 +7,8 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
+import android.content.Intent;
+
 
 import tech.milind.cleanwatercrowdsourcing.R;
 
@@ -28,6 +30,10 @@ public class MainActivity extends AppCompatActivity {
         switch (item.getItemId()) {
             case R.id.logout:
                 finish();
+                break;
+            case R.id.profile:
+                Intent i = new Intent(MainActivity.this, ViewProfileActivity.class);
+                startActivity(i);
                 break;
         }
         return true;

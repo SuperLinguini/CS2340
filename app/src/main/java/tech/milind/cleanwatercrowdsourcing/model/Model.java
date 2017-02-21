@@ -12,22 +12,34 @@ public class Model {
     public static Model getInstance() { return _instance; }
 
     private Security security;
+    private User currentUser;
 
     public Model() {
         security = new Security();
     }
 
+    public User getUser(String username) {
+        return security.findUser(username);
+    }
 
-    public boolean login(String username, String password) {
-        try {
-            return security.findUser(username).checkPassword(password);
-        } catch(NoSuchElementException e) {
-            Log.i("loginError", e.getMessage());
-            return false;
+    public User getCurrentUser() {
+        return currentUser;
+    }
+
+    public void setCurrentUser(User user) {
+        this.currentUser = user;
+    }
+
+    public void login(String username, String password) {
+        User user = security.findUser(username);
+        if (user.checkPassword(password)) {
+            currentUser = user;
+        } else {
+            throw new NoSuchElementException("Incorrect password");
         }
     }
 
-    public boolean register(String username, String password) {
-        return security.addUser(username, password);
+    public void register(String username, String password) {
+        currentUser = security.addUser(username, password);
     }
 }

@@ -6,6 +6,9 @@ import android.view.View;
 import android.content.Intent;
 import android.widget.EditText;
 import android.widget.Toast;
+import android.util.Log;
+
+import java.util.NoSuchElementException;
 
 import tech.milind.cleanwatercrowdsourcing.model.*;
 
@@ -15,6 +18,7 @@ public class RegistrationActivity extends AppCompatActivity {
     EditText username;
     EditText password;
     Model model;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -25,15 +29,14 @@ public class RegistrationActivity extends AppCompatActivity {
     }
 
     protected void onRegisterPressed(View view) {
-        boolean isSuccessful = model.register(username.getText().toString(),
-                                    password.getText().toString());
-        if (isSuccessful) {
-            Intent i = new Intent(RegistrationActivity.this, MainActivity.class);
+        try {
+            model.register(username.getText().toString(), password.getText().toString());
+            Intent i = new Intent(RegistrationActivity.this, EditProfileActivity.class);
             startActivity(i);
             finish();
-        } else {
-            //throws error in the form of a toast
-            Toast.makeText(this,"Registration failed. Please try again.",
+        } catch (NoSuchElementException e) {
+            Log.i("registrationError", e.getMessage());
+            Toast.makeText(this, "Registration failed. Please try again.",
                     Toast.LENGTH_LONG).show();
         }
     }
