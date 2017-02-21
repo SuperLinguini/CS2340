@@ -55,6 +55,7 @@ public class EditProfileActivity extends AppCompatActivity {
                 user.setUserType(UserType.findUserType((String) userTypeSpinner.getSelectedItem()));
                 Intent i = new Intent(EditProfileActivity.this, MainActivity.class);
                 startActivity(i);
+                finish();
             }
         });
 
