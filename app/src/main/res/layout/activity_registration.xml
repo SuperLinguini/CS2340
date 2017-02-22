@@ -55,7 +55,6 @@
         android:layout_below="@+id/input_register_password"
         android:layout_marginStart="45dp"
         android:layout_marginTop="68dp"
-        android:onClick="onRegisterPressed"
         android:text="@string/register" />
 
     <Button
@@ -65,7 +64,6 @@
         android:layout_alignBottom="@+id/buttonRegister"
         android:layout_alignParentEnd="true"
         android:layout_marginEnd="41dp"
-        android:onClick="onCancelPressed"
         android:text="@string/cancel" />
 
 </RelativeLayout>

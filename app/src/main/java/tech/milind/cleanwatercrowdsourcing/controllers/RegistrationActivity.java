@@ -1,47 +1,56 @@
 package tech.milind.cleanwatercrowdsourcing.controllers;
 
 import android.support.v7.app.AppCompatActivity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
-import android.content.Intent;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
-import android.util.Log;
-
 import java.util.NoSuchElementException;
-
 import tech.milind.cleanwatercrowdsourcing.model.*;
-
 import tech.milind.cleanwatercrowdsourcing.R;
 
 public class RegistrationActivity extends AppCompatActivity {
+    Model model;
     EditText username;
     EditText password;
-    Model model;
+    Button registerButton;
+    Button cancelButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_registration);
+
+        model = Model.getInstance();
         username = (EditText) findViewById(R.id.editTextUsername);
         password = (EditText) findViewById(R.id.editTextPassword);
-        model = Model.getInstance();
+        registerButton = (Button) findViewById(R.id.buttonRegister);
+        cancelButton = (Button) findViewById(R.id.buttonCancel);
+
+        registerButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                try {
+                    model.register(username.getText().toString(), password.getText().toString());
+                    Intent i = new Intent(RegistrationActivity.this, EditProfileActivity.class);
+                    startActivity(i);
+                    finish();
+                } catch (NoSuchElementException e) {
+                    Toast.makeText(getApplicationContext(), "Registration failed. Please try again.",
+                            Toast.LENGTH_LONG).show();
+                }
+            }
+        });
+
+        cancelButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                finish();
+            }
+        });
+
     }
 
-    protected void onRegisterPressed(View view) {
-        try {
-            model.register(username.getText().toString(), password.getText().toString());
-            Intent i = new Intent(RegistrationActivity.this, EditProfileActivity.class);
-            startActivity(i);
-            finish();
-        } catch (NoSuchElementException e) {
-            Log.i("registrationError", e.getMessage());
-            Toast.makeText(this, "Registration failed. Please try again.",
-                    Toast.LENGTH_LONG).show();
-        }
-    }
-
-    protected void onCancelPressed(View view) {
-        finish();
-    }
 }

@@ -1,8 +1,5 @@
 package tech.milind.cleanwatercrowdsourcing.model;
 
-/**
- * Created by whe1996 on 2/20/17.
- */
 public class User {
 
     private String username;
@@ -24,31 +21,38 @@ public class User {
     public String getUsername() {
         return username;
     }
+
     public String getName() {
         return name;
     }
+
     public void setName(String name) {
         this.name = name;
     }
+
     public String getHomeAddress() {
         return homeAddress;
     }
+
     public void setHomeAddress(String address) {
         this.homeAddress = address;
     }
+
     public String getEmailAddress() {
         return emailAddress;
     }
+
     public void setEmailAddress(String address) {
         this.emailAddress = address;
     }
+
     public UserType getUserType() {
         return userType;
     }
+
     public void setUserType(UserType type) {
         this.userType = type;
     }
-
 
     public boolean checkPassword(String password) {
         return this.password.equals(password);

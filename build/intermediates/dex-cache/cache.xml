@@ -7,7 +7,7 @@
         jumboMode="true"
         optimize="true"
         revision="25.0.2"
-        sha1="c28399770e30db64d01f390f140d0cfd15d7fab8">
+        sha1="8ba4640bbb57d8f7fedbca616cb14a2de1b8ec96">
         <dex dex="/Users/whe1996/Documents/school/cs-2340/Android/project/app/build/intermediates/transforms/dex/debug/folders/1000/10/instant-run_2223b39e28fc45421129d3fffdf65eb178e0ef1b/classes.dex" />
     </item>
     <item
@@ -97,7 +97,7 @@
         jumboMode="true"
         optimize="true"
         revision="25.0.2"
-        sha1="a819317a7a219b9603ec935aba33a6baf2581a97">
+        sha1="a73835be979dda84f1e5ba41a4346214c7289218">
         <dex dex="/Users/whe1996/Documents/school/cs-2340/Android/project/app/build/intermediates/transforms/dex/debug/folders/1000/10/instant-run-bootstrap_93567b44e7a3e78ba37ca66970f5cf19d40e848e/classes.dex" />
     </item>
     <item

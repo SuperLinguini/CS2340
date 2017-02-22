@@ -28,15 +28,6 @@
         android:layout_alignParentTop="true"
         android:layout_toEndOf="@+id/textView6"
         android:layout_marginTop="32dp"
-        android:id="@+id/button" />
-
-    <TextView
-        android:text="The Logout Button doesnt work yet"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="43dp"
-        android:id="@+id/textView7"
-        android:layout_below="@+id/textView6"
-        android:layout_alignEnd="@+id/button"
-        android:layout_marginEnd="32dp" />
+        android:id="@+id/buttonLogout" />
+    
 </RelativeLayout>

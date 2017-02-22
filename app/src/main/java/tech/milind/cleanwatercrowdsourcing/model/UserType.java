@@ -3,14 +3,11 @@ package tech.milind.cleanwatercrowdsourcing.model;
 import java.util.ArrayList;
 import java.util.List;
 
-/**
- * Created by whe1996 on 2/20/17.
- */
 public enum UserType {
-    USER("user", 0),
-    WORKER("worker", 1),
-    MANAGER("manager", 2),
-    ADMIN("administrator", 3);
+    USER("User", 0),
+    WORKER("Worker", 1),
+    MANAGER("Manager", 2),
+    ADMIN("Administrator", 3);
 
     private final String type;
     private final int level;
@@ -20,8 +17,22 @@ public enum UserType {
         this.level = level;
     }
 
-    public String getType() { return type; }
-    public int getLevel() { return level; }
+    public String getType() {
+        return type;
+    }
+
+    public int getLevel() {
+        return level;
+    }
+
+    public static UserType findUserType(String type) {
+        for (UserType u : UserType.values()) {
+            if (u.getType().equals(type)) {
+                return u;
+            }
+        }
+        return null;
+    }
 
     public static List<String> toList() {
         List<String> list = new ArrayList<String>(4);
@@ -29,15 +40,6 @@ public enum UserType {
             list.add(u.type);
         }
         return list;
-    }
-
-    public static UserType findUserType(String standing) {
-        for (UserType u : UserType.values()) {
-            if (u.getType().equals(standing)) {
-                return u;
-            }
-        }
-        return null;
     }
 
 }
