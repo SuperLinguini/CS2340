@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "704772592041",
+    "firebase_url": "https://cs2340-fd203.firebaseio.com",
+    "project_id": "cs2340-fd203",
+    "storage_bucket": "cs2340-fd203.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:704772592041:android:9a619f1dfc8e907a",
+        "android_client_info": {
+          "package_name": "tech.milind.cleanwatercrowdsourcing"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "704772592041-afu90imblcn2tsuf9n2cmk86m1vmkq21.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "tech.milind.cleanwatercrowdsourcing",
+            "certificate_hash": "8b5143faa296524d1cc413563b84f7a82ace51c2"
+          }
+        },
+        {
+          "client_id": "704772592041-l0n93teqv3dpm02cd4e56gk0ah2ldkvt.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDe3f8biu5xumZyNn7Hf1tqTA5pOkMs_z0"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "704772592041-l0n93teqv3dpm02cd4e56gk0ah2ldkvt.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

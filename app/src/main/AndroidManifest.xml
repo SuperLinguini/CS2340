@@ -13,6 +13,7 @@
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
+
             </intent-filter>
         </activity>
         <activity android:name=".controllers.RegistrationActivity" />
@@ -20,6 +21,7 @@
         <activity android:name=".controllers.MainActivity"/>
         <activity android:name=".controllers.ViewProfileActivity"/>
         <activity android:name=".controllers.EditProfileActivity"/>
+
     </application>
 
 </manifest>
