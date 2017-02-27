@@ -36,4 +36,8 @@ public class Model {
     public void register(String username, String password) {
         currentUser = security.addUser(username, password);
     }
+
+    public void deleteUser(String username) {
+        security.removeUser(username);
+    }
 }

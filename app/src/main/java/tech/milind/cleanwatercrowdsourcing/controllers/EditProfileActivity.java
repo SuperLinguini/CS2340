@@ -8,6 +8,8 @@ import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Spinner;
+import android.widget.Toast;
+
 import tech.milind.cleanwatercrowdsourcing.R;
 import tech.milind.cleanwatercrowdsourcing.model.*;
 
@@ -79,8 +81,23 @@ public class EditProfileActivity extends AppCompatActivity {
         cancelButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                if(getIntent().getBooleanExtra("New user", false)) {
+                    model.deleteUser(currentUser.getUsername());
+                    Toast.makeText(getApplicationContext(),
+                            "Registration failed.", Toast.LENGTH_SHORT).show();
+                }
                 finish();
             }
         });
+
+    }
+    @Override
+    public void onBackPressed() {
+        if(getIntent().getBooleanExtra("New user", false)) {
+            model.deleteUser(currentUser.getUsername());
+            Toast.makeText(getApplicationContext(),
+                    "Registration failed.", Toast.LENGTH_SHORT).show();
+        }
+        finish();
     }
 }

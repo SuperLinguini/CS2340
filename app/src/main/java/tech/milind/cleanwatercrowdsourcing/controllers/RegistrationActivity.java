@@ -35,10 +35,14 @@ public class RegistrationActivity extends AppCompatActivity {
                 try {
                     model.register(username.getText().toString(), password.getText().toString());
                     Intent i = new Intent(RegistrationActivity.this, EditProfileActivity.class);
+                    i.putExtra("New user", true);
                     startActivity(i);
                     finish();
                 } catch (NoSuchElementException e) {
                     Toast.makeText(getApplicationContext(), "Registration failed. Please try again.",
+                            Toast.LENGTH_LONG).show();
+                } catch (IllegalArgumentException e){
+                    Toast.makeText(getApplicationContext(), e.getMessage(),
                             Toast.LENGTH_LONG).show();
                 }
             }

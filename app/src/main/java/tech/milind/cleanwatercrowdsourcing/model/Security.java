@@ -28,9 +28,17 @@ public class Security {
         if (userList.containsKey(username)) {
             throw new NoSuchElementException("User already existed");
         }
+        if (username.length()==0) {
+            throw new IllegalArgumentException("Username must contain atleast one " +
+                    "character. Please try again.");
+        }
         User newUser = new User(username, password);
         userList.put(username, newUser);
         return newUser;
+    }
+
+    public void removeUser(String username) {
+        userList.remove(username);
     }
 
 
