@@ -16,6 +16,12 @@ public class Security {
         userList.put("user", new User("user", "pass"));
     }
 
+    /**
+     * Searches whether the user exists in the hashmap given the username
+     * @param username username of the user that is being searched for
+     * @return the User object that is found in the hashmap given the username
+     * @throws NoSuchElementException if User does not exist in the hashmap given the username
+     */
     public User findUser(String username) {
         if (userList.containsKey(username)) {
             return userList.get(username);
@@ -24,6 +30,14 @@ public class Security {
         }
     }
 
+    /**
+     * Creates a new User and adds user to hashmap if username is unique and valid
+     * @param username username of the new User
+     * @param password password of the new User
+     * @return The user object that was just added to the hashmap
+     * @throws NoSuchElementException if username already exists in hashmap
+     * @throws IllegalArgumentException if the username does not contain atleast one character
+     */
     public User addUser(String username, String password) {
         if (userList.containsKey(username)) {
             throw new NoSuchElementException("User already existed");
@@ -37,6 +51,10 @@ public class Security {
         return newUser;
     }
 
+    /**
+     * Removes the user from the userlist given the username of the user
+     * @param username the username of the user that is to be removed
+     */
     public void removeUser(String username) {
         userList.remove(username);
     }

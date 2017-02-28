@@ -91,6 +91,10 @@ public class EditProfileActivity extends AppCompatActivity {
         });
 
     }
+
+    /**
+     * Prevents the user from being registered if back button is pressed during registration
+     */
     @Override
     public void onBackPressed() {
         if(getIntent().getBooleanExtra("New user", false)) {
