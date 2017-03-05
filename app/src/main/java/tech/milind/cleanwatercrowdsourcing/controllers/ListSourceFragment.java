@@ -15,7 +15,6 @@ import android.view.ViewGroup;
 
 import android.widget.TextView;
 
-import java.util.Collections;
 import java.util.List;
 
 import tech.milind.cleanwatercrowdsourcing.R;

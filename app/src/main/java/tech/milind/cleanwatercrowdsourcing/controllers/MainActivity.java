@@ -60,10 +60,22 @@ public class MainActivity extends AppCompatActivity {
                             }
                             break;
                         case R.id.nav_purity:
-
+                            if(!(getSupportFragmentManager().findFragmentById(R.id.fragmentContainer)
+                                    instanceof FragmentPurity)) {
+                                getSupportFragmentManager().beginTransaction()
+                                        .replace(R.id.fragmentContainer, new FragmentPurity())
+                                        .commit();
+                                getSupportActionBar().setTitle("Water Purity Report");
+                            }
                             break;
                         case R.id.nav_admin:
-
+                            if(!(getSupportFragmentManager().findFragmentById(R.id.fragmentContainer)
+                                    instanceof FragmentAdmin)) {
+                                getSupportFragmentManager().beginTransaction()
+                                        .replace(R.id.fragmentContainer, new FragmentAdmin())
+                                        .commit();
+                                getSupportActionBar().setTitle("Admin Page");
+                            }
                             break;
                     }
                     return true;
