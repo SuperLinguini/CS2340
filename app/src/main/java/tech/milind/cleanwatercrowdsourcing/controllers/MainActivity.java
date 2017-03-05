@@ -1,6 +1,8 @@
 package tech.milind.cleanwatercrowdsourcing.controllers;
 
 import android.app.AlertDialog;
+import android.app.FragmentManager;
+import android.app.FragmentTransaction;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
@@ -28,7 +30,7 @@ import java.lang.reflect.Field;
 
 import tech.milind.cleanwatercrowdsourcing.R;
 
-public class MainActivity extends AppCompatActivity implements OnMapReadyCallback {
+public class MainActivity extends AppCompatActivity {
 
     Button logout;
 
@@ -36,6 +38,11 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        android.support.v4.app.FragmentManager fm = getSupportFragmentManager();
+        android.support.v4.app.FragmentTransaction ft = fm.beginTransaction();
+        ft.add(R.id.fragmentContainer, new SourceReportFragment());
+        ft.commit();
 
         BottomNavigationView bottomNavigationView =(BottomNavigationView)
                 findViewById(R.id.nav_bar);
@@ -47,21 +54,19 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
                     switch(item.getItemId()) {
                         case R.id.nav_home:
 
+                            break;
+                        case R.id.nav_source:
+
+                            break;
+                        case R.id.nav_purity:
+
+                            break;
+                        case R.id.nav_admin:
+
+                            break;
                     }
                     return true;
                 }
-        });
-
-        SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager()
-                .findFragmentById(R.id.map);
-        mapFragment.getMapAsync(this);
-        FloatingActionButton add = (FloatingActionButton) findViewById(R.id.addFAB);
-        add.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent i = new Intent(MainActivity.this, SubmitSourceReportActivity.class);
-                startActivity(i);
-            }
         });
     }
 
@@ -131,13 +136,5 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
 
         AlertDialog alertDialog = dialogBuilder.create();
         alertDialog.show();
-    }
-
-    @Override
-    public void onMapReady(GoogleMap googleMap) {
-        LatLng sydney = new LatLng(-33.852, 151.211);
-        googleMap.addMarker(new MarkerOptions().position(sydney)
-                .title("Marker in Sydney"));
-        googleMap.moveCamera(CameraUpdateFactory.newLatLng(sydney));
     }
 }

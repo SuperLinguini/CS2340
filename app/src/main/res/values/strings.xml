@@ -8,4 +8,7 @@
     <string name="SubmitWaterReport">Submit Water Source Report</string>
     <string name="sourceReportSubmitError">Missing one or more fields.</string>
     <string name="nav_source">Source</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>
