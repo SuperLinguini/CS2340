@@ -5,6 +5,5 @@
     <string name="register">Register</string>
     <string name="username">Username</string>
     <string name="password">Password</string>
-
-
+    <string name="SubmitWaterReport">Submit Water Source Report</string>
 </resources>

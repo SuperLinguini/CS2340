@@ -1,5 +1,7 @@
 package tech.milind.cleanwatercrowdsourcing.model;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.NoSuchElementException;
 
 public class Model {
@@ -9,10 +11,12 @@ public class Model {
         return _instance;
     }
 
+    private List<WaterSourceReport> reports;
     private Security security;
     private User currentUser;
 
-    public Model() {
+    private Model() {
+        reports = new ArrayList<>();
         security = new Security();
     }
 
@@ -39,5 +43,9 @@ public class Model {
 
     public void deleteUser(String username) {
         security.removeUser(username);
+    }
+
+    public void addReport(WaterSourceReport report) {
+        reports.add(report);
     }
 }
