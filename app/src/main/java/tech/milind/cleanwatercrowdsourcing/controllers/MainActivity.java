@@ -70,6 +70,9 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
         return true;
     }
 
+    /**
+     * shows alert dialog to logout if back button is pressed on homescreen
+     */
     @Override
     public void onBackPressed() {
         AlertDialog.Builder dialogBuilder = new AlertDialog.Builder(this);
