@@ -1,7 +1,10 @@
 package tech.milind.cleanwatercrowdsourcing.controllers;
 
 import android.content.Intent;
+import android.graphics.Color;
 import android.support.design.widget.FloatingActionButton;
+import android.support.design.widget.Snackbar;
+import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -67,15 +70,24 @@ public class SubmitSourceReportActivity extends AppCompatActivity {
         submitButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                _waterSourceReport.setName(name.getText().toString());
-                _waterSourceReport.setLocation(latLng);
-                _waterSourceReport.setType((WaterSourceReport.typeOfWater)
-                        typeSpinner.getSelectedItem());
-                _waterSourceReport.setCondition((WaterSourceReport.conditionOfWater)
-                        conditionSpinner.getSelectedItem());
-                Model model = Model.getInstance();
-                model.addReport(_waterSourceReport);
-                finish();
+                String nameText = name.getText().toString().trim();
+                if(!(isEmpty(nameText) || latLng == null)) {
+                    _waterSourceReport.setName(name.getText().toString());
+                    _waterSourceReport.setLocation(latLng);
+                    _waterSourceReport.setType((WaterSourceReport.typeOfWater)
+                            typeSpinner.getSelectedItem());
+                    _waterSourceReport.setCondition((WaterSourceReport.conditionOfWater)
+                            conditionSpinner.getSelectedItem());
+                    Model model = Model.getInstance();
+                    model.addReport(_waterSourceReport);
+                    finish();
+                } else {
+                    Snackbar snackbar = Snackbar.make(findViewById(R.id.activity_submit_source_report),
+                            R.string.sourceReportSubmitError, Snackbar.LENGTH_LONG);
+                    View sbview = snackbar.getView();
+                    sbview.setBackgroundColor(Color.RED);
+                    snackbar.show();
+                }
             }
         });
 
@@ -95,6 +107,11 @@ public class SubmitSourceReportActivity extends AppCompatActivity {
                 }
             }
         });
+    }
+
+    public boolean isEmpty(String input) {
+        return input.isEmpty() || input.length() == 0 || input.equals("") ||
+                input == null;
     }
 
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {

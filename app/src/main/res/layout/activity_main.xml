@@ -12,34 +12,17 @@
         xmlns:tools="http://schemas.android.com/tools"
         android:id="@+id/map"
         android:name="com.google.android.gms.maps.SupportMapFragment"
-        android:layout_width="500dp"
-        android:layout_height="500dp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/nav_bar"
+        android:layout_alignParentTop="true"
         tools:context="com.example.mapwithmarker.MapsMarkerActivity" />
-    
-    <TextView
-        android:text="Landing Page"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="152dp"
-        android:id="@+id/textView6"
-        android:textAppearance="@android:style/TextAppearance.Material.Large"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true" />
-
-    <Button
-        android:text="Logout"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
-        android:layout_toEndOf="@+id/textView6"
-        android:layout_marginTop="32dp"
-        android:id="@+id/buttonLogout" />
 
     <android.support.design.widget.FloatingActionButton
         android:id="@+id/addFAB"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignBottom="@+id/map"
+        android:layout_alignBottom="@id/map"
         android:layout_alignParentEnd="true"
         android:layout_marginBottom="19dp"
         android:layout_marginEnd="16dp"
@@ -47,5 +30,14 @@
         app:fabSize="mini"
         app:srcCompat="@mipmap/ic_add_white_24dp" />
 
+    <android.support.design.widget.BottomNavigationView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:id="@+id/nav_bar"
+        app:itemBackground="@color/colorPrimary"
+        app:itemIconTint="@color/white"
+        app:itemTextColor="@color/white"
+        app:menu="@menu/navbar"/>
 
 </RelativeLayout>

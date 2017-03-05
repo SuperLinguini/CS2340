@@ -6,4 +6,6 @@
     <string name="username">Username</string>
     <string name="password">Password</string>
     <string name="SubmitWaterReport">Submit Water Source Report</string>
+    <string name="sourceReportSubmitError">Missing one or more fields.</string>
+    <string name="nav_source">Source</string>
 </resources>
