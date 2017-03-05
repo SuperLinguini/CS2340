@@ -1,5 +1,6 @@
 package tech.milind.cleanwatercrowdsourcing.controllers;
 
+import android.app.Activity;
 import android.content.Intent;
 import android.graphics.Color;
 import android.support.design.widget.FloatingActionButton;
@@ -26,7 +27,7 @@ import tech.milind.cleanwatercrowdsourcing.model.WaterSourceReport;
 
 public class SubmitSourceReportActivity extends AppCompatActivity {
     private static final String TAG = "AddResourceReport";
-    int PLACE_PICKER_REQUEST = 1;
+    final int PLACE_PICKER_REQUEST = 1;
 
     private Spinner typeSpinner;
     private Spinner conditionSpinner;
@@ -40,8 +41,6 @@ public class SubmitSourceReportActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_submit_source_report);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-
-        _waterSourceReport = new WaterSourceReport();
 
         name = (EditText) findViewById(R.id.nameReportEditText);
 
@@ -72,6 +71,7 @@ public class SubmitSourceReportActivity extends AppCompatActivity {
             public void onClick(View v) {
                 String nameText = name.getText().toString().trim();
                 if(!(isEmpty(nameText) || latLng == null)) {
+                    _waterSourceReport = new WaterSourceReport();
                     _waterSourceReport.setName(name.getText().toString());
                     _waterSourceReport.setLocation(latLng);
                     _waterSourceReport.setType((WaterSourceReport.typeOfWater)
@@ -80,6 +80,8 @@ public class SubmitSourceReportActivity extends AppCompatActivity {
                             conditionSpinner.getSelectedItem());
                     Model model = Model.getInstance();
                     model.addReport(_waterSourceReport);
+                    Intent output = new Intent();
+                    setResult(Activity.RESULT_OK, output);
                     finish();
                 } else {
                     Snackbar snackbar = Snackbar.make(findViewById(R.id.activity_submit_source_report),
@@ -123,5 +125,12 @@ public class SubmitSourceReportActivity extends AppCompatActivity {
                 latLng = place.getLatLng();
             }
         }
+    }
+
+    @Override
+    public void onBackPressed() {
+        Intent output = new Intent();
+        setResult(Activity.RESULT_CANCELED, output);
+        super.onBackPressed();
     }
 }

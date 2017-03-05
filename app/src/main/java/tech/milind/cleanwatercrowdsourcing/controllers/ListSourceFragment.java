@@ -1,9 +1,13 @@
 package tech.milind.cleanwatercrowdsourcing.controllers;
 
+import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 
 import android.support.annotation.NonNull;
+import android.support.design.widget.FloatingActionButton;
 import android.support.v4.app.Fragment;
+import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -19,21 +23,44 @@ import tech.milind.cleanwatercrowdsourcing.model.Model;
 import tech.milind.cleanwatercrowdsourcing.model.WaterSourceReport;
 
 public class ListSourceFragment extends Fragment {
+    private SimpleSourceAdapter mAdapter;
+    final int REQUEST = 1;
+
     @Override
     public View onCreateView(LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_list, container, false);
         View recyclerView = view.findViewById(R.id.source_report_list);
         setupRecyclerView((RecyclerView) recyclerView);
+        FloatingActionButton add = (FloatingActionButton) view.findViewById(R.id.addFAB);
+        add.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(getActivity(), SubmitSourceReportActivity.class);
+                startActivityForResult(i, REQUEST);
+            }
+        });
         return view;
     }
 
+    @Override
+    public void onActivityResult(int requestCode, int resultCode, Intent data) {
+        if (requestCode == REQUEST) {
+            if (resultCode == Activity.RESULT_OK) {
+                mAdapter.notifyItemInserted(mAdapter.reports.size() - 1);
+            }
+        }
+    }
+
     private void setupRecyclerView(@NonNull RecyclerView recyclerView) {
+        LinearLayoutManager mLayoutManager = new LinearLayoutManager(getActivity());
+        mLayoutManager.setReverseLayout(true);
+        mLayoutManager.setStackFromEnd(true);
+        recyclerView.setLayoutManager(mLayoutManager);
         Model model = Model.getInstance();
         List<WaterSourceReport> reports = model.getReports();
-        Collections.sort(reports);
-        Collections.reverse(reports);
-        recyclerView.setAdapter(new SimpleSourceAdapter(reports));
+        mAdapter = new SimpleSourceAdapter(reports);
+        recyclerView.setAdapter(mAdapter);
     }
 
     public class SimpleSourceAdapter extends RecyclerView

@@ -20,20 +20,27 @@
             android:value="@string/google_maps_key" />
 
 
-        <activity android:name=".controllers.WelcomeActivity">
+        <activity android:name=".controllers.WelcomeActivity"
+            android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".controllers.RegistrationActivity" />
-        <activity android:name=".controllers.LoginActivity" />
-        <activity android:name=".controllers.MainActivity" />
-        <activity android:name=".controllers.ViewProfileActivity" />
-        <activity android:name=".controllers.EditProfileActivity" />
+        <activity android:name=".controllers.RegistrationActivity"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".controllers.LoginActivity"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".controllers.MainActivity"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".controllers.ViewProfileActivity"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".controllers.EditProfileActivity"
+            android:screenOrientation="portrait"/>
         <activity android:name=".controllers.SubmitSourceReportActivity"
-            android:label="@string/SubmitWaterReport">
+            android:label="@string/SubmitWaterReport"
+            android:screenOrientation="portrait">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="tech.milind.cleanwatercrowdsourcing.controllers.MainActivity"/>

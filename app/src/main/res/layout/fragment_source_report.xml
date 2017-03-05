@@ -5,10 +5,6 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context="tech.milind.cleanwatercrowdsourcing.controllers.SourceReportFragment">
 
-    <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
-
         <fragment xmlns:android="http://schemas.android.com/apk/res/android"
             xmlns:tools="http://schemas.android.com/tools"
             android:id="@+id/map"
@@ -17,17 +13,4 @@
             android:layout_height="match_parent"
             android:layout_alignParentTop="true"
             tools:context="com.example.mapwithmarker.MapsMarkerActivity" />
-
-        <android.support.design.widget.FloatingActionButton
-            android:id="@+id/addFAB"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignBottom="@id/map"
-            android:layout_alignParentEnd="true"
-            android:layout_marginBottom="19dp"
-            android:layout_marginEnd="16dp"
-            android:clickable="true"
-            app:fabSize="mini"
-            app:srcCompat="@mipmap/ic_add_white_24dp" />
-    </RelativeLayout>
 </FrameLayout>

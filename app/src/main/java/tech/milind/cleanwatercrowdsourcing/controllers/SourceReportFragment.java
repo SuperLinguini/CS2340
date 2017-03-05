@@ -32,14 +32,6 @@ public class SourceReportFragment extends Fragment implements OnMapReadyCallback
         SupportMapFragment mapFragment = (SupportMapFragment) this.getChildFragmentManager()
                 .findFragmentById(R.id.map);
         mapFragment.getMapAsync(this);
-        FloatingActionButton add = (FloatingActionButton) view.findViewById(R.id.addFAB);
-        add.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent i = new Intent(getActivity(), SubmitSourceReportActivity.class);
-                startActivity(i);
-            }
-        });
         return view;
     }
 
