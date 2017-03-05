@@ -81,4 +81,9 @@ public class WaterSourceReport implements Comparable<WaterSourceReport> {
     public int compareTo(@NonNull WaterSourceReport o) {
         return this.getReportNumber() > o.getReportNumber() ? 1 : -1;
     }
+
+    public String getSnippet() {
+        return String.format("#%d %tD %<tR %s/%s", reportNumber, date,
+                type.toString(), condition.toString());
+    }
 }

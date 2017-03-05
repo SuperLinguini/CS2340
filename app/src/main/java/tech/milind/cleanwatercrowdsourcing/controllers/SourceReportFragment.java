@@ -43,7 +43,9 @@ public class SourceReportFragment extends Fragment implements OnMapReadyCallback
         for(int i = 0; i < reports.size(); i++) {
             cur = reports.get(i);
             googleMap.addMarker(new MarkerOptions().position(cur.getLocation())
-                .title(cur.getName()));
+                .title(cur.getName())
+                .snippet(cur.getSnippet()))
+                .setTag(cur);
         }
         googleMap.moveCamera(CameraUpdateFactory.newLatLng(reports
                 .get(reports.size() - 1).getLocation()));
