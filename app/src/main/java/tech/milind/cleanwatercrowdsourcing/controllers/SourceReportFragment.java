@@ -3,6 +3,7 @@ package tech.milind.cleanwatercrowdsourcing.controllers;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.annotation.Nullable;
 import android.support.design.widget.FloatingActionButton;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
@@ -13,10 +14,13 @@ import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.SupportMapFragment;
-import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MarkerOptions;
 
+import java.util.List;
+
 import tech.milind.cleanwatercrowdsourcing.R;
+import tech.milind.cleanwatercrowdsourcing.model.Model;
+import tech.milind.cleanwatercrowdsourcing.model.WaterSourceReport;
 
 public class SourceReportFragment extends Fragment implements OnMapReadyCallback {
 
@@ -37,14 +41,19 @@ public class SourceReportFragment extends Fragment implements OnMapReadyCallback
             }
         });
         return view;
-
     }
 
     @Override
     public void onMapReady(GoogleMap googleMap) {
-        LatLng sydney = new LatLng(-33.852, 151.211);
-        googleMap.addMarker(new MarkerOptions().position(sydney)
-                .title("Marker in Sydney"));
-        googleMap.moveCamera(CameraUpdateFactory.newLatLng(sydney));
+        Model model = Model.getInstance();
+        List<WaterSourceReport> reports = model.getReports();
+        WaterSourceReport cur;
+        for(int i = 0; i < reports.size(); i++) {
+            cur = reports.get(i);
+            googleMap.addMarker(new MarkerOptions().position(cur.getLocation())
+                .title(cur.getName()));
+        }
+        googleMap.moveCamera(CameraUpdateFactory.newLatLng(reports
+                .get(reports.size() - 1).getLocation()));
     }
 }

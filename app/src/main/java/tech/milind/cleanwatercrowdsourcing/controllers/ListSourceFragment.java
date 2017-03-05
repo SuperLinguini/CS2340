@@ -1,7 +1,5 @@
 package tech.milind.cleanwatercrowdsourcing.controllers;
 
-
-import android.app.ListFragment;
 import android.os.Bundle;
 
 import android.support.annotation.NonNull;
@@ -11,12 +9,9 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import android.widget.AdapterView;
-import android.widget.AdapterView.OnItemClickListener;
-import android.widget.ArrayAdapter;
 import android.widget.TextView;
-import android.widget.Toast;
 
+import java.util.Collections;
 import java.util.List;
 
 import tech.milind.cleanwatercrowdsourcing.R;
@@ -35,7 +30,10 @@ public class ListSourceFragment extends Fragment {
 
     private void setupRecyclerView(@NonNull RecyclerView recyclerView) {
         Model model = Model.getInstance();
-        recyclerView.setAdapter(new SimpleSourceAdapter(model.getReports()));
+        List<WaterSourceReport> reports = model.getReports();
+        Collections.sort(reports);
+        Collections.reverse(reports);
+        recyclerView.setAdapter(new SimpleSourceAdapter(reports));
     }
 
     public class SimpleSourceAdapter extends RecyclerView
@@ -43,15 +41,15 @@ public class ListSourceFragment extends Fragment {
         private List<WaterSourceReport> reports;
 
         public class ViewHolder extends RecyclerView.ViewHolder {
-            public TextView reportName;
-            public TextView reportNumAndDate;
+            public TextView reportNumAndName;
+            public TextView reportDate;
             public TextView reportLocation;
             public TextView reportTypeCondition;
 
             public ViewHolder(View v) {
                 super(v);
-                reportName = (TextView) v.findViewById(R.id.reportName);
-                reportNumAndDate = (TextView) v.findViewById(R.id.reportNumAndDate);
+                reportNumAndName = (TextView) v.findViewById(R.id.reportNumAndName);
+                reportDate = (TextView) v.findViewById(R.id.reportDate);
                 reportLocation = (TextView) v.findViewById(R.id.reportLocation);
                 reportTypeCondition = (TextView) v.findViewById(R.id.reportTypeCondition);
             }
@@ -65,9 +63,9 @@ public class ListSourceFragment extends Fragment {
         public void onBindViewHolder(ViewHolder holder, int position) {
             final Model model = Model.getInstance();
             WaterSourceReport wrs = reports.get(position);
-            holder.reportNumAndDate.setText(String.format("#%1$d Date: %2$tD %2$tR",
-                    wrs.getReportNumber(), wrs.getDate()));
-            holder.reportName.setText(wrs.getName());
+            holder.reportDate.setText(String.format("Date: %tD %<tR", wrs.getDate()));
+            holder.reportNumAndName.setText(String.format("#%s %s",
+                    wrs.getReportNumber(), wrs.getName()));
             holder.reportLocation.setText(wrs.getLocation().toString());
             holder.reportTypeCondition.setText(wrs.getType() + ", " + wrs.getCondition());
         }

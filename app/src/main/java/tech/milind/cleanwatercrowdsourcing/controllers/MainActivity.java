@@ -28,6 +28,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        getSupportActionBar().setTitle("Water Availability");
         getSupportFragmentManager().beginTransaction()
                 .add(R.id.fragmentContainer, new SourceReportFragment())
                 .commit();
@@ -41,14 +42,22 @@ public class MainActivity extends AppCompatActivity {
                 public boolean onNavigationItemSelected(@NonNull MenuItem item) {
                     switch(item.getItemId()) {
                         case R.id.nav_home:
-                            getSupportFragmentManager().beginTransaction()
-                                    .replace(R.id.fragmentContainer, new SourceReportFragment())
-                                    .commit();
+                            if(!(getSupportFragmentManager().findFragmentById(R.id.fragmentContainer)
+                                    instanceof SourceReportFragment)) {
+                                getSupportFragmentManager().beginTransaction()
+                                        .replace(R.id.fragmentContainer, new SourceReportFragment())
+                                        .commit();
+                                getSupportActionBar().setTitle("Water Availability");
+                            }
                             break;
                         case R.id.nav_source:
-                            getSupportFragmentManager().beginTransaction()
-                                    .replace(R.id.fragmentContainer, new ListSourceFragment())
-                                    .commit();
+                            if(!(getSupportFragmentManager().findFragmentById(R.id.fragmentContainer)
+                                    instanceof ListSourceFragment)) {
+                                getSupportFragmentManager().beginTransaction()
+                                        .replace(R.id.fragmentContainer, new ListSourceFragment())
+                                        .commit();
+                                getSupportActionBar().setTitle("Water Source Report");
+                            }
                             break;
                         case R.id.nav_purity:
 

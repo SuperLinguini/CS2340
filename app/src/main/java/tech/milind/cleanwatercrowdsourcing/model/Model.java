@@ -24,13 +24,12 @@ public class Model {
     }
 
     void addTestData() {
-        reports.add(new WaterSourceReport("Report 1", new LatLng(33.77,-84.39),
+        reports.add(new WaterSourceReport("Test Report", new LatLng(33.77,-84.39),
                 WaterSourceReport.typeOfWater.Bottled, WaterSourceReport.conditionOfWater.Potable));
-        reports.add(new WaterSourceReport("Report 2", new LatLng(33.77248,-84.393003),
+        reports.add(new WaterSourceReport("A Report", new LatLng(33.77248,-84.393003),
                 WaterSourceReport.typeOfWater.Spring, WaterSourceReport.conditionOfWater.Treatable_Clear));
-        reports.add(new WaterSourceReport("Report 3", new LatLng(33.76873,-84.37565),
+        reports.add(new WaterSourceReport("My Report", new LatLng(33.76873,-84.37565),
                 WaterSourceReport.typeOfWater.Stream, WaterSourceReport.conditionOfWater.Treatable_Muddy));
-
     }
 
     /**

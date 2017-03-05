@@ -1,14 +1,17 @@
 package tech.milind.cleanwatercrowdsourcing.model;
 
+import android.support.annotation.NonNull;
+
 import com.google.android.gms.maps.model.LatLng;
 
+import java.util.Comparator;
 import java.util.Date;
 
 /**
  * Created by SuperLinguini on 3/2/2017.
  */
 
-public class WaterSourceReport {
+public class WaterSourceReport implements Comparable<WaterSourceReport> {
     private static int currentID = 1;
     public enum typeOfWater {
         Bottled, Well, Stream, Lake, Spring, Other
@@ -72,5 +75,10 @@ public class WaterSourceReport {
 
     public void setCondition(conditionOfWater condition) {
         this.condition = condition;
+    }
+
+    @Override
+    public int compareTo(@NonNull WaterSourceReport o) {
+        return this.getReportNumber() > o.getReportNumber() ? 1 : -1;
     }
 }
