@@ -23,6 +23,9 @@ public class Model {
         addTestData();
     }
 
+    /**
+     * Adds filler test data until we implement persistence
+     */
     void addTestData() {
         reports.add(new WaterSourceReport("Test Report", new LatLng(33.77,-84.39),
                 WaterSourceReport.typeOfWater.Bottled, WaterSourceReport.conditionOfWater.Potable));
@@ -44,6 +47,10 @@ public class Model {
         this.currentUser = user;
     }
 
+    /**
+     * Gets the WaterSourceReport list used in the the application
+     * @return the WaterSourceReport list
+     */
     public List<WaterSourceReport> getReports() {
         return reports;
     }
@@ -80,6 +87,10 @@ public class Model {
         security.removeUser(username);
     }
 
+    /**
+     * Add a report to the WaterSourceReport list
+     * @param report WaterSourceReport to add
+     */
     public void addReport(WaterSourceReport report) {
         reports.add(report);
     }

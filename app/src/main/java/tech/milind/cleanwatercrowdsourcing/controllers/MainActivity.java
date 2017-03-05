@@ -21,8 +21,6 @@ import tech.milind.cleanwatercrowdsourcing.R;
 
 public class MainActivity extends AppCompatActivity {
 
-    Button logout;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -83,6 +81,10 @@ public class MainActivity extends AppCompatActivity {
         });
     }
 
+    /**
+     * Disables shifting for BottomNavigationView nav bar
+     * @param view the BottomNavigationView for the app
+     */
     public static void disableShiftMode(BottomNavigationView view) {
         BottomNavigationMenuView menuView = (BottomNavigationMenuView) view.getChildAt(0);
         try {

@@ -110,11 +110,19 @@ public class SubmitSourceReportActivity extends AppCompatActivity {
         });
     }
 
+    /**
+     * Determines whether a TextView is empty
+     * @param input String from TextView
+     * @return whether the String is empty
+     */
     public boolean isEmpty(String input) {
         return input.isEmpty() || input.length() == 0 || input.equals("") ||
                 input == null;
     }
 
+    /**
+     * Determines whether the Google Place Picker was successful and modifies Location EditText
+     */
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         if (requestCode == PLACE_PICKER_REQUEST) {
             if (resultCode == RESULT_OK) {

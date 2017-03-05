@@ -51,6 +51,11 @@ public class ListSourceFragment extends Fragment {
         }
     }
 
+    /**
+     * Sets up the RecyclerView and reverses the layout to show the most recent report, adds
+     * the adapter and list to the RecyclerView
+     * @param recyclerView the RecyclerView to set up
+     */
     private void setupRecyclerView(@NonNull RecyclerView recyclerView) {
         LinearLayoutManager mLayoutManager = new LinearLayoutManager(getActivity());
         mLayoutManager.setReverseLayout(true);
@@ -66,12 +71,17 @@ public class ListSourceFragment extends Fragment {
             .Adapter<SimpleSourceAdapter.ViewHolder> {
         private List<WaterSourceReport> reports;
 
+
         public class ViewHolder extends RecyclerView.ViewHolder {
             public TextView reportNumAndName;
             public TextView reportDate;
             public TextView reportLocation;
             public TextView reportTypeCondition;
 
+            /**
+             * Constructor for ViewHolder that links the Views
+             * @param v the view acted on
+             */
             public ViewHolder(View v) {
                 super(v);
                 reportNumAndName = (TextView) v.findViewById(R.id.reportNumAndName);
@@ -81,6 +91,10 @@ public class ListSourceFragment extends Fragment {
             }
         }
 
+        /**
+         * Sets the reports of the adapter to the given list of reports
+         * @param list the list of reports to add to the adapter
+         */
         public SimpleSourceAdapter(List<WaterSourceReport> list) {
             reports = list;
         }
