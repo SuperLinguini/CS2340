@@ -31,11 +31,13 @@ import tech.milind.cleanwatercrowdsourcing.model.WaterSourceReport;
 public class EditSourceReportActivity extends AppCompatActivity {
     private static final String TAG = "AddResourceReport";
     final int PLACE_PICKER_REQUEST = 1;
+    final static int RESULT_CHANGED = 24;
 
     private Spinner typeSpinner;
     private Spinner conditionSpinner;
     private EditText reportName;
     private LatLng latLng;
+    private int position;
 
     private WaterSourceReport _waterSourceReport;
 
@@ -47,12 +49,14 @@ public class EditSourceReportActivity extends AppCompatActivity {
 
         Intent i = getIntent();
         WaterSourceReport wrs = (WaterSourceReport) i.getParcelableExtra("report_object");
+        position = i.getIntExtra("position", position);
 
         reportName = (EditText) findViewById(R.id.nameReportEditText);
         reportName.setText(wrs.getReportName());
 
         EditText mEdit = (EditText) findViewById(R.id.locationReportEditText);
         mEdit.setText(wrs.getLocation().toString());
+        latLng = wrs.getLocation();
         mEdit.setEnabled(false);
 
         typeSpinner = (Spinner) findViewById(R.id.spinnerType);
@@ -84,7 +88,7 @@ public class EditSourceReportActivity extends AppCompatActivity {
                 String nameText = reportName.getText().toString().trim();
                 if(!(isEmpty(nameText) || latLng == null)) {
                     Model model = Model.getInstance();
-                    _waterSourceReport = new WaterSourceReport();
+                    _waterSourceReport = model.getReports().get(position);
                     _waterSourceReport.setReporter(model.getCurrentUser().getUsername());
                     _waterSourceReport.setReportName(reportName.getText().toString());
                     _waterSourceReport.setLocation(latLng);
@@ -92,9 +96,10 @@ public class EditSourceReportActivity extends AppCompatActivity {
                             typeSpinner.getSelectedItem());
                     _waterSourceReport.setCondition((WaterSourceReport.conditionOfWater)
                             conditionSpinner.getSelectedItem());
-                    model.addReport(_waterSourceReport);
+                    model.getReports().set(position, _waterSourceReport);
                     Intent output = new Intent();
-                    setResult(Activity.RESULT_OK, output);
+                    output.putExtra("position", position);
+                    setResult(RESULT_CHANGED, output);
                     finish();
                 } else {
                     Snackbar snackbar = Snackbar.make(findViewById(R.id.activity_submit_source_report),

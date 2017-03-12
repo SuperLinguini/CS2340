@@ -45,6 +45,9 @@ public class ListSourceFragment extends Fragment {
     @Override
     public void onActivityResult(int requestCode, int resultCode, Intent data) {
         if (requestCode == REQUEST) {
+            if(resultCode == EditSourceReportActivity.RESULT_CHANGED) {
+                mAdapter.notifyItemChanged(data.getIntExtra("position", 0));
+            }
             if (resultCode == Activity.RESULT_OK) {
                 mAdapter.notifyItemInserted(mAdapter.reports.size() - 1);
             }
@@ -104,7 +107,7 @@ public class ListSourceFragment extends Fragment {
         }
 
         @Override
-        public void onBindViewHolder(ViewHolder holder, int position) {
+        public void onBindViewHolder(ViewHolder holder, final int position) {
             final Model model = Model.getInstance();
             final WaterSourceReport wrs = reports.get(position);
             holder.reportDate.setText(String.format("Date: %tD %<tR", wrs.getDate()));
@@ -118,6 +121,7 @@ public class ListSourceFragment extends Fragment {
                 public void onClick(View v) {
                     Intent i = new Intent(getActivity(), EditSourceReportActivity.class);
                     i.putExtra("report_object", wrs);
+                    i.putExtra("position", position);
                     startActivityForResult(i, REQUEST);
                 }
             });
