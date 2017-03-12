@@ -14,7 +14,7 @@ public class Model {
     }
 
     private List<WaterSourceReport> reports;
-    private List<WaterPurityReport> purityReports;
+    private List<WaterQualityReport> purityReports;
     private Security security;
     private User currentUser;
 
@@ -49,19 +49,27 @@ public class Model {
         return currentUser;
     }
 
+    /**
+     * Sets the current user object that is using the application
+     * @param user the new user to be set to for the application
+     */
     public void setCurrentUser(User user) {
         this.currentUser = user;
     }
 
     /**
-     * Gets the WaterSourceReport list used in the the application
+     * Gets the WaterSourceReport list used in the application
      * @return the WaterSourceReport list
      */
     public List<WaterSourceReport> getReports() {
         return reports;
     }
 
-    public List<WaterPurityReport> getPurityReports() { return purityReports; }
+    /**
+     * Gets the WaterQualityReport list used in the application
+     * @return the WaterQualityReport list
+     */
+    public List<WaterQualityReport> getPurityReports() { return purityReports; }
 
     /**
      * Checks if the username and password entered is a valid user
@@ -103,5 +111,9 @@ public class Model {
         reports.add(report);
     }
 
-    public void addPurityReport(WaterPurityReport report) {purityReports.add(report);}
+    /**
+     * Add a report to the WaterQualityReport list
+     * @param report WaterQualityReport to add
+     */
+    public void addPurityReport(WaterQualityReport report) {purityReports.add(report);}
 }
