@@ -3,120 +3,12 @@
 
     <item
         is-multidex="true"
-        jar="C:\Users\Brian Cai\Dropbox\My Documents\College\CS 2340\CS2340\app\build\intermediates\incremental-classes\debug\instant-run-bootstrap.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.2"
-        sha1="ddb650366d0dd9462dfbe51009f262329d85518d">
-        <dex dex="C:\Users\Brian Cai\Dropbox\My Documents\College\CS 2340\CS2340\app\build\intermediates\transforms\dex\debug\folders\1000\10\instant-run-bootstrap_8fd3840f6a6a058c59d25d7108d51dd6f8b47703\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="C:\Users\Brian Cai\Dropbox\My Documents\College\CS 2340\CS2340\app\build\intermediates\exploded-aar\com.google.firebase\firebase-analytics-impl\10.2.0\jars\classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.2"
-        sha1="ce9112e08a027c8620ae693983e38cdbb9f6371b">
-        <dex dex="C:\Users\Brian Cai\Dropbox\My Documents\College\CS 2340\CS2340\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.google.firebase-firebase-analytics-impl-10.2.0_a1b392977ff5a3cf8c4c4cb4e6af1d9c6bad0654\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="C:\Users\Brian Cai\Dropbox\My Documents\College\CS 2340\CS2340\app\build\intermediates\exploded-aar\com.google.firebase\firebase-iid\10.2.0\jars\classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.2"
-        sha1="3d6951cb416ebf8c66a32b9480808ca247b68344">
-        <dex dex="C:\Users\Brian Cai\Dropbox\My Documents\College\CS 2340\CS2340\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.google.firebase-firebase-iid-10.2.0_7b354e90ce37bfe0251b44f22be412181c9b8bc0\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="C:\Users\Brian Cai\Dropbox\My Documents\College\CS 2340\CS2340\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-base\10.2.0\jars\classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.2"
-        sha1="3d13e510077b35fe8e49930a627dd849ad5da0dc">
-        <dex dex="C:\Users\Brian Cai\Dropbox\My Documents\College\CS 2340\CS2340\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.google.android.gms-play-services-base-10.2.0_196f959078e5a1117358cb056b1b135080591e0c\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="C:\Users\Brian Cai\Dropbox\My Documents\College\CS 2340\CS2340\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-basement\10.2.0\jars\classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.2"
-        sha1="1ac56e5801e986583cbe27f2cce57f626cc7ff93">
-        <dex dex="C:\Users\Brian Cai\Dropbox\My Documents\College\CS 2340\CS2340\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.google.android.gms-play-services-basement-10.2.0_ccc6defb70a38f51acd751b1b9965aede842cd35\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="C:\Users\Brian Cai\Dropbox\My Documents\College\CS 2340\CS2340\app\build\intermediates\exploded-aar\com.android.support\support-v4\25.1.1\jars\classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.2"
-        sha1="d7c42c80f6509b9ea4db28ca7859ffae08ec5741">
-        <dex dex="C:\Users\Brian Cai\Dropbox\My Documents\College\CS 2340\CS2340\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-support-v4-25.1.1_9d1371c96787d9ccf60ace5f1587032bd0f12bdc\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="C:\Users\Brian Cai\Dropbox\My Documents\College\CS 2340\CS2340\app\build\intermediates\exploded-aar\com.android.support\animated-vector-drawable\25.1.1\jars\classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.2"
-        sha1="0d191c1a09e4892d059e5ce749e4ad4e08129e35">
-        <dex dex="C:\Users\Brian Cai\Dropbox\My Documents\College\CS 2340\CS2340\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-animated-vector-drawable-25.1.1_08a9e160c83788c0ba1593b4186218f01c6b121f\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="C:\Users\Brian Cai\Dropbox\My Documents\College\CS 2340\CS2340\app\build\intermediates\exploded-aar\com.android.support\design\25.1.1\jars\classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.2"
-        sha1="cd7951e04cfb9a8bf008d544a478d9a8d8192d38">
-        <dex dex="C:\Users\Brian Cai\Dropbox\My Documents\College\CS 2340\CS2340\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-design-25.1.1_eb733534ff51961c5e3f85a011f0f637a71bdd54\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="C:\Users\Brian Cai\Dropbox\My Documents\College\CS 2340\CS2340\app\build\intermediates\exploded-aar\com.android.support\support-vector-drawable\25.1.1\jars\classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.2"
-        sha1="c03bf57f358aa10d253f21989e93bcf6014b3b17">
-        <dex dex="C:\Users\Brian Cai\Dropbox\My Documents\College\CS 2340\CS2340\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-support-vector-drawable-25.1.1_fefd10eadd0ccd9d07a26bafe624dfe768a50fea\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="C:\Users\Brian Cai\Dropbox\My Documents\College\CS 2340\CS2340\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-tasks\10.2.0\jars\classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.2"
-        sha1="bd75f9f0296fe220da6d0ad961831b04541c4452">
-        <dex dex="C:\Users\Brian Cai\Dropbox\My Documents\College\CS 2340\CS2340\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.google.android.gms-play-services-tasks-10.2.0_3a8cc3ce4c2c222d1fcf792a4db1d6dc2eabb8b3\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="C:\Users\Brian Cai\Dropbox\My Documents\College\CS 2340\CS2340\app\build\intermediates\exploded-aar\com.android.support\appcompat-v7\25.1.1\jars\classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.2"
-        sha1="ecb496cc08dd52551fc5ec6db3bc0632e95a89bb">
-        <dex dex="C:\Users\Brian Cai\Dropbox\My Documents\College\CS 2340\CS2340\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-appcompat-v7-25.1.1_8f33954759d7c4a34d23818175362ab189090300\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="C:\Users\Brian Cai\Dropbox\My Documents\College\CS 2340\CS2340\app\build\intermediates\exploded-aar\com.google.firebase\firebase-auth\10.2.0\jars\classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.2"
-        sha1="48532a016bb0dfbe7970c147ce784598a515406b">
-        <dex dex="C:\Users\Brian Cai\Dropbox\My Documents\College\CS 2340\CS2340\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.google.firebase-firebase-auth-10.2.0_47123c583fe5e1baa4ae7b5f2f43d26242c64250\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="C:\Users\Brian Cai\Dropbox\My Documents\College\CS 2340\CS2340\app\build\intermediates\exploded-aar\com.google.firebase\firebase-analytics\10.2.0\jars\classes.jar"
+        jar="C:\Users\Brian Cai\.android\build-cache\5786f26ab6d60780c5b04acd708c9e6ca09931f9\output\jars\classes.jar"
         jumboMode="true"
         optimize="true"
         revision="25.0.2"
         sha1="a61e7010aa7be5da53cd1bc5279630510c9a4912">
-        <dex dex="C:\Users\Brian Cai\Dropbox\My Documents\College\CS 2340\CS2340\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.google.firebase-firebase-analytics-10.2.0_76c4b68de3edbe6f455bbcc0a7b970367dabb49d\classes.dex" />
+        <dex dex="C:\Users\Brian Cai\Dropbox\My Documents\College\CS 2340\CS2340\app\build\intermediates\transforms\dex\debug\folders\1000\10\classes_a14b4323b52351b994830590947417c131fd9aba\classes.dex" />
     </item>
     <item
         is-multidex="true"
@@ -129,102 +21,102 @@
     </item>
     <item
         is-multidex="true"
+        jar="C:\Users\Brian Cai\Dropbox\My Documents\College\CS 2340\CS2340\app\build\intermediates\incremental-classes\debug\instant-run-bootstrap.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="e5582ee1d52d3f0f00c991c0b7d5c0fa918d2455">
+        <dex dex="C:\Users\Brian Cai\Dropbox\My Documents\College\CS 2340\CS2340\app\build\intermediates\transforms\dex\debug\folders\1000\10000\instant-run-bootstrap_8fd3840f6a6a058c59d25d7108d51dd6f8b47703\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
         jar="C:\Users\Brian Cai\Dropbox\My Documents\College\CS 2340\CS2340\app\build\intermediates\incremental-runtime-classes\debug\instant-run.jar"
         jumboMode="true"
         optimize="true"
         revision="25.0.2"
-        sha1="3584748c0570da1575238b39dce050329e6abe5f">
-        <dex dex="C:\Users\Brian Cai\Dropbox\My Documents\College\CS 2340\CS2340\app\build\intermediates\transforms\dex\debug\folders\1000\10\instant-run_6cc419cc53610363b87dd4ea5a9874098657ea9c\classes.dex" />
+        sha1="c82741bc129dd5f99f11a4ab8666ae24262053b6">
+        <dex dex="C:\Users\Brian Cai\Dropbox\My Documents\College\CS 2340\CS2340\app\build\intermediates\transforms\dex\debug\folders\1000\10000\instant-run_6cc419cc53610363b87dd4ea5a9874098657ea9c\classes.dex" />
     </item>
     <item
         is-multidex="true"
-        jar="C:\Users\Brian Cai\Dropbox\My Documents\College\CS 2340\CS2340\app\build\intermediates\exploded-aar\com.google.firebase\firebase-database\10.2.0\jars\classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.2"
-        sha1="94fca868854457ede6df15c902938468c71d579e">
-        <dex dex="C:\Users\Brian Cai\Dropbox\My Documents\College\CS 2340\CS2340\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.google.firebase-firebase-database-10.2.0_a891bc32eb7dd51bae273e90ba921d0de51c4cc2\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="C:\Users\Brian Cai\Dropbox\My Documents\College\CS 2340\CS2340\app\build\intermediates\exploded-aar\com.android.support\support-compat\25.1.1\jars\classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.2"
-        sha1="02741d05d4b697fba5e279e9881aaa1da0ca7c7f">
-        <dex dex="C:\Users\Brian Cai\Dropbox\My Documents\College\CS 2340\CS2340\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-support-compat-25.1.1_fcb13cbafd8fafad7c9987a63ebbcd30152ea820\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="C:\Users\Brian Cai\Dropbox\My Documents\College\CS 2340\CS2340\app\build\intermediates\exploded-aar\com.android.support\support-core-ui\25.1.1\jars\classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.2"
-        sha1="3e04ac8ca644ea7baddf6fdcf72e15c79e9df94a">
-        <dex dex="C:\Users\Brian Cai\Dropbox\My Documents\College\CS 2340\CS2340\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-support-core-ui-25.1.1_52e777de6ca3edd19821fa474b316a7101bab2a8\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="C:\Users\Brian Cai\Dropbox\My Documents\College\CS 2340\CS2340\app\build\intermediates\exploded-aar\com.android.support\support-media-compat\25.1.1\jars\classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.2"
-        sha1="7bde4c34162092e0a77e7f12dc85ed77c484cf5c">
-        <dex dex="C:\Users\Brian Cai\Dropbox\My Documents\College\CS 2340\CS2340\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-support-media-compat-25.1.1_6f66eaa967babcbe8616b99e6ea11e239c75b871\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="C:\Users\Brian Cai\Dropbox\My Documents\College\CS 2340\CS2340\app\build\intermediates\exploded-aar\com.android.support\support-core-utils\25.1.1\jars\classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.2"
-        sha1="0fb891e8f0cfba0513043a7bb357513d229ca2cd">
-        <dex dex="C:\Users\Brian Cai\Dropbox\My Documents\College\CS 2340\CS2340\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-support-core-utils-25.1.1_626a3b8b14cc1f68d7aa375c3049a696f54450e6\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="C:\Users\Brian Cai\Dropbox\My Documents\College\CS 2340\CS2340\app\build\intermediates\exploded-aar\com.android.support\recyclerview-v7\25.1.1\jars\classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.2"
-        sha1="c9649557905bf7a80fca9e0d54cbcb7662627860">
-        <dex dex="C:\Users\Brian Cai\Dropbox\My Documents\College\CS 2340\CS2340\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-recyclerview-v7-25.1.1_99b8667fa0e484688792088480de3176ed703866\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="C:\Users\Brian Cai\Dropbox\My Documents\College\CS 2340\CS2340\app\build\intermediates\exploded-aar\com.android.support\transition\25.1.1\jars\classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.2"
-        sha1="15b049fedbd8e3926bf99d9e45dfc9b2a1043bb9">
-        <dex dex="C:\Users\Brian Cai\Dropbox\My Documents\College\CS 2340\CS2340\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-transition-25.1.1_3aa9d6169d85870bdd4db0fd9a77458a5433f8fa\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="C:\Users\Brian Cai\Dropbox\My Documents\College\CS 2340\CS2340\app\build\intermediates\exploded-aar\com.google.firebase\firebase-common\10.2.0\jars\classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.2"
-        sha1="0d5cbbbfe040201c7569478b70a13b58fd11aab4">
-        <dex dex="C:\Users\Brian Cai\Dropbox\My Documents\College\CS 2340\CS2340\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.google.firebase-firebase-common-10.2.0_258ba84d751cfa026b0fa689ef2500dcccdde95d\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="C:\Users\Brian Cai\Dropbox\My Documents\College\CS 2340\CS2340\app\build\intermediates\exploded-aar\com.android.support\support-fragment\25.1.1\jars\classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.2"
-        sha1="e2719c102dca3a7a5b02ce07f769362da6ddb4ab">
-        <dex dex="C:\Users\Brian Cai\Dropbox\My Documents\College\CS 2340\CS2340\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-support-fragment-25.1.1_3846a8f452cfa15717b07cae5e06e765138bbec2\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="C:\Users\Brian Cai\Dropbox\My Documents\College\CS 2340\CS2340\app\build\intermediates\exploded-aar\com.google.firebase\firebase-database-connection\10.2.0\jars\classes.jar"
+        jar="C:\Users\Brian Cai\.android\build-cache\fe8505540a40fc111e3e0106027a809cbee0f4fe\output\jars\classes.jar"
         jumboMode="true"
         optimize="true"
         revision="25.0.2"
         sha1="0e301f24b283f14b564f660c9abe863af6be5896">
-        <dex dex="C:\Users\Brian Cai\Dropbox\My Documents\College\CS 2340\CS2340\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.google.firebase-firebase-database-connection-10.2.0_8547547c71cd44807d2f420ba6b3f6dc033ee4c3\classes.dex" />
+        <dex dex="C:\Users\Brian Cai\Dropbox\My Documents\College\CS 2340\CS2340\app\build\intermediates\transforms\dex\debug\folders\1000\10\classes_1f74329732150e6046bcdf9b3144e2c37a529536\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\Brian Cai\.android\build-cache\bd23cdcf5a0534b86a62821ce01af2f6cab13be3\output\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="1ac56e5801e986583cbe27f2cce57f626cc7ff93">
+        <dex dex="C:\Users\Brian Cai\Dropbox\My Documents\College\CS 2340\CS2340\app\build\intermediates\transforms\dex\debug\folders\1000\10\classes_e15fdcda386273536a3b2e0e1fcf1be8f92a1312\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\Brian Cai\.android\build-cache\e5ec1d4ec50a4edd61fcf8deda43b68c2941e2a5\output\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="0d5cbbbfe040201c7569478b70a13b58fd11aab4">
+        <dex dex="C:\Users\Brian Cai\Dropbox\My Documents\College\CS 2340\CS2340\app\build\intermediates\transforms\dex\debug\folders\1000\10\classes_af34a72b48af5bcaf5ddb585b224f3ad6d9cb8ef\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\Brian Cai\.android\build-cache\a3b0e89db050ff73e30cd72d6aec0249b339c110\output\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="48532a016bb0dfbe7970c147ce784598a515406b">
+        <dex dex="C:\Users\Brian Cai\Dropbox\My Documents\College\CS 2340\CS2340\app\build\intermediates\transforms\dex\debug\folders\1000\10\classes_163839e0eb9f38bea2bc920e4b11dbb168133e90\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\Brian Cai\.android\build-cache\61604a36d0f5af8b06e812a9cdd7236ff65c4812\output\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="3d6951cb416ebf8c66a32b9480808ca247b68344">
+        <dex dex="C:\Users\Brian Cai\Dropbox\My Documents\College\CS 2340\CS2340\app\build\intermediates\transforms\dex\debug\folders\1000\10\classes_8ec3ca4d7d108ac0b01813dd3aa22984605e474b\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\Brian Cai\.android\build-cache\362daf8ef5691d75c1cc8fa8908d66b0469b529d\output\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="94fca868854457ede6df15c902938468c71d579e">
+        <dex dex="C:\Users\Brian Cai\Dropbox\My Documents\College\CS 2340\CS2340\app\build\intermediates\transforms\dex\debug\folders\1000\10\classes_6ffbee4e46f23852ada660fdd1bcaebf2c5e69b0\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\Brian Cai\.android\build-cache\4bbab45519fdbb03f19c03f89f937097bb2be00d\output\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="3d13e510077b35fe8e49930a627dd849ad5da0dc">
+        <dex dex="C:\Users\Brian Cai\Dropbox\My Documents\College\CS 2340\CS2340\app\build\intermediates\transforms\dex\debug\folders\1000\10\classes_87e4039a50ec7ffc4dbb9129d69b86c0bb096ff7\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\Brian Cai\.android\build-cache\16423db1b2a8fe578f6039fa1591cf6a381e9456\output\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="ce9112e08a027c8620ae693983e38cdbb9f6371b">
+        <dex dex="C:\Users\Brian Cai\Dropbox\My Documents\College\CS 2340\CS2340\app\build\intermediates\transforms\dex\debug\folders\1000\10\classes_58bf83d66656214752d0f4b95e55e5a10e804093\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\Brian Cai\.android\build-cache\6b92ae422b854f83bb645419eabf81eb3849fac3\output\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="bd75f9f0296fe220da6d0ad961831b04541c4452">
+        <dex dex="C:\Users\Brian Cai\Dropbox\My Documents\College\CS 2340\CS2340\app\build\intermediates\transforms\dex\debug\folders\1000\10\classes_a386f39d1c745778314cf496f49f1ed51bb8863d\classes.dex" />
     </item>
 
 </items>
