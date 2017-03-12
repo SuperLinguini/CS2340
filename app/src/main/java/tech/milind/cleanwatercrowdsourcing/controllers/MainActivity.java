@@ -18,6 +18,7 @@ import java.lang.reflect.Field;
 
 import tech.milind.cleanwatercrowdsourcing.R;
 import tech.milind.cleanwatercrowdsourcing.model.Model;
+import tech.milind.cleanwatercrowdsourcing.model.UserType;
 
 public class MainActivity extends AppCompatActivity {
 

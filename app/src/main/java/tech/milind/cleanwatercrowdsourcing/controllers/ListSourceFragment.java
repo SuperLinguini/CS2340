@@ -73,6 +73,7 @@ public class ListSourceFragment extends Fragment {
 
 
         public class ViewHolder extends RecyclerView.ViewHolder {
+            public View mView;
             public TextView reportNumAndName;
             public TextView reportDate;
             public TextView reportLocation;
@@ -85,6 +86,7 @@ public class ListSourceFragment extends Fragment {
              */
             public ViewHolder(View v) {
                 super(v);
+                mView = v;
                 reportNumAndName = (TextView) v.findViewById(R.id.reportNumAndName);
                 reportReporter = (TextView) v.findViewById(R.id.reportReporter);
                 reportDate = (TextView) v.findViewById(R.id.reportDate);
@@ -104,13 +106,21 @@ public class ListSourceFragment extends Fragment {
         @Override
         public void onBindViewHolder(ViewHolder holder, int position) {
             final Model model = Model.getInstance();
-            WaterSourceReport wrs = reports.get(position);
+            final WaterSourceReport wrs = reports.get(position);
             holder.reportDate.setText(String.format("Date: %tD %<tR", wrs.getDate()));
             holder.reportNumAndName.setText(String.format("#%s %s",
                     wrs.getReportNumber(), wrs.getReportName()));
             holder.reportReporter.setText(wrs.getReporter());
             holder.reportLocation.setText(wrs.getLocation().toString());
             holder.reportTypeCondition.setText(wrs.getType() + ", " + wrs.getCondition());
+            holder.mView.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    Intent i = new Intent(getActivity(), EditSourceReportActivity.class);
+                    i.putExtra("report_object", wrs);
+                    startActivityForResult(i, REQUEST);
+                }
+            });
         }
 
         @Override
