@@ -1,5 +1,6 @@
 package tech.milind.cleanwatercrowdsourcing.controllers;
 
+import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
@@ -41,6 +42,15 @@ public class FragmentQuality extends Fragment {
             }
         });
         return view;
+    }
+
+    @Override
+    public void onActivityResult(int requestCode, int resultCode, Intent data) {
+        if (requestCode == REQUEST) {
+            if (resultCode == Activity.RESULT_OK) {
+                mAdapter.notifyItemInserted(mAdapter.reports.size() - 1);
+            }
+        }
     }
 
     /**
