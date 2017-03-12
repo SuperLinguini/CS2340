@@ -1,7 +1,6 @@
 package tech.milind.cleanwatercrowdsourcing.controllers;
 
 import android.app.AlertDialog;
-import android.content.ClipData;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
@@ -10,18 +9,15 @@ import android.support.design.internal.BottomNavigationItemView;
 import android.support.design.internal.BottomNavigationMenuView;
 import android.support.design.widget.BottomNavigationView;
 import android.support.v7.app.AppCompatActivity;
-import android.support.v7.view.menu.MenuView;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
-import android.view.View;
 
 import java.lang.reflect.Field;
 
 import tech.milind.cleanwatercrowdsourcing.R;
 import tech.milind.cleanwatercrowdsourcing.model.Model;
-import tech.milind.cleanwatercrowdsourcing.model.UserType;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -81,9 +77,9 @@ public class MainActivity extends AppCompatActivity {
                             break;
                         case R.id.nav_purity:
                             if(!(getSupportFragmentManager().findFragmentById(R.id.fragmentContainer)
-                                    instanceof FragmentPurity)) {
+                                    instanceof FragmentQuality)) {
                                 getSupportFragmentManager().beginTransaction()
-                                        .replace(R.id.fragmentContainer, new FragmentPurity())
+                                        .replace(R.id.fragmentContainer, new FragmentQuality())
                                         .commit();
                                 getSupportActionBar().setTitle("Water Purity Report");
                             }
