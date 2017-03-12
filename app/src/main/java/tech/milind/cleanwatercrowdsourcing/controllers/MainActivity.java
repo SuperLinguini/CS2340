@@ -1,6 +1,7 @@
 package tech.milind.cleanwatercrowdsourcing.controllers;
 
 import android.app.AlertDialog;
+import android.content.ClipData;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
@@ -9,15 +10,18 @@ import android.support.design.internal.BottomNavigationItemView;
 import android.support.design.internal.BottomNavigationMenuView;
 import android.support.design.widget.BottomNavigationView;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.view.menu.MenuView;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
+import android.view.View;
 
 import java.lang.reflect.Field;
 
 import tech.milind.cleanwatercrowdsourcing.R;
 import tech.milind.cleanwatercrowdsourcing.model.Model;
+import tech.milind.cleanwatercrowdsourcing.model.UserType;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -34,8 +38,23 @@ public class MainActivity extends AppCompatActivity {
                 .add(R.id.fragmentContainer, new AvailabilityFragment())
                 .commit();
 
-        BottomNavigationView bottomNavigationView =(BottomNavigationView)
-                findViewById(R.id.nav_bar);
+        BottomNavigationView bottomNavigationView = (BottomNavigationView) findViewById(R.id.nav_bar);
+
+        switch(model.getCurrentUser().getUserType()) {
+            case USER:
+                bottomNavigationView.inflateMenu(R.menu.navbar_user);
+                break;
+            case WORKER:
+                bottomNavigationView.inflateMenu(R.menu.navbar_worker);
+                break;
+            case MANAGER:
+                bottomNavigationView.inflateMenu(R.menu.navbar_manager);
+                break;
+            case ADMIN:
+                bottomNavigationView.inflateMenu(R.menu.navbar_admin);
+                break;
+        }
+
         disableShiftMode(bottomNavigationView);
         bottomNavigationView.setOnNavigationItemSelectedListener(
             new BottomNavigationView.OnNavigationItemSelectedListener() {
@@ -121,11 +140,12 @@ public class MainActivity extends AppCompatActivity {
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
             case R.id.logout:
-                finish();
+                Intent logoutIntent = new Intent(MainActivity.this, WelcomeActivity.class);
+                startActivity(logoutIntent);
                 break;
             case R.id.profile:
-                Intent i = new Intent(MainActivity.this, ViewProfileActivity.class);
-                startActivity(i);
+                Intent viewProfileIntent = new Intent(MainActivity.this, ViewProfileActivity.class);
+                startActivity(viewProfileIntent);
                 break;
         }
         return true;

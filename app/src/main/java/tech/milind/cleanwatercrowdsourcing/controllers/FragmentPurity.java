@@ -29,7 +29,7 @@ public class FragmentPurity extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.fragment_purity, container, false);
+        View view = inflater.inflate(R.layout.fragment_quality, container, false);
         View recyclerView = view.findViewById(R.id.purity_report_list);
         setupRecyclerView((RecyclerView) recyclerView);
         FloatingActionButton add = (FloatingActionButton) view.findViewById(R.id.addPurityFAB);
