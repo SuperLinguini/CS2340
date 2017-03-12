@@ -22,14 +22,13 @@ import com.google.android.gms.maps.model.LatLng;
 
 import tech.milind.cleanwatercrowdsourcing.R;
 import tech.milind.cleanwatercrowdsourcing.model.Model;
-import tech.milind.cleanwatercrowdsourcing.model.WaterPurityReport;
-import tech.milind.cleanwatercrowdsourcing.model.WaterSourceReport;
+import tech.milind.cleanwatercrowdsourcing.model.WaterQualityReport;
 
 /**
  * Created by gunoupark on 12/03/2017.
  */
 
-public class SubmitPurityReportActivity extends AppCompatActivity {
+public class SubmitQualityReportActivity extends AppCompatActivity {
     private static final String TAG = "AddPurityReport";
     final int PLACE_PICKER_REQUEST = 1;
 
@@ -39,7 +38,7 @@ public class SubmitPurityReportActivity extends AppCompatActivity {
     private EditText virusPPM;
     private EditText contaminationPPM;
 
-    private WaterPurityReport _waterPurityReport;
+    private WaterQualityReport _waterPurityReport;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -54,10 +53,10 @@ public class SubmitPurityReportActivity extends AppCompatActivity {
         EditText mEdit = (EditText) findViewById(R.id.locationPurityReportEditText);
         mEdit.setEnabled(false);
 
-        final ArrayAdapter<WaterPurityReport.conditionOfWater> conditionOfWaterArrayAdapter =
-                new ArrayAdapter<WaterPurityReport.conditionOfWater>(this,
+        final ArrayAdapter<WaterQualityReport.conditionOfWater> conditionOfWaterArrayAdapter =
+                new ArrayAdapter<WaterQualityReport.conditionOfWater>(this,
                         android.R.layout.simple_spinner_dropdown_item,
-                        WaterPurityReport.conditionOfWater.values());
+                        WaterQualityReport.conditionOfWater.values());
         conditionOfWaterArrayAdapter.setDropDownViewResource(android.R.layout
                 .simple_spinner_dropdown_item);
         conditionSpinner.setAdapter(conditionOfWaterArrayAdapter);
@@ -73,10 +72,10 @@ public class SubmitPurityReportActivity extends AppCompatActivity {
                 int virus = Integer.parseInt(virusPPM.getText().toString());
                 int contamination = Integer.parseInt(contaminationPPM.getText().toString());
                 if(!(isEmpty(nameText) || latLng == null)) {
-                        _waterPurityReport = new WaterPurityReport();
+                        _waterPurityReport = new WaterQualityReport();
                     _waterPurityReport.setName(name.getText().toString());
                     _waterPurityReport.setLocation(latLng);
-                    _waterPurityReport.setCondition((WaterPurityReport.conditionOfWater)
+                    _waterPurityReport.setCondition((WaterQualityReport.conditionOfWater)
                             conditionSpinner.getSelectedItem());
                     _waterPurityReport.setVirusPPM(virus);
                     _waterPurityReport.setContaminantPPM(contamination);
@@ -102,7 +101,7 @@ public class SubmitPurityReportActivity extends AppCompatActivity {
                 PlacePicker.IntentBuilder builder = new PlacePicker.IntentBuilder();
 
                 try {
-                    startActivityForResult(builder.build(SubmitPurityReportActivity.this),
+                    startActivityForResult(builder.build(SubmitQualityReportActivity.this),
                             PLACE_PICKER_REQUEST);
                 } catch (GooglePlayServicesRepairableException e) {
                     Log.e(TAG, "Failed", e);

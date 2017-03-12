@@ -1,110 +1,153 @@
 package tech.milind.cleanwatercrowdsourcing.model;
 
+import android.support.annotation.NonNull;
+
 import com.google.android.gms.maps.model.LatLng;
 
 import java.util.Date;
 
+
 /**
- * Created by SuperLinguini on 3/12/2017.
+ * Created by gunoupark on 12/03/2017.
  */
 
-public class WaterQualityReport {
+public class WaterQualityReport implements Comparable<WaterQualityReport> {
     private static int currentID = 1;
-
-    public enum overallCondition {
-        Safe, Treatable, Unsafe
+    public enum conditionOfWater {
+        Safe, Treatable, Unsafe;
     }
 
-    private int reportNumber;
-    private String reportName;
-    private String workerName;
-    private overallCondition condition;
     private Date date;
+    private int reportNumber;
+    private String name;
     private LatLng location;
-    private double virusPPM;
-    private double contaminantPPM;
+    private conditionOfWater condition;
+    private int virusPPM;
+    private int contaminantPPM;
 
     /**
-     * Default constructor for the WaterSourceReport
+     * Default constructor for the WaterQualityReport
      */
     public WaterQualityReport() {
         date = new Date();
         reportNumber = currentID++;
     }
 
-    public WaterQualityReport(String reportName, String workerName, LatLng location,
-                              overallCondition condition, double virusPPM, double contaminantPPM) {
+    /**
+     * Constructor for the WaterQualityReport with all inputs
+     * @param name the name to be set to the WaterQualityReport
+     * @param location the new LatLng location to be set to the WaterQualityReport
+     * @param condition the water condition to be set to the WaterQualityReport
+     */
+    public WaterQualityReport(String name, LatLng location,
+                              conditionOfWater condition, int virus, int contam) {
         date = new Date();
         reportNumber = currentID++;
-        this.reportName = reportName;
-        this.workerName = workerName;
+        this.name = name;
         this.location = location;
         this.condition = condition;
-        this.virusPPM = virusPPM;
-        this.contaminantPPM = contaminantPPM;
+        this.virusPPM = virus;
+        this.contaminantPPM = contam;
     }
 
-    public int getReportNumber() {
-        return reportNumber;
-    }
-
-    public String getWorkerName() {
-        return workerName;
-    }
-
+    /**
+     * Gets the date of the WaterQualityReport
+     * @return the date of the WaterQualityReport
+     */
     public Date getDate() {
         return date;
     }
 
+    /**
+     * Gets the report number of the WaterQualityReport
+     * @return the report number of the WaterQualityReport
+     */
+    public int getReportNumber() {
+        return reportNumber;
+    }
+
+    /**
+     * Gets the name of the WaterQualityReport
+     * @return the name of the WaterQualityReport
+     */
+    public String getName() {
+        return name;
+    }
+
+    /**
+     * Gets the location (in LatLng) of the WaterQualityReport
+     * @return the location of the WaterQualityReport
+     */
     public LatLng getLocation() {
         return location;
     }
 
-    public double getVirusPPM() {
-        return virusPPM;
-    }
-
-    public double getContaminantPPM() {
-        return contaminantPPM;
-    }
-
-    public overallCondition getCondition() {
+    /**
+     * Gets the condition of the WaterQualityReport
+     * @return the condition of the WaterQualityReport
+     */
+    public WaterQualityReport.conditionOfWater getCondition() {
         return condition;
     }
 
-    public String getReportName() {
-        return reportName;
+    /**
+     * Gets the virus PPM of the WaterQualityReport
+     * @return the virus PPM of the WaterQualityReport
+     */
+    public int getVirusPPM() {
+        return virusPPM;
     }
 
-    public void setReportNumber(int reportNumber) {
-        this.reportNumber = reportNumber;
+    /**
+     * Gets the contaminantPPM of the WaterQualityReport
+     * @return the contaminantPPM of the WaterQualityReport
+     */
+    public int getContaminantPPM() {
+        return contaminantPPM;
     }
 
-    public void setWorkerName(String workerName) {
-        this.workerName = workerName;
+    /**
+     * Sets the name of the WaterQualityReport
+     * @param name the new name to be set to the WaterQualityReport
+     */
+    public void setName(String name) {
+        this.name = name;
     }
 
-    public void setDate(Date date) {
-        this.date = date;
-    }
-
+    /**
+     * Sets the location of the WaterQualityReport
+     * @param location the new LatLng location to be set to the WaterQualityReport
+     */
     public void setLocation(LatLng location) {
         this.location = location;
     }
 
-    public void setVirusPPM(double virusPPM) {
+    /**
+     * Sets the condition of the WaterQualityReport
+     * @param condition the new condition to be set to the WaterQualityReport
+     */
+    public void setCondition(WaterQualityReport.conditionOfWater condition) {
+        this.condition = condition;
+    }
+
+    /**
+     * Sets the virus PPM of the WaterQualityReport
+     * @param virusPPM the new virus PPM to be set to the WaterQualityReport
+     */
+    public void setVirusPPM(int virusPPM) {
         this.virusPPM = virusPPM;
     }
 
-    public void setContaminantPPM(double contaminantPPM) {
+    /**
+     * Sets the contaminant PPM of the WaterQualityReport
+     * @param contaminantPPM the new contaminant PPM to be set to the WaterQualityReport
+     */
+    public void setContaminantPPM(int contaminantPPM) {
         this.contaminantPPM = contaminantPPM;
     }
 
-    public void setReportName(String reportName) {
-        this.reportName = reportName;
-    }
-
-    public void setCondition(overallCondition condition) {
-        this.condition = condition;
+    @Override
+    public int compareTo(@NonNull WaterQualityReport o) {
+        return this.getReportNumber() > o.getReportNumber() ? 1 : -1;
     }
 }

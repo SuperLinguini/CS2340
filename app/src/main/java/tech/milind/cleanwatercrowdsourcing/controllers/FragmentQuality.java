@@ -16,7 +16,7 @@ import java.util.List;
 
 import tech.milind.cleanwatercrowdsourcing.R;
 import tech.milind.cleanwatercrowdsourcing.model.Model;
-import tech.milind.cleanwatercrowdsourcing.model.WaterPurityReport;
+import tech.milind.cleanwatercrowdsourcing.model.WaterQualityReport;
 
 /**
  * Created by SuperLinguini on 3/5/2017.
@@ -36,7 +36,7 @@ public class FragmentQuality extends Fragment {
         add.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent i = new Intent(getActivity(), SubmitPurityReportActivity.class);
+                Intent i = new Intent(getActivity(), SubmitQualityReportActivity.class);
                 startActivityForResult(i, REQUEST);
             }
         });
@@ -54,14 +54,14 @@ public class FragmentQuality extends Fragment {
         mLayoutManager.setStackFromEnd(true);
         recyclerView.setLayoutManager(mLayoutManager);
         Model model = Model.getInstance();
-        List<WaterPurityReport> reports = model.getPurityReports();
+        List<WaterQualityReport> reports = model.getPurityReports();
         mAdapter = new SimplePurityAdapter(reports);
         recyclerView.setAdapter(mAdapter);
     }
 
     public class SimplePurityAdapter extends RecyclerView
             .Adapter<FragmentQuality.SimplePurityAdapter.ViewHolder> {
-        private List<WaterPurityReport> reports;
+        private List<WaterQualityReport> reports;
 
 
         public class ViewHolder extends RecyclerView.ViewHolder {
@@ -87,14 +87,14 @@ public class FragmentQuality extends Fragment {
          * Sets the reports of the adapter to the given list of reports
          * @param list the list of reports to add to the adapter
          */
-        public SimplePurityAdapter(List<WaterPurityReport> list) {
+        public SimplePurityAdapter(List<WaterQualityReport> list) {
             reports = list;
         }
 
         @Override
         public void onBindViewHolder(ViewHolder holder, int position) {
             final Model model = Model.getInstance();
-            WaterPurityReport wrp = reports.get(position);
+            WaterQualityReport wrp = reports.get(position);
             holder.reportDate.setText(String.format("Date: %tD %<tR", wrp.getDate()));
             holder.reportNumAndName.setText(String.format("#%s %s", wrp.getReportNumber(),
                     wrp.getName()));
