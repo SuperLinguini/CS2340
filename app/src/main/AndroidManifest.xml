@@ -40,6 +40,9 @@
             android:screenOrientation="portrait"/>
         <activity android:name=".controllers.SubmitSourceReportActivity"
             android:label="@string/SubmitWaterReport"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".controllers.SubmitPurityReportActivity"
+            android:label="@string/SubmitWaterPurityReport"
             android:screenOrientation="portrait">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
