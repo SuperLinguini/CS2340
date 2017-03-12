@@ -22,7 +22,7 @@ import tech.milind.cleanwatercrowdsourcing.model.WaterPurityReport;
  * Created by SuperLinguini on 3/5/2017.
  */
 
-public class FragmentPurity extends Fragment {
+public class FragmentQuality extends Fragment {
     private SimplePurityAdapter mAdapter;
     final int REQUEST = 1;
 
@@ -60,7 +60,7 @@ public class FragmentPurity extends Fragment {
     }
 
     public class SimplePurityAdapter extends RecyclerView
-            .Adapter<FragmentPurity.SimplePurityAdapter.ViewHolder> {
+            .Adapter<FragmentQuality.SimplePurityAdapter.ViewHolder> {
         private List<WaterPurityReport> reports;
 
 
