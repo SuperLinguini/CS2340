@@ -11,4 +11,12 @@
         app:showAsAction="always" />
     <item
         android:title=""/>
+    <item
+        android:id="@+id/nav_source"
+        android:enabled="true"
+        android:icon="@mipmap/ic_source"
+        android:title="@string/nav_source"
+        app:showAsAction="always" />
+    <item
+        android:title=""/>
 </menu>
