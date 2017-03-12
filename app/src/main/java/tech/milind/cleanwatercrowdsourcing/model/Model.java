@@ -18,6 +18,8 @@ public class Model {
     private Security security;
     private User currentUser;
 
+    private boolean hasRun = false;
+
     private Model() {
         reports = new ArrayList<>();
         purityReports = new ArrayList<>();
@@ -28,12 +30,15 @@ public class Model {
      * Adds filler test data until we implement persistence
      */
     public void addTestData() {
-        reports.add(new WaterSourceReport("Test Report", currentUser.getUsername(), new LatLng(33.77,-84.39),
-                WaterSourceReport.typeOfWater.Bottled, WaterSourceReport.conditionOfWater.Potable));
-        reports.add(new WaterSourceReport("A Report", currentUser.getUsername(), new LatLng(33.77248,-84.393003),
-                WaterSourceReport.typeOfWater.Spring, WaterSourceReport.conditionOfWater.Treatable_Clear));
-        reports.add(new WaterSourceReport("My Report", currentUser.getUsername(), new LatLng(33.76873,-84.37565),
-                WaterSourceReport.typeOfWater.Stream, WaterSourceReport.conditionOfWater.Treatable_Muddy));
+        if (!hasRun) {
+            reports.add(new WaterSourceReport("Test Report", currentUser.getUsername(), new LatLng(33.77,-84.39),
+                    WaterSourceReport.typeOfWater.Bottled, WaterSourceReport.conditionOfWater.Potable));
+            reports.add(new WaterSourceReport("A Report", currentUser.getUsername(), new LatLng(33.77248,-84.393003),
+                    WaterSourceReport.typeOfWater.Spring, WaterSourceReport.conditionOfWater.Treatable_Clear));
+            reports.add(new WaterSourceReport("My Report", currentUser.getUsername(), new LatLng(33.76873,-84.37565),
+                    WaterSourceReport.typeOfWater.Stream, WaterSourceReport.conditionOfWater.Treatable_Muddy));
+            hasRun = true;
+        }
     }
 
     /**

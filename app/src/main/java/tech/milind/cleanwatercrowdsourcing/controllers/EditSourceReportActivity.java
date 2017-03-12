@@ -5,8 +5,10 @@ import android.content.Intent;
 import android.graphics.Color;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
+import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.View;
 import android.widget.ArrayAdapter;
@@ -45,6 +47,7 @@ public class EditSourceReportActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_edit_source_report);
+
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         Intent i = getIntent();
@@ -154,9 +157,10 @@ public class EditSourceReportActivity extends AppCompatActivity {
     }
 
     @Override
-    public void onBackPressed() {
+    public boolean onSupportNavigateUp(){
         Intent output = new Intent();
         setResult(Activity.RESULT_CANCELED, output);
-        super.onBackPressed();
+        finish();
+        return true;
     }
 }

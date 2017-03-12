@@ -136,9 +136,10 @@ public class SubmitSourceReportActivity extends AppCompatActivity {
     }
 
     @Override
-    public void onBackPressed() {
+    public boolean onSupportNavigateUp(){
         Intent output = new Intent();
         setResult(Activity.RESULT_CANCELED, output);
-        super.onBackPressed();
+        finish();
+        return true;
     }
 }
