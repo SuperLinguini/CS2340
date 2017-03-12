@@ -70,14 +70,15 @@ public class SubmitSourceReportActivity extends AppCompatActivity {
             public void onClick(View v) {
                 String nameText = name.getText().toString().trim();
                 if(!(isEmpty(nameText) || latLng == null)) {
+                    Model model = Model.getInstance();
                     _waterSourceReport = new WaterSourceReport();
-                    _waterSourceReport.setName(name.getText().toString());
+                    _waterSourceReport.setReporter(model.getCurrentUser().getUsername());
+                    _waterSourceReport.setReportName(name.getText().toString());
                     _waterSourceReport.setLocation(latLng);
                     _waterSourceReport.setType((WaterSourceReport.typeOfWater)
                             typeSpinner.getSelectedItem());
                     _waterSourceReport.setCondition((WaterSourceReport.conditionOfWater)
                             conditionSpinner.getSelectedItem());
-                    Model model = Model.getInstance();
                     model.addReport(_waterSourceReport);
                     Intent output = new Intent();
                     setResult(Activity.RESULT_OK, output);
