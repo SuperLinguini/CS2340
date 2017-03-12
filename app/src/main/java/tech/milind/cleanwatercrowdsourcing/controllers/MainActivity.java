@@ -13,11 +13,11 @@ import android.util.Log;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
-import android.widget.Button;
 
 import java.lang.reflect.Field;
 
 import tech.milind.cleanwatercrowdsourcing.R;
+import tech.milind.cleanwatercrowdsourcing.model.Model;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -26,9 +26,12 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        Model model = Model.getInstance();
+        model.addTestData();
+
         getSupportActionBar().setTitle("Water Availability");
         getSupportFragmentManager().beginTransaction()
-                .add(R.id.fragmentContainer, new SourceReportFragment())
+                .add(R.id.fragmentContainer, new AvailabilityFragment())
                 .commit();
 
         BottomNavigationView bottomNavigationView =(BottomNavigationView)
@@ -41,9 +44,9 @@ public class MainActivity extends AppCompatActivity {
                     switch(item.getItemId()) {
                         case R.id.nav_home:
                             if(!(getSupportFragmentManager().findFragmentById(R.id.fragmentContainer)
-                                    instanceof SourceReportFragment)) {
+                                    instanceof AvailabilityFragment)) {
                                 getSupportFragmentManager().beginTransaction()
-                                        .replace(R.id.fragmentContainer, new SourceReportFragment())
+                                        .replace(R.id.fragmentContainer, new AvailabilityFragment())
                                         .commit();
                                 getSupportActionBar().setTitle("Water Availability");
                             }

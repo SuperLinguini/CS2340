@@ -1,10 +1,7 @@
 package tech.milind.cleanwatercrowdsourcing.controllers;
 
 
-import android.content.Intent;
 import android.os.Bundle;
-import android.support.annotation.Nullable;
-import android.support.design.widget.FloatingActionButton;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -22,13 +19,13 @@ import tech.milind.cleanwatercrowdsourcing.R;
 import tech.milind.cleanwatercrowdsourcing.model.Model;
 import tech.milind.cleanwatercrowdsourcing.model.WaterSourceReport;
 
-public class SourceReportFragment extends Fragment implements OnMapReadyCallback {
+public class AvailabilityFragment extends Fragment implements OnMapReadyCallback {
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        View view = inflater.inflate(R.layout.fragment_source_report, container, false);
+        View view = inflater.inflate(R.layout.fragment_availability, container, false);
         SupportMapFragment mapFragment = (SupportMapFragment) this.getChildFragmentManager()
                 .findFragmentById(R.id.map);
         mapFragment.getMapAsync(this);
@@ -43,7 +40,7 @@ public class SourceReportFragment extends Fragment implements OnMapReadyCallback
         for(int i = 0; i < reports.size(); i++) {
             cur = reports.get(i);
             googleMap.addMarker(new MarkerOptions().position(cur.getLocation())
-                .title(cur.getName())
+                .title(cur.getReportName())
                 .snippet(cur.getSnippet()))
                 .setTag(cur);
         }

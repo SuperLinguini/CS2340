@@ -21,7 +21,8 @@ public class WaterSourceReport implements Comparable<WaterSourceReport> {
 
     private Date date;
     private int reportNumber;
-    private String name;
+    private String reportName;
+    private String reporter;
     private LatLng location;
     private typeOfWater type;
     private conditionOfWater condition;
@@ -36,16 +37,18 @@ public class WaterSourceReport implements Comparable<WaterSourceReport> {
 
     /**
      * Constructor for the WaterSourceReport with all inputs
-     * @param name the name to be set to the WaterSourceReport
+     * @param reportName the report name to be set to the WaterSourceReport
+     * @param reporter
      * @param location the new LatLng location to be set to the WaterSourceReport
      * @param type the water type to be set to the WaterSourceReport
      * @param condition the water condition to be set to the WaterSourceReport
      */
-    public WaterSourceReport(String name, LatLng location,
+    public WaterSourceReport(String reportName, String reporter, LatLng location,
                              typeOfWater type, conditionOfWater condition) {
         date = new Date();
         reportNumber = currentID++;
-        this.name = name;
+        this.reportName = reportName;
+        this.reporter = reporter;
         this.location = location;
         this.type = type;
         this.condition = condition;
@@ -71,8 +74,8 @@ public class WaterSourceReport implements Comparable<WaterSourceReport> {
      * Gets the name of the WaterSourceReport
      * @return the name of the WaterSourceReport
      */
-    public String getName() {
-        return name;
+    public String getReportName() {
+        return reportName;
     }
 
     /**
@@ -100,11 +103,19 @@ public class WaterSourceReport implements Comparable<WaterSourceReport> {
     }
 
     /**
-     * Sets the name of the WaterSourceReport
-     * @param name the new name to be set to the WaterSourceReport
+     * Gets the reporter name of the WaterSourceReport
+     * @return the reporter of the WaterSourceReport
      */
-    public void setName(String name) {
-        this.name = name;
+    public String getReporter() {
+        return reporter;
+    }
+
+    /**
+     * Sets the name of the WaterSourceReport
+     * @param reportName the new name to be set to the WaterSourceReport
+     */
+    public void setReportName(String reportName) {
+        this.reportName = reportName;
     }
 
     /**
@@ -129,6 +140,30 @@ public class WaterSourceReport implements Comparable<WaterSourceReport> {
      */
     public void setCondition(conditionOfWater condition) {
         this.condition = condition;
+    }
+
+    /**
+     * Sets the date of the WaterSourceReport
+     * @param date the new date to be set to the WaterSourceReport
+     */
+    public void setDate(Date date) {
+        this.date = date;
+    }
+
+    /**
+     * Sets the report number of the WaterSourceReport
+     * @param reportNumber the new report number to be set to the WaterSourceReport
+     */
+    public void setReportNumber(int reportNumber) {
+        this.reportNumber = reportNumber;
+    }
+
+    /**
+     * Sets the reporter of the WaterSourceReport
+     * @param reporter the new reporter to be set to the WaterSourceReport
+     */
+    public void setReporter(String reporter) {
+        this.reporter = reporter;
     }
 
     @Override

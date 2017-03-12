@@ -77,6 +77,7 @@ public class ListSourceFragment extends Fragment {
             public TextView reportDate;
             public TextView reportLocation;
             public TextView reportTypeCondition;
+            public TextView reportReporter;
 
             /**
              * Constructor for ViewHolder that links the Views
@@ -85,6 +86,7 @@ public class ListSourceFragment extends Fragment {
             public ViewHolder(View v) {
                 super(v);
                 reportNumAndName = (TextView) v.findViewById(R.id.reportNumAndName);
+                reportReporter = (TextView) v.findViewById(R.id.reportReporter);
                 reportDate = (TextView) v.findViewById(R.id.reportDate);
                 reportLocation = (TextView) v.findViewById(R.id.reportLocation);
                 reportTypeCondition = (TextView) v.findViewById(R.id.reportTypeCondition);
@@ -105,7 +107,8 @@ public class ListSourceFragment extends Fragment {
             WaterSourceReport wrs = reports.get(position);
             holder.reportDate.setText(String.format("Date: %tD %<tR", wrs.getDate()));
             holder.reportNumAndName.setText(String.format("#%s %s",
-                    wrs.getReportNumber(), wrs.getName()));
+                    wrs.getReportNumber(), wrs.getReportName()));
+            holder.reportReporter.setText(wrs.getReporter());
             holder.reportLocation.setText(wrs.getLocation().toString());
             holder.reportTypeCondition.setText(wrs.getType() + ", " + wrs.getCondition());
         }
