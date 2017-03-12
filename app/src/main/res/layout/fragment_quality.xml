@@ -1,15 +1,31 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#00aef2">
+    android:background="#00aef2"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
 
-    <TextView
-        android:id="@+id/textView2"
+    <android.support.v7.widget.RecyclerView
+        xmlns:tools="http://schemas.android.com/tools"
+        android:id="@+id/purity_report_list"
+        android:name="lab3.cs2340.gatech.edu.lab3.CourseDetailFragment"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="4dp"
+        app:layoutManager="LinearLayoutManager"
+        tools:context="tech.milind.cleanwatercrowdsourcing.controllers.FragmentPurity"
+        tools:listitem="@layout/purity_list_content" />
+
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/addPurityFAB"
+        app:fabSize="mini"
+        app:srcCompat="@mipmap/ic_add_white_24dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Purity Fragment"
-        android:layout_marginTop="214dp"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true" />
+        android:layout_alignBottom="@id/purity_report_list"
+        android:layout_alignParentEnd="true"
+        android:layout_marginBottom="19dp"
+        android:layout_marginEnd="16dp"
+        android:clickable="true" />
+
 </RelativeLayout>

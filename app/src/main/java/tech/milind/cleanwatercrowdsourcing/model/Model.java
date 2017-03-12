@@ -14,11 +14,13 @@ public class Model {
     }
 
     private List<WaterSourceReport> reports;
+    private List<WaterPurityReport> purityReports;
     private Security security;
     private User currentUser;
 
     private Model() {
         reports = new ArrayList<>();
+        purityReports = new ArrayList<>();
         security = new Security();
     }
 
@@ -53,6 +55,8 @@ public class Model {
     public List<WaterSourceReport> getReports() {
         return reports;
     }
+
+    public List<WaterPurityReport> getPurityReports() { return purityReports; }
 
     /**
      * Checks if the username and password entered is a valid user
@@ -93,4 +97,6 @@ public class Model {
     public void addReport(WaterSourceReport report) {
         reports.add(report);
     }
+
+    public void addPurityReport(WaterPurityReport report) {purityReports.add(report);}
 }

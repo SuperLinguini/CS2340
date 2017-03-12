@@ -6,6 +6,7 @@
     android:id="@+id/activity_test"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:itemBackground="@color/colorPrimary"
     tools:context="tech.milind.cleanwatercrowdsourcing.controllers.WelcomeActivity">
 
     <FrameLayout
@@ -15,7 +16,6 @@
         android:layout_above="@+id/nav_bar"/>
 
 
-
     <android.support.design.widget.BottomNavigationView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -23,7 +23,5 @@
         android:id="@+id/nav_bar"
         app:itemBackground="@color/colorPrimary"
         app:itemIconTint="@color/white"
-        app:itemTextColor="@color/white"
-        app:menu="@menu/navbar"/>
-
+        app:itemTextColor="@color/white" />
 </RelativeLayout>
