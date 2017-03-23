@@ -11,12 +11,14 @@ import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.SupportMapFragment;
+import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import com.google.android.gms.maps.model.MarkerOptions;
 
 import java.util.List;
 
 import tech.milind.cleanwatercrowdsourcing.R;
 import tech.milind.cleanwatercrowdsourcing.model.Model;
+import tech.milind.cleanwatercrowdsourcing.model.WaterQualityReport;
 import tech.milind.cleanwatercrowdsourcing.model.WaterSourceReport;
 
 public class AvailabilityFragment extends Fragment implements OnMapReadyCallback {
@@ -43,6 +45,16 @@ public class AvailabilityFragment extends Fragment implements OnMapReadyCallback
                 .title(cur.getReportName())
                 .snippet(cur.getSnippet()))
                 .setTag(cur);
+        }
+        List<WaterQualityReport> qualityReports = model.getPurityReports();
+        WaterQualityReport purity;
+        for(int i = 0; i < reports.size(); i++) {
+            purity = qualityReports.get(i);
+            googleMap.addMarker(new MarkerOptions().position(purity.getLocation())
+                    .title(purity.getName())
+                    .snippet(purity.getSnippet())
+                    .icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_CYAN)))
+                    .setTag(purity);
         }
         googleMap.moveCamera(CameraUpdateFactory.newLatLng(reports
                 .get(reports.size() - 1).getLocation()));

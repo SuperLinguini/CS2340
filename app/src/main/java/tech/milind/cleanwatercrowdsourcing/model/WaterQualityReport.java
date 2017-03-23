@@ -150,4 +150,13 @@ public class WaterQualityReport implements Comparable<WaterQualityReport> {
     public int compareTo(@NonNull WaterQualityReport o) {
         return this.getReportNumber() > o.getReportNumber() ? 1 : -1;
     }
+
+    /**
+     * Gets the snippet for the map pin for each WaterQualityReport
+     * @return the String details for the map pin snippet
+     */
+    public String getSnippet() {
+        return String.format("#%d %tD %<tR %s/%s/%s", reportNumber, date,
+                condition.toString(), virusPPM, contaminantPPM);
+    }
 }

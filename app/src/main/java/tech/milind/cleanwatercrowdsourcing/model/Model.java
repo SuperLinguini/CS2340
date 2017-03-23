@@ -18,8 +18,6 @@ public class Model {
     private Security security;
     private User currentUser;
 
-    private boolean hasRun = false;
-
     private Model() {
         reports = new ArrayList<>();
         purityReports = new ArrayList<>();
@@ -30,15 +28,18 @@ public class Model {
      * Adds filler test data until we implement persistence
      */
     public void addTestData() {
-        if (!hasRun) {
-            reports.add(new WaterSourceReport("Test Report", currentUser.getUsername(), new LatLng(33.77,-84.39),
-                    WaterSourceReport.typeOfWater.Bottled, WaterSourceReport.conditionOfWater.Potable));
-            reports.add(new WaterSourceReport("A Report", currentUser.getUsername(), new LatLng(33.77248,-84.393003),
-                    WaterSourceReport.typeOfWater.Spring, WaterSourceReport.conditionOfWater.Treatable_Clear));
-            reports.add(new WaterSourceReport("My Report", currentUser.getUsername(), new LatLng(33.76873,-84.37565),
-                    WaterSourceReport.typeOfWater.Stream, WaterSourceReport.conditionOfWater.Treatable_Muddy));
-            hasRun = true;
-        }
+        reports.add(new WaterSourceReport("Test Report", currentUser.getUsername(), new LatLng(33.77,-84.39),
+                WaterSourceReport.typeOfWater.Bottled, WaterSourceReport.conditionOfWater.Potable));
+        reports.add(new WaterSourceReport("A Report", currentUser.getUsername(), new LatLng(33.77248,-84.393003),
+                WaterSourceReport.typeOfWater.Spring, WaterSourceReport.conditionOfWater.Treatable_Clear));
+        reports.add(new WaterSourceReport("My Report", currentUser.getUsername(), new LatLng(33.76873,-84.37565),
+                WaterSourceReport.typeOfWater.Stream, WaterSourceReport.conditionOfWater.Treatable_Muddy));
+        purityReports.add(new WaterQualityReport("Panda Express", new LatLng(43.22, -72.21),
+                WaterQualityReport.conditionOfWater.Safe, 40, 50));
+        purityReports.add(new WaterQualityReport("Chick-fil-A", new LatLng(50.23, -68.53),
+                WaterQualityReport.conditionOfWater.Treatable, 120, 90));
+        purityReports.add(new WaterQualityReport("Taco Bell", new LatLng(38.7532, -79.293),
+                WaterQualityReport.conditionOfWater.Unsafe, 340, 380));
     }
 
     /**
