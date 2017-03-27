@@ -3,6 +3,7 @@
 
     <item
         is-multidex="true"
+<<<<<<< HEAD
         jar="C:\Users\Brian Cai\.android\build-cache\5786f26ab6d60780c5b04acd708c9e6ca09931f9\output\jars\classes.jar"
         jumboMode="true"
         optimize="true"
@@ -31,10 +32,23 @@
     <item
         is-multidex="true"
         jar="C:\Users\Brian Cai\Dropbox\My Documents\College\CS 2340\CS2340\app\build\intermediates\incremental-runtime-classes\debug\instant-run.jar"
+=======
+        jar="/Users/whe1996/Documents/school/cs_2340/android/app/build/intermediates/incremental-classes/debug/instant-run-bootstrap.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="a83137209101f932ffc589cc9268c027174a52d9">
+        <dex dex="/Users/whe1996/Documents/school/cs_2340/android/app/build/intermediates/transforms/dex/debug/folders/1000/10000/instant-run-bootstrap_0fcd99fabc9d58b0116c5c965db4258b6fa66705/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/whe1996/Documents/school/cs_2340/android/app/build/intermediates/incremental-runtime-classes/debug/instant-run.jar"
+>>>>>>> 006a579692374c2009da66a656525d7640257b70
         jumboMode="true"
         optimize="true"
         revision="25.0.2"
         sha1="c82741bc129dd5f99f11a4ab8666ae24262053b6">
+<<<<<<< HEAD
         <dex dex="C:\Users\Brian Cai\Dropbox\My Documents\College\CS 2340\CS2340\app\build\intermediates\transforms\dex\debug\folders\1000\10000\instant-run_6cc419cc53610363b87dd4ea5a9874098657ea9c\classes.dex" />
     </item>
     <item
@@ -117,6 +131,9 @@
         revision="25.0.2"
         sha1="bd75f9f0296fe220da6d0ad961831b04541c4452">
         <dex dex="C:\Users\Brian Cai\Dropbox\My Documents\College\CS 2340\CS2340\app\build\intermediates\transforms\dex\debug\folders\1000\10\classes_a386f39d1c745778314cf496f49f1ed51bb8863d\classes.dex" />
+=======
+        <dex dex="/Users/whe1996/Documents/school/cs_2340/android/app/build/intermediates/transforms/dex/debug/folders/1000/10000/instant-run_3b8c306117c6123083142b8d7df1d0b72480ce42/classes.dex" />
+>>>>>>> 006a579692374c2009da66a656525d7640257b70
     </item>
 
 </items>

@@ -2,6 +2,9 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="tech.milind.cleanwatercrowdsourcing">
 
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
+    <uses-permission android:name="android.permission.INTERNET" />
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -9,20 +12,43 @@
         android:supportsRtl="true"
         android:debuggable="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".controllers.WelcomeActivity">
+
+        <meta-data
+            android:name="com.google.android.gms.version"
+            android:value="@integer/google_play_services_version" />
+        <meta-data
+            android:name="com.google.android.geo.API_KEY"
+            android:value="@string/google_maps_key" />
+
+
+        <activity android:name=".controllers.WelcomeActivity"
+            android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
-
             </intent-filter>
         </activity>
-        <activity android:name=".controllers.RegistrationActivity" />
-        <activity android:name=".controllers.LoginActivity" />
-        <activity android:name=".controllers.MainActivity"/>
-        <activity android:name=".controllers.ViewProfileActivity"/>
-        <activity android:name=".controllers.EditProfileActivity"/>
-
+        <activity android:name=".controllers.RegistrationActivity"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".controllers.LoginActivity"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".controllers.MainActivity"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".controllers.ViewProfileActivity"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".controllers.EditProfileActivity"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".controllers.SubmitSourceReportActivity"
+            android:label="@string/SubmitWaterReport"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".controllers.SubmitQualityReportActivity"
+            android:label="@string/SubmitWaterPurityReport"
+            android:screenOrientation="portrait">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="tech.milind.cleanwatercrowdsourcing.controllers.MainActivity"/>
+        </activity>
     </application>
 
 </manifest>

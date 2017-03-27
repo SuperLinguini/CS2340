@@ -12,94 +12,93 @@
         android:id="@+id/edit_profile" />
 
     <TextView
-        android:text="Name"
         android:id="@+id/text_name"
-        android:textAppearance="@android:style/TextAppearance.Material.Large"
-        android:layout_marginTop="20dp"
-        android:layout_height="wrap_content"
         android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignStart="@+id/textView"
         android:layout_below="@+id/textView"
-        android:layout_alignStart="@+id/textView" />
+        android:layout_marginTop="20dp"
+        android:text="Name"
+        android:textAppearance="@android:style/TextAppearance.Material.Medium" />
 
     <TextView
-        android:text="Home Address:"
         android:id="@+id/text_home_address"
-        android:layout_height="wrap_content"
         android:layout_width="wrap_content"
-        android:textAppearance="@android:style/TextAppearance.Material.Large"
+        android:layout_height="wrap_content"
+        android:layout_alignStart="@+id/textView"
         android:layout_below="@+id/txt_view_name"
-        android:layout_alignStart="@+id/textView"
+        android:layout_marginBottom="5dp"
         android:layout_marginTop="20dp"
-        android:layout_marginBottom="5dp" />
+        android:text="Home Address:"
+        android:textAppearance="@android:style/TextAppearance.Material.Medium" />
 
     <TextView
-        android:text="Email Address:"
         android:id="@+id/text_email_address"
-        android:layout_height="wrap_content"
         android:layout_width="wrap_content"
-        android:textAppearance="@android:style/TextAppearance.Material.Large"
-        android:layout_marginTop="20dp"
+        android:layout_height="wrap_content"
+        android:layout_alignStart="@+id/textView"
         android:layout_below="@+id/txt_view_home_address"
-        android:layout_alignStart="@+id/textView" />
-
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:ems="10"
-        android:id="@+id/txt_view_name"
-        android:layout_below="@+id/text_name"
-        android:layout_alignStart="@+id/textView"
-        android:layout_alignEnd="@+id/edit_profile"
-        android:layout_marginTop="5dp"
-        android:layout_marginBottom="15dp"
-        android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
-
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:inputType="textPersonName"
-        android:ems="10"
-        android:layout_alignStart="@+id/textView"
-        android:layout_alignEnd="@+id/edit_profile"
-        android:id="@+id/txt_view_home_address"
-        android:layout_below="@id/text_home_address"
-        android:layout_marginTop="5dp"
-        android:layout_marginBottom="15dp"
-        android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
-
-    <TextView
-        android:text="Title"
-        android:id="@+id/text_title"
-        android:textAppearance="@android:style/TextAppearance.Material.Large"
         android:layout_marginTop="20dp"
-        android:layout_height="wrap_content"
-        android:layout_width="wrap_content"
-        android:layout_below="@+id/txt_view_email_address"
-        android:layout_alignStart="@+id/textView" />
+        android:text="Email Address:"
+        android:textAppearance="@android:style/TextAppearance.Material.Medium" />
 
     <TextView
+        android:id="@+id/txt_view_name"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:ems="10"
-        android:layout_below="@+id/text_email_address"
-        android:layout_alignStart="@+id/textView"
         android:layout_alignEnd="@+id/edit_profile"
-        android:id="@+id/txt_view_email_address"
-        android:layout_marginTop="5dp"
+        android:layout_alignStart="@+id/textView"
+        android:layout_below="@+id/text_name"
         android:layout_marginBottom="15dp"
-        android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
+        android:layout_marginTop="5dp"
+        android:ems="10"
+        android:textAppearance="@style/TextAppearance.AppCompat.Small" />
 
     <TextView
+        android:id="@+id/txt_view_home_address"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/text_title"
-        android:id="@+id/txt_view_user_type"
-        android:layout_alignStart="@+id/textView"
         android:layout_alignEnd="@+id/edit_profile"
+        android:layout_alignStart="@+id/textView"
+        android:layout_below="@id/text_home_address"
+        android:layout_marginBottom="15dp"
+        android:layout_marginTop="5dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:textAppearance="@style/TextAppearance.AppCompat.Small" />
+
+    <TextView
+        android:id="@+id/text_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignStart="@+id/textView"
+        android:layout_below="@+id/txt_view_email_address"
+        android:layout_marginTop="20dp"
+        android:text="Title"
+        android:textAppearance="@android:style/TextAppearance.Material.Medium" />
+
+    <TextView
+        android:id="@+id/txt_view_email_address"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignEnd="@+id/edit_profile"
+        android:layout_alignStart="@+id/textView"
+        android:layout_below="@+id/text_email_address"
+        android:layout_marginBottom="15dp"
+        android:layout_marginTop="5dp"
+        android:ems="10"
+        android:textAppearance="@style/TextAppearance.AppCompat.Small" />
+
+    <TextView
+        android:id="@+id/txt_view_user_type"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignEnd="@+id/edit_profile"
+        android:layout_alignStart="@+id/textView"
+        android:layout_below="@+id/text_title"
         android:layout_marginBottom="5dp"
         android:layout_marginTop="5dp"
-        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
-        android:textAlignment="textStart" />
+        android:textAppearance="@style/TextAppearance.AppCompat.Small" />
 
     <TextView
         android:text="User Profile"
