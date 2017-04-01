@@ -3,21 +3,21 @@
 
     <item
         is-multidex="true"
-        jar="/Users/whe1996/Documents/school/cs_2340/android/app/build/intermediates/incremental-classes/debug/instant-run-bootstrap.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.2"
-        sha1="a83137209101f932ffc589cc9268c027174a52d9">
-        <dex dex="/Users/whe1996/Documents/school/cs_2340/android/app/build/intermediates/transforms/dex/debug/folders/1000/10000/instant-run-bootstrap_0fcd99fabc9d58b0116c5c965db4258b6fa66705/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/Users/whe1996/Documents/school/cs_2340/android/app/build/intermediates/incremental-runtime-classes/debug/instant-run.jar"
+        jar="/Users/whe1996/Documents/school/cs-2340/android/app/build/intermediates/incremental-runtime-classes/debug/instant-run.jar"
         jumboMode="true"
         optimize="true"
         revision="25.0.2"
         sha1="c82741bc129dd5f99f11a4ab8666ae24262053b6">
-        <dex dex="/Users/whe1996/Documents/school/cs_2340/android/app/build/intermediates/transforms/dex/debug/folders/1000/10000/instant-run_3b8c306117c6123083142b8d7df1d0b72480ce42/classes.dex" />
+        <dex dex="/Users/whe1996/Documents/school/cs-2340/android/app/build/intermediates/transforms/dex/debug/folders/1000/10000/instant-run_848c2b73a0c2058d9fd6035ceeb9a91e6cb156b3/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/whe1996/Documents/school/cs-2340/android/app/build/intermediates/incremental-classes/debug/instant-run-bootstrap.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="abb7a16e4e485c765d0bfdbf83a0eab2f274eee7">
+        <dex dex="/Users/whe1996/Documents/school/cs-2340/android/app/build/intermediates/transforms/dex/debug/folders/1000/10000/instant-run-bootstrap_b9f1c9eb812f9b0a1309a51155f3f53c47182433/classes.dex" />
     </item>
 
 </items>
