@@ -27,7 +27,8 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         Model model = Model.getInstance();
-        model.addTestData();
+//        model.addTestData();
+        model.loadWaterSourceReports();
 
         getSupportActionBar().setTitle("Water Availability");
         getSupportFragmentManager().beginTransaction()

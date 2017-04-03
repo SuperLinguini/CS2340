@@ -65,8 +65,7 @@ public class ListSourceFragment extends Fragment {
         mLayoutManager.setStackFromEnd(true);
         recyclerView.setLayoutManager(mLayoutManager);
         Model model = Model.getInstance();
-        List<WaterSourceReport> reports = model.getReports();
-        mAdapter = new SimpleSourceAdapter(reports);
+        mAdapter = new SimpleSourceAdapter(model.getReports());
         recyclerView.setAdapter(mAdapter);
     }
 
@@ -107,24 +106,26 @@ public class ListSourceFragment extends Fragment {
         }
 
         @Override
-        public void onBindViewHolder(ViewHolder holder, final int position) {
+        public void onBindViewHolder(final ViewHolder holder, final int position) {
             final Model model = Model.getInstance();
-            final WaterSourceReport wrs = reports.get(position);
-            holder.reportDate.setText(String.format("Date: %tD %<tR", wrs.getDate()));
-            holder.reportNumAndName.setText(String.format("#%s %s",
-                    wrs.getReportNumber(), wrs.getReportName()));
-            holder.reportReporter.setText(wrs.getReporter());
-            holder.reportLocation.setText(wrs.getLocation().toString());
-            holder.reportTypeCondition.setText(wrs.getType() + ", " + wrs.getCondition());
-            holder.mView.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    Intent i = new Intent(getActivity(), EditSourceReportActivity.class);
-                    i.putExtra("report_object", wrs);
-                    i.putExtra("position", position);
-                    startActivityForResult(i, REQUEST);
-                }
-            });
+            if (reports.get(holder.getAdapterPosition()) != null) {
+                final WaterSourceReport wrs = reports.get(holder.getAdapterPosition());
+                holder.reportDate.setText(String.format("Date: %tD %<tR", wrs.getDate()));
+                holder.reportNumAndName.setText(String.format("#%s %s",
+                        wrs.getReportNumber(), wrs.getReportName()));
+                holder.reportReporter.setText(wrs.getReporter());
+                holder.reportLocation.setText(wrs.getLocation().toString());
+                holder.reportTypeCondition.setText(wrs.getType() + ", " + wrs.getCondition());
+                holder.mView.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        Intent i = new Intent(getActivity(), EditSourceReportActivity.class);
+                        i.putExtra("report_object", wrs);
+                        i.putExtra("position", holder.getAdapterPosition());
+                        startActivityForResult(i, REQUEST);
+                    }
+                });
+            }
         }
 
         @Override

@@ -14,6 +14,10 @@ public class Security {
     public Security() {
         userList = new HashMap<>(50);
         userList.put("user", new User("user", "pass"));
+        User manager = new User("a", "a");
+        manager.setName("Milind");
+        manager.setUserType(UserType.MANAGER);
+        userList.put("a", manager);
     }
 
     /**

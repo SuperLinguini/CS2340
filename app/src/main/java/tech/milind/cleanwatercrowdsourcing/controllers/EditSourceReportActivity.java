@@ -5,10 +5,8 @@ import android.content.Intent;
 import android.graphics.Color;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
-import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.View;
 import android.widget.ArrayAdapter;
@@ -20,13 +18,12 @@ import com.google.android.gms.common.GooglePlayServicesNotAvailableException;
 import com.google.android.gms.common.GooglePlayServicesRepairableException;
 import com.google.android.gms.location.places.Place;
 import com.google.android.gms.location.places.ui.PlacePicker;
-import com.google.android.gms.maps.model.LatLng;
 
-import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
 import tech.milind.cleanwatercrowdsourcing.R;
+import tech.milind.cleanwatercrowdsourcing.model.LatLng;
 import tech.milind.cleanwatercrowdsourcing.model.Model;
 import tech.milind.cleanwatercrowdsourcing.model.WaterSourceReport;
 
@@ -94,12 +91,15 @@ public class EditSourceReportActivity extends AppCompatActivity {
                     _waterSourceReport = model.getReports().get(position);
                     _waterSourceReport.setReporter(model.getCurrentUser().getUsername());
                     _waterSourceReport.setReportName(reportName.getText().toString());
-                    _waterSourceReport.setLocation(latLng);
+                    _waterSourceReport.setLocation(new LatLng(latLng.getLatitude(), latLng.getLongitude()));
                     _waterSourceReport.setType((WaterSourceReport.typeOfWater)
                             typeSpinner.getSelectedItem());
                     _waterSourceReport.setCondition((WaterSourceReport.conditionOfWater)
                             conditionSpinner.getSelectedItem());
-                    model.getReports().set(position, _waterSourceReport);
+//                    model.getmDatabase().child("waterSourceReport")
+//                            .child("" + (_waterSourceReport.getReportNumber() - 1))
+//                            .setValue(_waterSourceReport);
+                    model.editWaterSourceReport(_waterSourceReport);
                     Intent output = new Intent();
                     output.putExtra("position", position);
                     setResult(RESULT_CHANGED, output);
@@ -151,7 +151,7 @@ public class EditSourceReportActivity extends AppCompatActivity {
                 Place place = PlacePicker.getPlace(data, this);
                 EditText editText = (EditText) findViewById(R.id.locationReportEditText);
                 editText.setText("" + place.getLatLng());
-                latLng = place.getLatLng();
+                latLng = new LatLng(place.getLatLng().latitude, place.getLatLng().longitude);
             }
         }
     }

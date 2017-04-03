@@ -4,8 +4,6 @@ import android.os.Parcel;
 import android.os.Parcelable;
 import android.support.annotation.NonNull;
 
-import com.google.android.gms.maps.model.LatLng;
-
 import java.util.Date;
 
 /**
@@ -13,7 +11,6 @@ import java.util.Date;
  */
 
 public class WaterSourceReport implements Comparable<WaterSourceReport>, Parcelable {
-    private static int currentID = 1;
     public enum typeOfWater {
         Bottled, Well, Stream, Lake, Spring, Other
     }
@@ -34,7 +31,6 @@ public class WaterSourceReport implements Comparable<WaterSourceReport>, Parcela
      */
     public WaterSourceReport() {
         date = new Date();
-        reportNumber = currentID++;
     }
 
     /**
@@ -48,7 +44,6 @@ public class WaterSourceReport implements Comparable<WaterSourceReport>, Parcela
     public WaterSourceReport(String reportName, String reporter, LatLng location,
                              typeOfWater type, conditionOfWater condition) {
         date = new Date();
-        reportNumber = currentID++;
         this.reportName = reportName;
         this.reporter = reporter;
         this.location = location;

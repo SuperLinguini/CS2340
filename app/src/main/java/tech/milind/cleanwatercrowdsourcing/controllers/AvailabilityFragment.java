@@ -41,14 +41,16 @@ public class AvailabilityFragment extends Fragment implements OnMapReadyCallback
         WaterSourceReport cur;
         for(int i = 0; i < reports.size(); i++) {
             cur = reports.get(i);
-            googleMap.addMarker(new MarkerOptions().position(cur.getLocation())
-                .title(cur.getReportName())
-                .snippet(cur.getSnippet()))
-                .setTag(cur);
+            if (cur != null) {
+                googleMap.addMarker(new MarkerOptions().position(cur.getLocation().getMapsLatLng())
+                        .title(cur.getReportName())
+                        .snippet(cur.getSnippet()))
+                        .setTag(cur);
+            }
         }
         List<WaterQualityReport> qualityReports = model.getPurityReports();
         WaterQualityReport purity;
-        for(int i = 0; i < reports.size(); i++) {
+        for(int i = 0; i < qualityReports.size(); i++) {
             purity = qualityReports.get(i);
             googleMap.addMarker(new MarkerOptions().position(purity.getLocation())
                     .title(purity.getName())
@@ -57,6 +59,6 @@ public class AvailabilityFragment extends Fragment implements OnMapReadyCallback
                     .setTag(purity);
         }
         googleMap.moveCamera(CameraUpdateFactory.newLatLng(reports
-                .get(reports.size() - 1).getLocation()));
+                .get(reports.size() - 1).getLocation().getMapsLatLng()));
     }
 }
