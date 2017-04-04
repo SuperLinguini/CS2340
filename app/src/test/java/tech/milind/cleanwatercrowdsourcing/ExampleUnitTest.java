@@ -29,7 +29,7 @@ public class ExampleUnitTest {
     @Test(timeout = TIMEOUT)
     public void testNonexistentUser() {
         thrown.expect(NoSuchElementException.class);
-        security.findUser("newuser");
+        security.findUser("e");
     }
 
     @Test(timeout = TIMEOUT)
