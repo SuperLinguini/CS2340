@@ -46,6 +46,10 @@
             android:name=".controllers.SubmitSourceReportActivity"
             android:label="@string/SubmitWaterReport"
             android:screenOrientation="portrait"/>
+        <activity
+            android:name=".controllers.EditHistoricalReportActivity"
+            android:label="Edit Historical Report"
+            android:screenOrientation="portrait"/>
         <activity android:name=".controllers.SubmitQualityReportActivity"
             android:label="@string/SubmitWaterPurityReport"
             android:screenOrientation="portrait">
