@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent" android:layout_height="match_parent"
+    android:descendantFocusability="beforeDescendants"
+    android:focusableInTouchMode="true"
+    android:id="@+id/activity_edit_historical_report">
+    <android.support.design.widget.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="25dp"
+        android:layout_alignParentTop="true"
+        android:layout_marginRight="60dp"
+        android:layout_alignParentStart="true"
+        android:id="@+id/textInputLayout">
+
+        <EditText
+            android:id="@+id/locationHistReportEditText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:hint="Location"
+            android:inputType="none" />
+    </android.support.design.widget.TextInputLayout>
+
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/addLocationHistFAB"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:clickable="true"
+        app:fabSize="mini"
+        app:srcCompat="@mipmap/ic_add_white_24dp"
+        android:layout_alignBottom="@+id/textInputLayout"
+        android:layout_alignParentEnd="true"
+        android:layout_marginEnd="16dp" />
+
+    <android.support.design.widget.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="25dp"
+        android:layout_below="@+id/textInputLayout"
+        android:layout_marginRight="60dp"
+        android:layout_alignParentStart="true"
+        android:id="@+id/textInputLayoutRadius">
+
+        <EditText
+            android:id="@+id/radiusHistEditText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:hint="Radius"
+            android:inputType="number" />
+    </android.support.design.widget.TextInputLayout>
+
+    <android.support.design.widget.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="25dp"
+        android:layout_below="@+id/textInputLayoutRadius"
+        android:layout_marginRight="60dp"
+        android:layout_alignParentStart="true"
+        android:id="@+id/textInputLayoutYear">
+
+        <EditText
+            android:id="@+id/yearHistEditText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:hint="Year"
+            android:inputType="number" />
+    </android.support.design.widget.TextInputLayout>
+    <TextView
+        android:id="@+id/rgtv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="25dp"
+        android:layout_below="@id/textInputLayoutYear"
+        android:text="Select Purirty Type"/>
+    <RadioGroup
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="10dp"
+        android:id="@+id/HistradioGroup"
+        android:layout_marginLeft="20dp"
+        android:layout_below="@id/rgtv">
+
+        <RadioButton
+            android:id="@+id/rbVirus"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Virus PPM"/>
+
+        <RadioButton
+            android:id="@+id/rbContaminant"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Contaminant PPM"/>
+
+    </RadioGroup>
+
+    <Button
+        android:id="@+id/HistButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:layout_centerInParent="true"
+        android:layout_below="@id/HistradioGroup"
+        android:text="Create Graph"/>
+
+
+</RelativeLayout>

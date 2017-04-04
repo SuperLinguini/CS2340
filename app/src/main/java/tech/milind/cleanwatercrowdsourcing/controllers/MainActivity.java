@@ -94,6 +94,15 @@ public class MainActivity extends AppCompatActivity {
                                 getSupportActionBar().setTitle("Admin Page");
                             }
                             break;
+                        case R.id.nav_historical:
+                            if(!(getSupportFragmentManager().findFragmentById(R.id.fragmentContainer)
+                                    instanceof FragmentManager)) {
+                                getSupportFragmentManager().beginTransaction()
+                                        .replace(R.id.fragmentContainer, new FragmentManager())
+                                        .commit();
+                                getSupportActionBar().setTitle("Historical Report");
+                            }
+                            break;
                     }
                     return true;
                 }
