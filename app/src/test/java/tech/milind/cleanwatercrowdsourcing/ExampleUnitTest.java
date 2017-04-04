@@ -26,13 +26,13 @@ public class ExampleUnitTest {
         security = new Security();
     }
 
-    @Test(timeout = TIMEOUT)
+    @Test
     public void testNonexistentUser() {
         thrown.expect(NoSuchElementException.class);
         security.findUser("e");
     }
 
-    @Test(timeout = TIMEOUT)
+    @Test
     public void testExistingUser() {
         security.addUser("test", "pass");
         User expected = new User("test", "pass");
@@ -44,7 +44,7 @@ public class ExampleUnitTest {
         assertEquals(expected.getUserType(), found.getUserType());
     }
 
-    @Test(timeout = TIMEOUT)
+    @Test
     public void testRemovedUser() {
         thrown.expect(NoSuchElementException.class);
         security.addUser("test", "pass");
