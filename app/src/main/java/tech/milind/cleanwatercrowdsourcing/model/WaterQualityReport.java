@@ -16,7 +16,7 @@ public class WaterQualityReport implements Comparable<WaterQualityReport> {
 
     private Date date;
     private int reportNumber;
-    private String name;
+    private String reportName;
     private LatLng location;
     private conditionOfWater condition;
     private int virusPPM;
@@ -31,14 +31,14 @@ public class WaterQualityReport implements Comparable<WaterQualityReport> {
 
     /**
      * Constructor for the WaterQualityReport with all inputs
-     * @param name the name to be set to the WaterQualityReport
+     * @param reportName the name to be set to the WaterQualityReport
      * @param location the new LatLng location to be set to the WaterQualityReport
      * @param condition the water condition to be set to the WaterQualityReport
      */
-    public WaterQualityReport(String name, LatLng location,
+    public WaterQualityReport(String reportName, LatLng location,
                               conditionOfWater condition, int virus, int contam) {
         date = new Date();
-        this.name = name;
+        this.reportName = reportName;
         this.location = location;
         this.condition = condition;
         this.virusPPM = virus;
@@ -65,8 +65,8 @@ public class WaterQualityReport implements Comparable<WaterQualityReport> {
      * Gets the name of the WaterQualityReport
      * @return the name of the WaterQualityReport
      */
-    public String getName() {
-        return name;
+    public String getReportName() {
+        return reportName;
     }
 
     /**
@@ -105,8 +105,8 @@ public class WaterQualityReport implements Comparable<WaterQualityReport> {
      * Sets the name of the WaterQualityReport
      * @param name the new name to be set to the WaterQualityReport
      */
-    public void setName(String name) {
-        this.name = name;
+    public void setReportName(String name) {
+        this.reportName = name;
     }
 
     /**

@@ -52,11 +52,13 @@ public class AvailabilityFragment extends Fragment implements OnMapReadyCallback
         WaterQualityReport purity;
         for(int i = 0; i < qualityReports.size(); i++) {
             purity = qualityReports.get(i);
-            googleMap.addMarker(new MarkerOptions().position(purity.getLocation().getMapsLatLng())
-                    .title(purity.getName())
-                    .snippet(purity.getSnippet())
-                    .icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_CYAN)))
-                    .setTag(purity);
+            if (purity != null) {
+                googleMap.addMarker(new MarkerOptions().position(purity.getLocation().getMapsLatLng())
+                        .title(purity.getReportName())
+                        .snippet(purity.getSnippet())
+                        .icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_CYAN)))
+                        .setTag(purity);
+            }
         }
         googleMap.moveCamera(CameraUpdateFactory.newLatLng(reports
                 .get(reports.size() - 1).getLocation().getMapsLatLng()));

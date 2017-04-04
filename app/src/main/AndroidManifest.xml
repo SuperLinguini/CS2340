@@ -54,6 +54,8 @@
                 android:value="tech.milind.cleanwatercrowdsourcing.controllers.MainActivity" />
         </activity>
         <activity android:name=".controllers.EditSourceReportActivity"></activity>
+        <activity android:name=".controllers.EditQualityReportActivity"></activity>
+
     </application>
 
 </manifest>
