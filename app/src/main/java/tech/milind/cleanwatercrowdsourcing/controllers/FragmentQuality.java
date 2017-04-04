@@ -49,6 +49,8 @@ public class FragmentQuality extends Fragment {
         if (requestCode == REQUEST) {
             if (resultCode == Activity.RESULT_OK) {
                 mAdapter.notifyItemInserted(mAdapter.reports.size() - 1);
+            } else if (resultCode == EditQualityReportActivity.RESULT_CHANGED) {
+                mAdapter.notifyItemChanged(data.getIntExtra("position", 0));
             }
         }
     }
@@ -75,6 +77,7 @@ public class FragmentQuality extends Fragment {
 
 
         public class ViewHolder extends RecyclerView.ViewHolder {
+            public View mView;
             public TextView reportNumAndName;
             public TextView reportDate;
             public TextView reportLocation;
@@ -86,6 +89,7 @@ public class FragmentQuality extends Fragment {
              */
             public ViewHolder(View v) {
                 super(v);
+                mView = v;
                 reportNumAndName = (TextView) v.findViewById(R.id.purityNumAndName);
                 reportDate = (TextView) v.findViewById(R.id.purityDate);
                 reportLocation = (TextView) v.findViewById(R.id.purityLocation);
@@ -102,15 +106,26 @@ public class FragmentQuality extends Fragment {
         }
 
         @Override
-        public void onBindViewHolder(ViewHolder holder, int position) {
+        public void onBindViewHolder(final ViewHolder holder, final int position) {
             final Model model = Model.getInstance();
-            WaterQualityReport wrp = reports.get(position);
-            holder.reportDate.setText(String.format("Date: %tD %<tR", wrp.getDate()));
-            holder.reportNumAndName.setText(String.format("#%s %s", wrp.getReportNumber(),
-                    wrp.getName()));
-            holder.reportLocation.setText(wrp.getLocation().toString());
-            holder.reportConditionPPM.setText(wrp.getCondition() + ", " + wrp.getVirusPPM() + ", "
-                    + wrp.getContaminantPPM());
+            if (reports.get(holder.getAdapterPosition()) != null) {
+                final WaterQualityReport wrs = reports.get(holder.getAdapterPosition());
+                WaterQualityReport wrp = reports.get(position);
+                holder.reportDate.setText(String.format("Date: %tD %<tR", wrp.getDate()));
+                holder.reportNumAndName.setText(String.format("#%s %s", wrp.getReportNumber(),
+                        wrp.getReportName()));
+                holder.reportLocation.setText(wrp.getLocation().toString());
+                holder.reportConditionPPM.setText(wrp.getCondition() + ", " + wrp.getVirusPPM() + ", "
+                        + wrp.getContaminantPPM());
+                holder.mView.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        Intent i = new Intent(getActivity(), EditQualityReportActivity.class);
+                        i.putExtra("position", holder.getAdapterPosition());
+                        startActivityForResult(i, REQUEST);
+                    }
+                });
+            }
         }
 
         @Override

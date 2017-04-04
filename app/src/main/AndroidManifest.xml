@@ -45,20 +45,17 @@
         <activity
             android:name=".controllers.SubmitSourceReportActivity"
             android:label="@string/SubmitWaterReport"
-            android:screenOrientation="portrait" />
-        <activity
-            android:name=".controllers.SubmitQualityReportActivity"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".controllers.SubmitQualityReportActivity"
             android:label="@string/SubmitWaterPurityReport"
             android:screenOrientation="portrait">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="tech.milind.cleanwatercrowdsourcing.controllers.MainActivity" />
         </activity>
-        <activity android:name=".controllers.EditSourceReportActivity" />
-        <activity
-            android:name=".controllers.EditHistoricalReportActivity"
-            android:label="@string/title_activity_edit_historical_report"
-            android:theme="@style/AppTheme.NoActionBar"></activity>
+        <activity android:name=".controllers.EditSourceReportActivity"></activity>
+        <activity android:name=".controllers.EditQualityReportActivity"></activity>
+
     </application>
 
 </manifest>

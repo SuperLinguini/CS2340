@@ -34,7 +34,7 @@ public class Model {
     }
 
     /**
-     * Adds filler test data until we implement persistence
+     * Adds filler test data
      */
     public void addTestData() {
         addWaterSourceReport(new WaterSourceReport("Test Report", currentUser.getName(), new LatLng(33.77,-84.39),
@@ -56,6 +56,7 @@ public class Model {
             reports = new LinkedList<>();
         }
         wsr.setReportNumber(reports.size());
+        reports.add(wsr);
         mDatabase.child("waterSourceReports").child(""+wsr.getReportNumber()).setValue(wsr);
     }
 
@@ -68,6 +69,7 @@ public class Model {
             qualityReports = new LinkedList<>();
         }
         wqr.setReportNumber(qualityReports.size());
+        qualityReports.add(wqr);
         mDatabase.child("waterQualityReports").child(""+wqr.getReportNumber()).setValue(wqr);
     }
 

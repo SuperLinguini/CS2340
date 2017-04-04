@@ -51,16 +51,16 @@ public class EditSourceReportActivity extends AppCompatActivity {
         WaterSourceReport wrs = (WaterSourceReport) i.getParcelableExtra("report_object");
         position = i.getIntExtra("position", position);
 
-        reportName = (EditText) findViewById(R.id.nameReportEditText);
+        reportName = (EditText) findViewById(R.id.nameReportEditTextEdit);
         reportName.setText(wrs.getReportName());
 
-        EditText mEdit = (EditText) findViewById(R.id.locationReportEditText);
+        EditText mEdit = (EditText) findViewById(R.id.locationReportEditTextEdit);
         mEdit.setText(wrs.getLocation().toString());
         latLng = wrs.getLocation();
         mEdit.setEnabled(false);
 
-        typeSpinner = (Spinner) findViewById(R.id.spinnerType);
-        conditionSpinner = (Spinner) findViewById(R.id.spinnerCondition);
+        typeSpinner = (Spinner) findViewById(R.id.spinnerTypeEdit);
+        conditionSpinner = (Spinner) findViewById(R.id.spinnerConditionEdit);
 
         List<WaterSourceReport.typeOfWater> types =
                 Arrays.asList(WaterSourceReport.typeOfWater.values());
@@ -81,7 +81,7 @@ public class EditSourceReportActivity extends AppCompatActivity {
         conditionSpinner.setAdapter(conditionOfWaterArrayAdapter);
         conditionSpinner.setSelection(conditions.indexOf(wrs.getCondition()));
 
-        Button submitButton = (Button) findViewById(R.id.submitReport);
+        Button submitButton = (Button) findViewById(R.id.submitReportEdit);
         submitButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -105,7 +105,7 @@ public class EditSourceReportActivity extends AppCompatActivity {
                     setResult(RESULT_CHANGED, output);
                     finish();
                 } else {
-                    Snackbar snackbar = Snackbar.make(findViewById(R.id.activity_submit_source_report),
+                    Snackbar snackbar = Snackbar.make(findViewById(R.id.activity_edit_source_report),
                             R.string.sourceReportSubmitError, Snackbar.LENGTH_LONG);
                     View sbview = snackbar.getView();
                     sbview.setBackgroundColor(Color.RED);
@@ -114,7 +114,7 @@ public class EditSourceReportActivity extends AppCompatActivity {
             }
         });
 
-        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.addLocation);
+        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.addLocationEdit);
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -149,7 +149,7 @@ public class EditSourceReportActivity extends AppCompatActivity {
         if (requestCode == PLACE_PICKER_REQUEST) {
             if (resultCode == RESULT_OK) {
                 Place place = PlacePicker.getPlace(data, this);
-                EditText editText = (EditText) findViewById(R.id.locationReportEditText);
+                EditText editText = (EditText) findViewById(R.id.locationReportEditTextEdit);
                 editText.setText("" + place.getLatLng());
                 latLng = new LatLng(place.getLatLng().latitude, place.getLatLng().longitude);
             }

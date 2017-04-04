@@ -47,6 +47,8 @@ public class ListSourceFragment extends Fragment {
         if (requestCode == REQUEST) {
             if (resultCode == Activity.RESULT_OK) {
                 mAdapter.notifyItemInserted(mAdapter.reports.size() - 1);
+            } else if (resultCode == EditSourceReportActivity.RESULT_CHANGED) {
+                mAdapter.notifyItemChanged(data.getIntExtra("position", 0));
             }
         }
     }

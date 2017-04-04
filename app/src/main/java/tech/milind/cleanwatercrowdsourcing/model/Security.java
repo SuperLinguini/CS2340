@@ -16,7 +16,7 @@ public class Security {
         userList.put("user", new User("user", "pass"));
         User manager = new User("a", "a");
         manager.setName("Milind");
-        manager.setUserType(UserType.MANAGER);
+        manager.setUserType(UserType.ADMIN);
         userList.put("a", manager);
     }
 
