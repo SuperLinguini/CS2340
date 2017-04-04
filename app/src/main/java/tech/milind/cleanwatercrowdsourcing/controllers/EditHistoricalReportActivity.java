@@ -1,7 +1,6 @@
 package tech.milind.cleanwatercrowdsourcing.controllers;
 
 import android.app.Activity;
-import android.support.v4.app.Fragment;
 
 import android.content.Intent;
 import android.graphics.Color;
@@ -10,25 +9,24 @@ import android.os.Bundle;
 import android.support.annotation.IdRes;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
-import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.RadioGroup;
-import android.widget.Toast;
 
 import com.google.android.gms.common.GooglePlayServicesNotAvailableException;
 import com.google.android.gms.common.GooglePlayServicesRepairableException;
 import com.google.android.gms.location.places.Place;
 import com.google.android.gms.location.places.ui.PlacePicker;
-import com.google.android.gms.maps.model.LatLng;
 
 import java.util.ArrayList;
 import java.util.List;
 
 import tech.milind.cleanwatercrowdsourcing.R;
+import tech.milind.cleanwatercrowdsourcing.model.HistoricalReport;
+import tech.milind.cleanwatercrowdsourcing.model.LatLng;
 import tech.milind.cleanwatercrowdsourcing.model.Model;
 import tech.milind.cleanwatercrowdsourcing.model.WaterQualityReport;
 
@@ -40,7 +38,7 @@ public class EditHistoricalReportActivity extends AppCompatActivity {
     private EditText radius;
     private EditText location;
     private RadioGroup qualityType;
-    private String type;
+    private HistoricalReport.purityType type;
     private LatLng latLng;
     private Button button;
     @Override
@@ -48,23 +46,37 @@ public class EditHistoricalReportActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_edit_historical_report);
         //getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        Model model = Model.getInstance();
+        HistoricalReport existingHr = model.getHistoricalReport();
         year = (EditText) findViewById(R.id.yearHistEditText);
         radius = (EditText) findViewById(R.id.radiusHistEditText);
         qualityType = (RadioGroup) findViewById(R.id.HistradioGroup);
         button = (Button) findViewById(R.id.HistButton);
         location = (EditText) findViewById(R.id.locationHistReportEditText);
         location.setEnabled(false);
-        qualityType = (RadioGroup) findViewById(R.id.HistradioGroup);
+
+        if(existingHr != null) {
+            year.setText("" + existingHr.getYear());
+            radius.setText("" + (int) existingHr.getRadius());
+            latLng = existingHr.getLocation();
+            location.setText("" + latLng);
+            type = existingHr.getType();
+            if(type == HistoricalReport.purityType.Contaminant) {
+                qualityType.check(R.id.rbContaminant);
+            } else {
+                qualityType.check(R.id.rbVirus);
+            }
+        }
         qualityType.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(RadioGroup radioGroup, @IdRes int i) {
                 switch (i) {
                     case R.id.rbVirus: {
-                        type = "virus";
+                        type = HistoricalReport.purityType.Virus;
                         break;
                     }
                     case R.id.rbContaminant: {
-                        type = "contaminant";
+                        type = HistoricalReport.purityType.Contaminant;
                         break;
                     }
                 }
@@ -76,22 +88,13 @@ public class EditHistoricalReportActivity extends AppCompatActivity {
 
                 if(!(isEmpty(year.getText().toString())|| isEmpty(radius.getText().toString()) ||
                         type == null || latLng == null)) {
-                    List<WaterQualityReport> reports = getPurityReportsInRadius();
-                    Bundle bundle = new Bundle();
-                    bundle.putDoubleArray("quality averages", getQualityAverages(reports));
-                    bundle.putString("quality type", type);
-                    Log.d("added Bundle", "bundle");
-//                    FragmentManager fm = new FragmentManager();
-//                    fm.setArguments(bundle);
-//                    FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
-//                    transaction.replace(R.id.fragmentContainer, fm);
-//                    transaction.addToBackStack(null);
-//
-//                    transaction.commit();
-                    //finish();
-                    //bundle.put
+
+                    Model model = Model.getInstance();
+                    int yr = Integer.parseInt(year.getText().toString());
+                    double rad = Double.parseDouble(radius.getText().toString());
+                    HistoricalReport hr = new HistoricalReport(latLng, yr, rad,type);
+                    model.setHistoricalReport(hr);
                     Intent output = new Intent();
-                    output.putExtras(bundle);
                     setResult(Activity.RESULT_OK, output);
                     finish();
                 } else {
@@ -141,48 +144,9 @@ public class EditHistoricalReportActivity extends AppCompatActivity {
             if (resultCode == RESULT_OK) {
                 Place place = PlacePicker.getPlace(data, this);
                 location.setText("" + place.getLatLng());
-                latLng = place.getLatLng();
+                latLng = new LatLng(place.getLatLng().latitude, place.getLatLng().longitude);
             }
         }
-    }
-
-    private List<WaterQualityReport> getPurityReportsInRadius() {
-        Model model = Model.getInstance();
-        List<WaterQualityReport> reports = model.getQualityReports();
-        List<WaterQualityReport> reportsInRadius = new ArrayList<WaterQualityReport>();
-        Location center = new Location("center");
-        center.setLatitude(latLng.latitude);
-        center.setLongitude(latLng.longitude);
-        for(WaterQualityReport report: reports) {
-            Location loc = new Location("Report Location");
-            loc.setLatitude(report.getLocation().getLatitude());
-            loc.setLongitude(report.getLocation().getLongitude());
-            double rad = Double.parseDouble(radius.getText().toString());
-            double distanceInMiles = center.distanceTo(loc) / 1609.34;
-            int yr = Integer.parseInt(year.getText().toString());
-            int reportYear = report.getDate().getYear() + 1900;
-            if (distanceInMiles <= rad && reportYear == yr) {
-                reportsInRadius.add(report);
-
-            }
-        }
-        return reportsInRadius;
-    }
-
-    private double[] getQualityAverages(List<WaterQualityReport> reports) {
-        int[] numPerMonth = new int[12];
-        int[] qualitySum = new int[12];
-        double[] qualityAverages = new double[12];
-        for(WaterQualityReport report: reports) {
-            int month = report.getDate().getMonth();
-            int ppm = (type.equals("virus"))? report.getVirusPPM() : report.getContaminantPPM();
-            numPerMonth[month]++;
-            qualitySum[month] += ppm;
-        }
-        for(int i = 0; i < qualityAverages.length; i++) {
-            qualityAverages[i] = qualitySum[i] /((double) numPerMonth[i]);
-        }
-        return qualityAverages;
     }
 
     @Override

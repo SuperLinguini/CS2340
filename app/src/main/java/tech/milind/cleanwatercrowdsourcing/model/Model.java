@@ -22,6 +22,7 @@ public class Model {
 
     private List<WaterSourceReport> reports;
     private List<WaterQualityReport> qualityReports;
+    private HistoricalReport historicalReport;
     private Security security;
     private User currentUser;
     private DatabaseReference mDatabase;
@@ -185,6 +186,21 @@ public class Model {
      */
     public List<WaterQualityReport> getQualityReports() { return qualityReports; }
 
+    /** gets the HistoricalReport used in this application
+     * @return the Historical Report
+     */
+    public HistoricalReport getHistoricalReport() {
+        return historicalReport;
+    }
+
+    /**
+     * Sets the historicalReport to the report passed in
+     * @param historicalReport
+     */
+    public void setHistoricalReport(HistoricalReport historicalReport) {
+        this.historicalReport = historicalReport;
+    }
+
     /**
      * Checks if the username and password entered is a valid user
      * @param username username entered by the user to login
@@ -231,4 +247,5 @@ public class Model {
      */
     public void addPurityReport(WaterQualityReport report) {
         qualityReports.add(report);}
+
 }
