@@ -1,29 +1,17 @@
 package tech.milind.cleanwatercrowdsourcing.model;
 
-import android.support.annotation.NonNull;
-
-import com.google.android.gms.tasks.OnCompleteListener;
-import com.google.android.gms.tasks.Task;
-import com.google.android.gms.tasks.Tasks;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.GenericTypeIndicator;
-import com.google.firebase.database.Query;
 import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
-import java.util.Collections;
-import java.util.HashMap;
 import java.util.HashSet;
 import java.util.LinkedList;
 import java.util.List;
-import java.util.Map;
 import java.util.NoSuchElementException;
-import java.util.TreeSet;
-
-import tech.milind.cleanwatercrowdsourcing.controllers.ListSourceFragment;
 
 public class Model {
 
@@ -33,13 +21,13 @@ public class Model {
     }
 
     private List<WaterSourceReport> reports;
-    private List<WaterQualityReport> purityReports;
+    private List<WaterQualityReport> qualityReports;
     private Security security;
     private User currentUser;
     private DatabaseReference mDatabase;
 
     private Model() {
-        purityReports = new ArrayList<>();
+        qualityReports = new ArrayList<>();
         security = new Security();
         FirebaseDatabase.getInstance().setPersistenceEnabled(true);
         mDatabase = FirebaseDatabase.getInstance().getReference();
@@ -49,25 +37,18 @@ public class Model {
      * Adds filler test data until we implement persistence
      */
     public void addTestData() {
-//        reports.add(new WaterSourceReport("Test Report", currentUser.getUsername(), new LatLng(33.77,-84.39),
-//                WaterSourceReport.typeOfWater.Bottled, WaterSourceReport.conditionOfWater.Potable));
-//        reports.add(new WaterSourceReport("A Report", currentUser.getUsername(), new LatLng(33.77248,-84.393003),
-//                WaterSourceReport.typeOfWater.Spring, WaterSourceReport.conditionOfWater.Treatable_Clear));
-//        reports.add(new WaterSourceReport("My Report", currentUser.getUsername(), new LatLng(33.76873,-84.37565),
-//                WaterSourceReport.typeOfWater.Stream, WaterSourceReport.conditionOfWater.Treatable_Muddy));
-//        purityReports.add(new WaterQualityReport("Panda Express", new com.google.android.gms.maps.model.LatLng(43.22, -72.21),
-//                WaterQualityReport.conditionOfWater.Safe, 40, 50));
-//        purityReports.add(new WaterQualityReport("Chick-fil-A", new com.google.android.gms.maps.model.LatLng(50.23, -68.53),
-//                WaterQualityReport.conditionOfWater.Treatable, 120, 90));
-//        purityReports.add(new WaterQualityReport("Taco Bell", new com.google.android.gms.maps.model.LatLng(38.7532, -79.293),
-//                WaterQualityReport.conditionOfWater.Unsafe, 340, 380));
-//        mDatabase.child("waterSourceReportLinked").setValue(reports);
-        addWaterSourceReport(new WaterSourceReport("Test Report", currentUser.getUsername(), new LatLng(33.77,-84.39),
+        addWaterSourceReport(new WaterSourceReport("Test Report", currentUser.getName(), new LatLng(33.77,-84.39),
                 WaterSourceReport.typeOfWater.Bottled, WaterSourceReport.conditionOfWater.Potable));
-        addWaterSourceReport(new WaterSourceReport("A Report", currentUser.getUsername(), new LatLng(33.77248,-84.393003),
+        addWaterSourceReport(new WaterSourceReport("A Report", currentUser.getName(), new LatLng(33.77248,-84.393003),
                 WaterSourceReport.typeOfWater.Spring, WaterSourceReport.conditionOfWater.Treatable_Clear));
-        addWaterSourceReport(new WaterSourceReport("My Report", currentUser.getUsername(), new LatLng(33.76873,-84.37565),
+        addWaterSourceReport(new WaterSourceReport("My Report", currentUser.getName(), new LatLng(33.76873,-84.37565),
                 WaterSourceReport.typeOfWater.Stream, WaterSourceReport.conditionOfWater.Treatable_Muddy));
+        addWaterQualityReport(new WaterQualityReport("Panda Express", new LatLng(43.22, -72.21),
+                WaterQualityReport.conditionOfWater.Safe, 40, 50));
+        addWaterQualityReport(new WaterQualityReport("Chick-fil-A", new LatLng(50.23, -68.53),
+                WaterQualityReport.conditionOfWater.Treatable, 120, 90));
+        addWaterQualityReport(new WaterQualityReport("Taco Bell", new LatLng(38.7532, -79.293),
+                WaterQualityReport.conditionOfWater.Unsafe, 340, 380));
     }
 
     public void addWaterSourceReport(WaterSourceReport wsr) {
@@ -82,14 +63,19 @@ public class Model {
         mDatabase.child("waterSourceReports").child(""+wsr.getReportNumber()).setValue(wsr);
     }
 
+    public void addWaterQualityReport(WaterQualityReport wqr) {
+        if (qualityReports == null) {
+            qualityReports = new LinkedList<>();
+        }
+        wqr.setReportNumber(qualityReports.size());
+        mDatabase.child("waterQualityReports").child(""+wqr.getReportNumber()).setValue(wqr);
+    }
+
+    public void editWaterQualityReport(WaterQualityReport wqr) {
+        mDatabase.child("waterQualityReports").child(""+wqr.getReportNumber()).setValue(wqr);
+    }
 
     public void loadWaterSourceReports() {
-        purityReports.add(new WaterQualityReport("Panda Express", new com.google.android.gms.maps.model.LatLng(43.22, -72.21),
-                WaterQualityReport.conditionOfWater.Safe, 40, 50));
-        purityReports.add(new WaterQualityReport("Chick-fil-A", new com.google.android.gms.maps.model.LatLng(50.23, -68.53),
-                WaterQualityReport.conditionOfWater.Treatable, 120, 90));
-        purityReports.add(new WaterQualityReport("Taco Bell", new com.google.android.gms.maps.model.LatLng(38.7532, -79.293),
-                WaterQualityReport.conditionOfWater.Unsafe, 340, 380));
         //.child("date").child("time").orderByValue().limitToLast(100)
 
         mDatabase.child("waterSourceReports").limitToLast(100).orderByChild("date").addValueEventListener(new ValueEventListener() {
@@ -128,58 +114,35 @@ public class Model {
 
             }
         });
-//        mDatabase.child("waterSourceReport").limitToLast(100).orderByChild("date").addValueEventListener(new ValueEventListener() {
-//            @Override
-//            public void onDataChange(DataSnapshot dataSnapshot) {
-//                GenericTypeIndicator<Map<String, WaterSourceReport>> t =
-//                        new GenericTypeIndicator<Map<String, WaterSourceReport>>() {};
-//                reportMap = dataSnapshot.getValue(t);
-//                if (reports != null) {
-//                    reports.clear();
-//                } else {
-//                    reports = new LinkedList<WaterSourceReport>();
-//                }
-//                for (WaterSourceReport wsr: new LinkedList<WaterSourceReport>(reportMap.values())) {
-//                    reports.add(wsr);
-//                }
-//                Collections.sort(reports);
-////                reports.clear();
-////                for (DataSnapshot wsr: dataSnapshot.getChildren()) {
-////                    reports.add(wsr.getValue(WaterSourceReport.class));
-////                }
-////                GenericTypeIndicator<List<WaterSourceReport>> t =
-////                        new GenericTypeIndicator<List<WaterSourceReport>>() {};
-////                reports = dataSnapshot.getValue(t);
-////                reports.removeAll(Collections.singleton(null));
-//            }
-//
-//            @Override
-//            public void onCancelled(DatabaseError databaseError) {
-//
-//            }
-//        });
-    }
+        mDatabase.child("waterQualityReports").limitToLast(100).orderByChild("date").addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+                if (qualityReports == null) {
+                    qualityReports = new LinkedList<>();
+                }
+                GenericTypeIndicator<List<WaterQualityReport>> t =
+                        new GenericTypeIndicator<List<WaterQualityReport>>() {};
+                if (qualityReports.size() == 0) {
+                    qualityReports = dataSnapshot.getValue(t);
+                } else {
+                    List<WaterQualityReport> list = dataSnapshot.getValue(t);
+                    HashSet<Integer> set = new HashSet<Integer>();
+                    for (WaterQualityReport wqr: qualityReports) {
+                        set.add(wqr.getReportNumber());
+                    }
+                    for (WaterQualityReport wqr: list) {
+                        if (!set.contains(wqr.getReportNumber())) {
+                            qualityReports.add(wqr);
+                        }
+                    }
+                }
+            }
 
-    public void getDataBlocking() {
-//        Query query = mDatabase.child("waterSourceReport").limitToLast(100).orderByChild("date");
-//        Tasks.await(query.start)
-//        mDatabase.child("waterSourceReport").limitToLast(100).orderByChild("date")
-//                .addListenerForSingleValueEvent(new ValueEventListener() {
-//            @Override
-//            public void onDataChange(DataSnapshot dataSnapshot) {
-//                GenericTypeIndicator<Map<String, WaterSourceReport>> t =
-//                        new GenericTypeIndicator<Map<String, WaterSourceReport>>() {
-//                        };
-//                reportMap = dataSnapshot.getValue(t);
-//                reports = new LinkedList<WaterSourceReport>(reportMap.values());
-//                Collections.sort(reports);
-//            }
-//
-//            @Override
-//            public void onCancelled(DatabaseError databaseError) {
-//
-//            }
-//        });
+            @Override
+            public void onCancelled(DatabaseError databaseError) {
+
+            }
+        });
     }
 
     /**
@@ -218,7 +181,7 @@ public class Model {
      * Gets the WaterQualityReport list used in the application
      * @return the WaterQualityReport list
      */
-    public List<WaterQualityReport> getPurityReports() { return purityReports; }
+    public List<WaterQualityReport> getQualityReports() { return qualityReports; }
 
     /**
      * Checks if the username and password entered is a valid user
@@ -264,5 +227,6 @@ public class Model {
      * Add a report to the WaterQualityReport list
      * @param report WaterQualityReport to add
      */
-    public void addPurityReport(WaterQualityReport report) {purityReports.add(report);}
+    public void addPurityReport(WaterQualityReport report) {
+        qualityReports.add(report);}
 }

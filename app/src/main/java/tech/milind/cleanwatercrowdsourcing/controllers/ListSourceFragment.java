@@ -45,9 +45,6 @@ public class ListSourceFragment extends Fragment {
     @Override
     public void onActivityResult(int requestCode, int resultCode, Intent data) {
         if (requestCode == REQUEST) {
-            if(resultCode == EditSourceReportActivity.RESULT_CHANGED) {
-                mAdapter.notifyItemChanged(data.getIntExtra("position", 0));
-            }
             if (resultCode == Activity.RESULT_OK) {
                 mAdapter.notifyItemInserted(mAdapter.reports.size() - 1);
             }

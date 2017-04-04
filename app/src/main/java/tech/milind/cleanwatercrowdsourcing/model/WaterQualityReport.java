@@ -2,8 +2,6 @@ package tech.milind.cleanwatercrowdsourcing.model;
 
 import android.support.annotation.NonNull;
 
-import com.google.android.gms.maps.model.LatLng;
-
 import java.util.Date;
 
 
@@ -12,7 +10,6 @@ import java.util.Date;
  */
 
 public class WaterQualityReport implements Comparable<WaterQualityReport> {
-    private static int currentID = 1;
     public enum conditionOfWater {
         Safe, Treatable, Unsafe;
     }
@@ -30,7 +27,6 @@ public class WaterQualityReport implements Comparable<WaterQualityReport> {
      */
     public WaterQualityReport() {
         date = new Date();
-        reportNumber = currentID++;
     }
 
     /**
@@ -42,7 +38,6 @@ public class WaterQualityReport implements Comparable<WaterQualityReport> {
     public WaterQualityReport(String name, LatLng location,
                               conditionOfWater condition, int virus, int contam) {
         date = new Date();
-        reportNumber = currentID++;
         this.name = name;
         this.location = location;
         this.condition = condition;
@@ -144,6 +139,14 @@ public class WaterQualityReport implements Comparable<WaterQualityReport> {
      */
     public void setContaminantPPM(int contaminantPPM) {
         this.contaminantPPM = contaminantPPM;
+    }
+
+    /**
+     * Sets the report number of the WaterSourceReport
+     * @param reportNumber the new report number to be set to the WaterSourceReport
+     */
+    public void setReportNumber(int reportNumber) {
+        this.reportNumber = reportNumber;
     }
 
     @Override

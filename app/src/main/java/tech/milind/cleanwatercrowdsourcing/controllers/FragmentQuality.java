@@ -64,7 +64,7 @@ public class FragmentQuality extends Fragment {
         mLayoutManager.setStackFromEnd(true);
         recyclerView.setLayoutManager(mLayoutManager);
         Model model = Model.getInstance();
-        List<WaterQualityReport> reports = model.getPurityReports();
+        List<WaterQualityReport> reports = model.getQualityReports();
         mAdapter = new SimplePurityAdapter(reports);
         recyclerView.setAdapter(mAdapter);
     }

@@ -48,11 +48,11 @@ public class AvailabilityFragment extends Fragment implements OnMapReadyCallback
                         .setTag(cur);
             }
         }
-        List<WaterQualityReport> qualityReports = model.getPurityReports();
+        List<WaterQualityReport> qualityReports = model.getQualityReports();
         WaterQualityReport purity;
         for(int i = 0; i < qualityReports.size(); i++) {
             purity = qualityReports.get(i);
-            googleMap.addMarker(new MarkerOptions().position(purity.getLocation())
+            googleMap.addMarker(new MarkerOptions().position(purity.getLocation().getMapsLatLng())
                     .title(purity.getName())
                     .snippet(purity.getSnippet())
                     .icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_CYAN)))
