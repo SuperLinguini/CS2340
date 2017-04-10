@@ -33,12 +33,12 @@ import tech.milind.cleanwatercrowdsourcing.model.WaterQualityReport;
  */
 
 public class FragmentManager extends Fragment {
-    final int REQUEST = 1;
-    final String[] xAxisLabels= {"Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"};
+    final private int REQUEST = 1;
+    final private String[] xAxisLabels= {"Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"};
     private LineChart chart;
     private HistoricalReport hr;
     private List<WaterQualityReport> qualityReports;
-    Model model = Model.getInstance();
+    final private Model model = Model.getInstance();
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_manager,container, false);

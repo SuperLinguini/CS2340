@@ -26,7 +26,7 @@ import tech.milind.cleanwatercrowdsourcing.model.LatLng;
 
 public class SubmitSourceReportActivity extends AppCompatActivity {
     private static final String TAG = "AddResourceReport";
-    final int PLACE_PICKER_REQUEST = 1;
+    final private int PLACE_PICKER_REQUEST = 1;
 
     private Spinner typeSpinner;
     private Spinner conditionSpinner;
@@ -39,10 +39,7 @@ public class SubmitSourceReportActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_submit_source_report);
-
-        if (getSupportActionBar() != null) {
-            getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-        }
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         name = (EditText) findViewById(R.id.nameReportEditText);
 
@@ -117,8 +114,9 @@ public class SubmitSourceReportActivity extends AppCompatActivity {
      * @param input String from TextView
      * @return whether the String is empty
      */
-    public boolean isEmpty(String input) {
-        return input == null || input.isEmpty() || input.length() == 0 || input.equals("");
+    private boolean isEmpty(String input) {
+        return input.isEmpty() || input.length() == 0 || input.equals("") ||
+                input == null;
     }
 
     /**

@@ -22,6 +22,7 @@ public class LatLng implements Parcelable {
         return latitude;
     }
 
+    @SuppressWarnings("unused")
     public void setLatitude(Double latitude) {
         this.latitude = latitude;
     }
@@ -30,6 +31,7 @@ public class LatLng implements Parcelable {
         return longitude;
     }
 
+    @SuppressWarnings("unused")
     public void setLongitude(Double longitude) {
         this.longitude = longitude;
     }
@@ -39,7 +41,7 @@ public class LatLng implements Parcelable {
         return String.format("Lat/Lng: (%.3f, %.3f)", latitude, longitude);
     }
 
-    protected LatLng(Parcel in) {
+    LatLng(Parcel in) {
         latitude = in.readByte() == 0x00 ? null : in.readDouble();
         longitude = in.readByte() == 0x00 ? null : in.readDouble();
     }

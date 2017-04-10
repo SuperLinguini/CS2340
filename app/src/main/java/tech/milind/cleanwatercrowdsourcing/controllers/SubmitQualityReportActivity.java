@@ -30,7 +30,7 @@ import tech.milind.cleanwatercrowdsourcing.model.LatLng;
 
 public class SubmitQualityReportActivity extends AppCompatActivity {
     private static final String TAG = "AddPurityReport";
-    final int PLACE_PICKER_REQUEST = 1;
+    final private int PLACE_PICKER_REQUEST = 1;
 
     private Spinner conditionSpinner;
     private EditText name;
@@ -44,10 +44,7 @@ public class SubmitQualityReportActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_submit_purity_report);
-
-        if (getSupportActionBar() != null) {
-            getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-        }
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         name = (EditText) findViewById(R.id.namePurityReportEditText);
 
@@ -118,8 +115,9 @@ public class SubmitQualityReportActivity extends AppCompatActivity {
      * @param input String from TextView
      * @return whether the String is empty
      */
-    public boolean isEmpty(String input) {
-        return input == null || input.isEmpty() || input.length() == 0 || input.equals("");
+    private boolean isEmpty(String input) {
+        return input.isEmpty() || input.length() == 0 || input.equals("") ||
+                input == null;
     }
 
     /**

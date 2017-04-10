@@ -29,7 +29,7 @@ import tech.milind.cleanwatercrowdsourcing.model.WaterSourceReport;
 
 public class EditSourceReportActivity extends AppCompatActivity {
     private static final String TAG = "AddResourceReport";
-    final int PLACE_PICKER_REQUEST = 1;
+    final private int PLACE_PICKER_REQUEST = 1;
     final static int RESULT_CHANGED = 24;
 
     private Spinner typeSpinner;
@@ -45,12 +45,10 @@ public class EditSourceReportActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_edit_source_report);
 
-        if (getSupportActionBar() != null) {
-            getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-        }
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         Intent i = getIntent();
-        WaterSourceReport wrs = i.getParcelableExtra("report_object");
+        WaterSourceReport wrs = (WaterSourceReport) i.getParcelableExtra("report_object");
         position = i.getIntExtra("position", position);
 
         reportName = (EditText) findViewById(R.id.nameReportEditTextEdit);
@@ -134,8 +132,9 @@ public class EditSourceReportActivity extends AppCompatActivity {
      * @param input String from TextView
      * @return whether the String is empty
      */
-    public boolean isEmpty(String input) {
-        return input == null || input.isEmpty() || input.length() == 0 || input.equals("");
+    private boolean isEmpty(String input) {
+        return input.isEmpty() || input.length() == 0 || input.equals("") ||
+                input == null;
     }
 
     /**

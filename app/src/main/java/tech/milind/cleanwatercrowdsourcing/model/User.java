@@ -2,8 +2,8 @@ package tech.milind.cleanwatercrowdsourcing.model;
 
 public class User {
 
-    private String username;
-    private String password;
+    final private String username;
+    final private String password;
     private String name;
     private String homeAddress;
     private String emailAddress;

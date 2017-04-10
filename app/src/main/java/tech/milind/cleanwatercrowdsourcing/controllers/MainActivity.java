@@ -117,7 +117,7 @@ public class MainActivity extends AppCompatActivity {
      * Disables shifting for BottomNavigationView nav bar
      * @param view the BottomNavigationView for the app
      */
-    public static void disableShiftMode(BottomNavigationView view) {
+    private static void disableShiftMode(BottomNavigationView view) {
         BottomNavigationMenuView menuView = (BottomNavigationMenuView) view.getChildAt(0);
         try {
             Field shiftingMode = menuView.getClass().getDeclaredField("mShiftingMode");

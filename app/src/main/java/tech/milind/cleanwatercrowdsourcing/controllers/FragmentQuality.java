@@ -25,7 +25,7 @@ import tech.milind.cleanwatercrowdsourcing.model.WaterQualityReport;
 
 public class FragmentQuality extends Fragment {
     private SimplePurityAdapter mAdapter;
-    final int REQUEST = 1;
+    final private int REQUEST = 1;
 
     @Override
     public View onCreateView(LayoutInflater inflater,
@@ -73,15 +73,15 @@ public class FragmentQuality extends Fragment {
 
     public class SimplePurityAdapter extends RecyclerView
             .Adapter<FragmentQuality.SimplePurityAdapter.ViewHolder> {
-        private List<WaterQualityReport> reports;
+        final private List<WaterQualityReport> reports;
 
 
         public class ViewHolder extends RecyclerView.ViewHolder {
-            public View mView;
-            public TextView reportNumAndName;
-            public TextView reportDate;
-            public TextView reportLocation;
-            public TextView reportConditionPPM;
+            final public View mView;
+            final public TextView reportNumAndName;
+            final public TextView reportDate;
+            final public TextView reportLocation;
+            final public TextView reportConditionPPM;
 
             /**
              * Constructor for ViewHolder that links the Views

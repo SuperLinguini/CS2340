@@ -13,9 +13,9 @@ import tech.milind.cleanwatercrowdsourcing.model.User;
  * Created by gunoupark on 03/04/2017.
  */
 public class SecurityTest {
-    Security security;
-    String username;
-    String password;
+    private Security security;
+    private String username;
+    private String password;
 
     @Before
     public void setUp() throws Exception {
