@@ -30,8 +30,6 @@ public class Model {
     private Model() {
         qualityReports = new ArrayList<>();
         security = new Security();
-        FirebaseDatabase.getInstance().setPersistenceEnabled(true);
-        mDatabase = FirebaseDatabase.getInstance().getReference();
     }
 
     /**
@@ -80,7 +78,8 @@ public class Model {
 
     public void loadWaterSourceReports() {
         //.child("date").child("time").orderByValue().limitToLast(100)
-
+        FirebaseDatabase.getInstance().setPersistenceEnabled(true);
+        mDatabase = FirebaseDatabase.getInstance().getReference();
         mDatabase.child("waterSourceReports").limitToLast(100).orderByChild("date").addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
@@ -234,6 +233,14 @@ public class Model {
     }
 
     /**
+     * Gets the Security object used in the application
+     * @return the Security object
+     */
+    public Security getSecurity() {
+        return security;
+    }
+
+    /**
      * Add a report to the WaterSourceReport list
      * @param report WaterSourceReport to add
      */
@@ -247,5 +254,4 @@ public class Model {
      */
     public void addPurityReport(WaterQualityReport report) {
         qualityReports.add(report);}
-
 }
