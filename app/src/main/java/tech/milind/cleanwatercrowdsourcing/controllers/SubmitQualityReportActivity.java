@@ -18,11 +18,11 @@ import com.google.android.gms.common.GooglePlayServicesNotAvailableException;
 import com.google.android.gms.common.GooglePlayServicesRepairableException;
 import com.google.android.gms.location.places.Place;
 import com.google.android.gms.location.places.ui.PlacePicker;
-import com.google.android.gms.maps.model.LatLng;
 
 import tech.milind.cleanwatercrowdsourcing.R;
 import tech.milind.cleanwatercrowdsourcing.model.Model;
 import tech.milind.cleanwatercrowdsourcing.model.WaterQualityReport;
+import tech.milind.cleanwatercrowdsourcing.model.LatLng;
 
 /**
  * Created by gunoupark on 12/03/2017.
@@ -30,7 +30,7 @@ import tech.milind.cleanwatercrowdsourcing.model.WaterQualityReport;
 
 public class SubmitQualityReportActivity extends AppCompatActivity {
     private static final String TAG = "AddPurityReport";
-    final int PLACE_PICKER_REQUEST = 1;
+    final private int PLACE_PICKER_REQUEST = 1;
 
     private Spinner conditionSpinner;
     private EditText name;
@@ -38,7 +38,7 @@ public class SubmitQualityReportActivity extends AppCompatActivity {
     private EditText virusPPM;
     private EditText contaminationPPM;
 
-    private WaterQualityReport _waterPurityReport;
+    private WaterQualityReport _waterQualityReport;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -72,23 +72,23 @@ public class SubmitQualityReportActivity extends AppCompatActivity {
                 int virus = Integer.parseInt(virusPPM.getText().toString());
                 int contamination = Integer.parseInt(contaminationPPM.getText().toString());
                 if(!(isEmpty(nameText) || latLng == null)) {
-                        _waterPurityReport = new WaterQualityReport();
-                    _waterPurityReport.setName(name.getText().toString());
-                    _waterPurityReport.setLocation(latLng);
-                    _waterPurityReport.setCondition((WaterQualityReport.conditionOfWater)
+                        _waterQualityReport = new WaterQualityReport();
+                    _waterQualityReport.setReportName(name.getText().toString());
+                    _waterQualityReport.setLocation(latLng);
+                    _waterQualityReport.setCondition((WaterQualityReport.conditionOfWater)
                             conditionSpinner.getSelectedItem());
-                    _waterPurityReport.setVirusPPM(virus);
-                    _waterPurityReport.setContaminantPPM(contamination);
+                    _waterQualityReport.setVirusPPM(virus);
+                    _waterQualityReport.setContaminantPPM(contamination);
                     Model model = Model.getInstance();
-                    model.addPurityReport(_waterPurityReport);
+                    model.addWaterQualityReport(_waterQualityReport);
                     Intent output = new Intent();
                     setResult(Activity.RESULT_OK, output);
                     finish();
                 } else {
                     Snackbar snackbar = Snackbar.make(findViewById(R.id.activity_submit_purity_report),
                             R.string.purityReportSubmitError, Snackbar.LENGTH_LONG);
-                    View sbview = snackbar.getView();
-                    sbview.setBackgroundColor(Color.RED);
+                    View sbView = snackbar.getView();
+                    sbView.setBackgroundColor(Color.RED);
                     snackbar.show();
                 }
             }
@@ -103,9 +103,7 @@ public class SubmitQualityReportActivity extends AppCompatActivity {
                 try {
                     startActivityForResult(builder.build(SubmitQualityReportActivity.this),
                             PLACE_PICKER_REQUEST);
-                } catch (GooglePlayServicesRepairableException e) {
-                    Log.e(TAG, "Failed", e);
-                } catch (GooglePlayServicesNotAvailableException e) {
+                } catch (GooglePlayServicesRepairableException | GooglePlayServicesNotAvailableException e) {
                     Log.e(TAG, "Failed", e);
                 }
             }
@@ -117,7 +115,7 @@ public class SubmitQualityReportActivity extends AppCompatActivity {
      * @param input String from TextView
      * @return whether the String is empty
      */
-    public boolean isEmpty(String input) {
+    private boolean isEmpty(String input) {
         return input.isEmpty() || input.length() == 0 || input.equals("") ||
                 input == null;
     }
@@ -131,7 +129,7 @@ public class SubmitQualityReportActivity extends AppCompatActivity {
                 Place place = PlacePicker.getPlace(data, this);
                 EditText editText = (EditText) findViewById(R.id.locationPurityReportEditText);
                 editText.setText("" + place.getLatLng());
-                latLng = place.getLatLng();
+                latLng = new LatLng(place.getLatLng().latitude, place.getLatLng().longitude);
             }
         }
     }

@@ -36,7 +36,7 @@ public class EditProfileActivity extends AppCompatActivity {
         saveButton = (Button) findViewById(R.id.save_profile);
         cancelButton = (Button) findViewById(R.id.cancel_profile);
         nameField = (EditText) findViewById(R.id.edit_name);
-        homeAddressField = (EditText) findViewById(R.id.edit_home_adress);
+        homeAddressField = (EditText) findViewById(R.id.edit_home_address);
         emailAddressField = (EditText) findViewById(R.id.edit_email_address);
         userTypeSpinner = (Spinner) findViewById(R.id.spinner_user_type);
 
@@ -45,19 +45,19 @@ public class EditProfileActivity extends AppCompatActivity {
         userTypeAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         userTypeSpinner.setAdapter(userTypeAdapter);
 
-        if (currentUser.getName() == "") {
+        if (currentUser.getName().equals("")) {
             nameField.setHint("Enter text here");
         } else {
             nameField.setText(currentUser.getName());
         }
 
-        if (currentUser.getHomeAddress() == "") {
+        if (currentUser.getHomeAddress().equals("")) {
             homeAddressField.setHint("Enter text here.");
         } else {
             homeAddressField.setText(currentUser.getHomeAddress());
         }
 
-        if (currentUser.getEmailAddress() == "") {
+        if (currentUser.getEmailAddress().equals("")) {
             emailAddressField.setHint("Enter text here.");
         } else {
             emailAddressField.setText(currentUser.getEmailAddress());

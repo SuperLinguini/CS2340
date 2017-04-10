@@ -2,8 +2,8 @@ package tech.milind.cleanwatercrowdsourcing.model;
 
 public class User {
 
-    private String username;
-    private String password;
+    final private String username;
+    final private String password;
     private String name;
     private String homeAddress;
     private String emailAddress;
@@ -51,7 +51,7 @@ public class User {
     }
 
     /**
-     * sets the home address of the user to homeaddress passed in
+     * sets the home address of the user to home address passed in
      * @param address the new address to be set to the user
      */
     public void setHomeAddress(String address) {
@@ -60,14 +60,14 @@ public class User {
 
     /**
      * gets the email address of the user
-     * @return the email adress of the user
+     * @return the email address of the user
      */
     public String getEmailAddress() {
         return emailAddress;
     }
 
     /**
-     * sets the email address of the user to the emailaddress passed in
+     * sets the email address of the user to the email address passed in
      * @param address the new email address to be set to the user
      */
     public void setEmailAddress(String address) {
@@ -83,8 +83,8 @@ public class User {
     }
 
     /**
-     * sets the Usertype of the user to the type passed in
-     * @param type the new Usertype to be set to the user
+     * sets the UserType of the user to the type passed in
+     * @param type the new UserType to be set to the user
      */
     public void setUserType(UserType type) {
         this.userType = type;

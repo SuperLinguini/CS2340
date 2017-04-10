@@ -19,4 +19,10 @@
         android:icon="@mipmap/ic_purity"
         android:title="Purity"
         app:showAsAction="always" />
+    <item
+        android:id="@+id/nav_historical"
+        android:enabled="true"
+        android:icon="@mipmap/ic_timeline_black_24dp"
+        android:title="Trends"
+        app:showAsAction="always" />
 </menu>

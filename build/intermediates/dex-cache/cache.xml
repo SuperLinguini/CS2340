@@ -3,137 +3,606 @@
 
     <item
         is-multidex="true"
-<<<<<<< HEAD
-        jar="C:\Users\Brian Cai\.android\build-cache\5786f26ab6d60780c5b04acd708c9e6ca09931f9\output\jars\classes.jar"
+        jar="/Users/whe1996/.android/build-cache/040f3eb4a57c78e18c53b5f96797fe5c32dfea44/output/jars/classes.jar"
         jumboMode="true"
         optimize="true"
         revision="25.0.2"
-        sha1="a61e7010aa7be5da53cd1bc5279630510c9a4912">
-        <dex dex="C:\Users\Brian Cai\Dropbox\My Documents\College\CS 2340\CS2340\app\build\intermediates\transforms\dex\debug\folders\1000\10\classes_a14b4323b52351b994830590947417c131fd9aba\classes.dex" />
+        sha1="734e80dffea7bd76c18ae256822a124c30d85850">
+        <dex dex="/Users/whe1996/Documents/school/cs-2340/android/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_a4dd3b3a5f25fc8f23cd9f6763e562f8ed220055/classes.dex" />
     </item>
     <item
         is-multidex="true"
-        jar="C:\Users\Brian Cai\AppData\Local\Android\Sdk\extras\android\m2repository\com\android\support\support-annotations\25.1.1\support-annotations-25.1.1.jar"
+        jar="/Users/whe1996/.android/build-cache/2b5a6eb0f5660b8e7dfaabd8b115b2b7ab0f8a85/output/jars/classes.jar"
         jumboMode="true"
         optimize="true"
         revision="25.0.2"
-        sha1="b59b6ee8d6ecc03e672d253800430343493a6ed8">
-        <dex dex="C:\Users\Brian Cai\Dropbox\My Documents\College\CS 2340\CS2340\app\build\intermediates\transforms\dex\debug\folders\1000\10\support-annotations-25.1.1_a24fa789a65f55b457c243e2fbde3b1f97938669\classes.dex" />
+        sha1="b2349ddfe04831042844cbf055e5a072da37ddf8">
+        <dex dex="/Users/whe1996/Documents/school/cs-2340/android/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_eab591b00fe98b38c43dd7ac0fbe1e0a8ac43817/classes.dex" />
     </item>
     <item
         is-multidex="true"
-        jar="C:\Users\Brian Cai\Dropbox\My Documents\College\CS 2340\CS2340\app\build\intermediates\incremental-classes\debug\instant-run-bootstrap.jar"
+        jar="/Users/whe1996/.android/build-cache/c3c1a3a89a37689fb44629de8e2c0d1ba77908b4/output/jars/classes.jar"
         jumboMode="true"
         optimize="true"
         revision="25.0.2"
-        sha1="e5582ee1d52d3f0f00c991c0b7d5c0fa918d2455">
-        <dex dex="C:\Users\Brian Cai\Dropbox\My Documents\College\CS 2340\CS2340\app\build\intermediates\transforms\dex\debug\folders\1000\10000\instant-run-bootstrap_8fd3840f6a6a058c59d25d7108d51dd6f8b47703\classes.dex" />
+        sha1="ec7d3099b4e3cf23230c78acaae438f3371e1c19">
+        <dex dex="/Users/whe1996/Documents/school/cs-2340/android/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_486e8cef7f507d1791c0b93c1ed69b29cbb8dd24/classes.dex" />
     </item>
     <item
         is-multidex="true"
-        jar="C:\Users\Brian Cai\Dropbox\My Documents\College\CS 2340\CS2340\app\build\intermediates\incremental-runtime-classes\debug\instant-run.jar"
-=======
-        jar="/Users/whe1996/Documents/school/cs_2340/android/app/build/intermediates/incremental-classes/debug/instant-run-bootstrap.jar"
+        jar="/Users/whe1996/.android/build-cache/cb7fb23103ca4b7e92d5b4208c51a59df76d564d/output/jars/classes.jar"
         jumboMode="true"
         optimize="true"
         revision="25.0.2"
-        sha1="a83137209101f932ffc589cc9268c027174a52d9">
-        <dex dex="/Users/whe1996/Documents/school/cs_2340/android/app/build/intermediates/transforms/dex/debug/folders/1000/10000/instant-run-bootstrap_0fcd99fabc9d58b0116c5c965db4258b6fa66705/classes.dex" />
+        sha1="4b32372f6821e003ae24cd3389bdd7925247f100">
+        <dex dex="/Users/whe1996/Documents/school/cs-2340/android/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_739c818b73c4148bf44f9e50dcde122be85384de/classes.dex" />
     </item>
     <item
         is-multidex="true"
-        jar="/Users/whe1996/Documents/school/cs_2340/android/app/build/intermediates/incremental-runtime-classes/debug/instant-run.jar"
->>>>>>> 006a579692374c2009da66a656525d7640257b70
+        jar="/Users/whe1996/.android/build-cache/bc627947846e9e807446b81c0508c6076efb4627/output/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="dbae35d7fc3427d30bef0037bdf61ad0d8d984f8">
+        <dex dex="/Users/whe1996/Documents/school/cs-2340/android/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_2ffcdf366097a8ee86647955d2a3be8d6f61d1d8/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/whe1996/.android/build-cache/08b06d1c1b859d627f246a466478d903601b2415/output/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="c3c7f923e1df76640acb3a24823600f034a5d226">
+        <dex dex="/Users/whe1996/Documents/school/cs-2340/android/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_5db7e0455f65ad47e9b19fda9d5566d41fefc00f/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/whe1996/.android/build-cache/0cf6e97953bd0140367ee14c1997d9560f3963ea/output/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="e4851331b3944beb6e7f77316a7661f53781da62">
+        <dex dex="/Users/whe1996/Documents/school/cs-2340/android/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_3169a6ee84dac6aa45322771956885aedd20278c/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/whe1996/Documents/school/cs-2340/android/app/build/intermediates/incremental-runtime-classes/debug/instant-run.jar"
         jumboMode="true"
         optimize="true"
         revision="25.0.2"
         sha1="c82741bc129dd5f99f11a4ab8666ae24262053b6">
-<<<<<<< HEAD
-        <dex dex="C:\Users\Brian Cai\Dropbox\My Documents\College\CS 2340\CS2340\app\build\intermediates\transforms\dex\debug\folders\1000\10000\instant-run_6cc419cc53610363b87dd4ea5a9874098657ea9c\classes.dex" />
+        <dex dex="/Users/whe1996/Documents/school/cs-2340/android/app/build/intermediates/transforms/dex/debug/folders/1000/10000/instant-run_848c2b73a0c2058d9fd6035ceeb9a91e6cb156b3/classes.dex" />
     </item>
     <item
         is-multidex="true"
-        jar="C:\Users\Brian Cai\.android\build-cache\fe8505540a40fc111e3e0106027a809cbee0f4fe\output\jars\classes.jar"
+        jar="/Users/whe1996/.android/build-cache/89e98c0cd4d9f982d7832087f9220852e8aedb72/output/jars/classes.jar"
         jumboMode="true"
         optimize="true"
         revision="25.0.2"
-        sha1="0e301f24b283f14b564f660c9abe863af6be5896">
-        <dex dex="C:\Users\Brian Cai\Dropbox\My Documents\College\CS 2340\CS2340\app\build\intermediates\transforms\dex\debug\folders\1000\10\classes_1f74329732150e6046bcdf9b3144e2c37a529536\classes.dex" />
+        sha1="efae381df589f3d4977c346c8a980f030315bb8b">
+        <dex dex="/Users/whe1996/Documents/school/cs-2340/android/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_bd3d78bd90e49d06d3f383e53d1ff16699aba588/classes.dex" />
     </item>
     <item
         is-multidex="true"
-        jar="C:\Users\Brian Cai\.android\build-cache\bd23cdcf5a0534b86a62821ce01af2f6cab13be3\output\jars\classes.jar"
+        jar="/Users/whe1996/.android/build-cache/280e05a782802bd92d22b3c7b1e67bbd0acf56e2/output/jars/classes.jar"
         jumboMode="true"
         optimize="true"
         revision="25.0.2"
-        sha1="1ac56e5801e986583cbe27f2cce57f626cc7ff93">
-        <dex dex="C:\Users\Brian Cai\Dropbox\My Documents\College\CS 2340\CS2340\app\build\intermediates\transforms\dex\debug\folders\1000\10\classes_e15fdcda386273536a3b2e0e1fcf1be8f92a1312\classes.dex" />
+        sha1="0a5d5553c308643a9022f15513ebdd59e9c78d82">
+        <dex dex="/Users/whe1996/Documents/school/cs-2340/android/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_faf8d46463ca7e92b6939d78bc149894bac75516/classes.dex" />
     </item>
     <item
         is-multidex="true"
-        jar="C:\Users\Brian Cai\.android\build-cache\e5ec1d4ec50a4edd61fcf8deda43b68c2941e2a5\output\jars\classes.jar"
+        jar="/Users/whe1996/.android/build-cache/f7be55e4b153186fafb78fd45cf91622af642bf6/output/jars/classes.jar"
         jumboMode="true"
         optimize="true"
         revision="25.0.2"
-        sha1="0d5cbbbfe040201c7569478b70a13b58fd11aab4">
-        <dex dex="C:\Users\Brian Cai\Dropbox\My Documents\College\CS 2340\CS2340\app\build\intermediates\transforms\dex\debug\folders\1000\10\classes_af34a72b48af5bcaf5ddb585b224f3ad6d9cb8ef\classes.dex" />
+        sha1="914f5d3e3ace66080e59613708f06d129a222e25">
+        <dex dex="/Users/whe1996/Documents/school/cs-2340/android/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_9fa12add1459c305b3b4f124eae49cc09755cd73/classes.dex" />
     </item>
     <item
         is-multidex="true"
-        jar="C:\Users\Brian Cai\.android\build-cache\a3b0e89db050ff73e30cd72d6aec0249b339c110\output\jars\classes.jar"
+        jar="/Users/whe1996/.android/build-cache/1253708292f51fe71467eaca596d8ae0db39aa09/output/jars/classes.jar"
         jumboMode="true"
         optimize="true"
         revision="25.0.2"
-        sha1="48532a016bb0dfbe7970c147ce784598a515406b">
-        <dex dex="C:\Users\Brian Cai\Dropbox\My Documents\College\CS 2340\CS2340\app\build\intermediates\transforms\dex\debug\folders\1000\10\classes_163839e0eb9f38bea2bc920e4b11dbb168133e90\classes.dex" />
+        sha1="38789e20ace9ab7dbd00554bd2673ab424478d3b">
+        <dex dex="/Users/whe1996/Documents/school/cs-2340/android/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_681cf84fb9c355093654d3f3d1954c98048293f4/classes.dex" />
     </item>
     <item
         is-multidex="true"
-        jar="C:\Users\Brian Cai\.android\build-cache\61604a36d0f5af8b06e812a9cdd7236ff65c4812\output\jars\classes.jar"
+        jar="/Users/whe1996/.android/build-cache/8374ed0218f0e66b4954d90d8221f3691d4ddd67/output/jars/classes.jar"
         jumboMode="true"
         optimize="true"
         revision="25.0.2"
-        sha1="3d6951cb416ebf8c66a32b9480808ca247b68344">
-        <dex dex="C:\Users\Brian Cai\Dropbox\My Documents\College\CS 2340\CS2340\app\build\intermediates\transforms\dex\debug\folders\1000\10\classes_8ec3ca4d7d108ac0b01813dd3aa22984605e474b\classes.dex" />
+        sha1="4e684205744f814a73b7752545e0661330415c9e">
+        <dex dex="/Users/whe1996/Documents/school/cs-2340/android/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_da579b24a7bb16b3d6f6dfa11ded99c0541f663b/classes.dex" />
     </item>
     <item
         is-multidex="true"
-        jar="C:\Users\Brian Cai\.android\build-cache\362daf8ef5691d75c1cc8fa8908d66b0469b529d\output\jars\classes.jar"
+        jar="/Users/whe1996/.android/build-cache/adbeeba9d782e7fab7f11ddbfdea33a252739ed4/output/jars/classes.jar"
         jumboMode="true"
         optimize="true"
         revision="25.0.2"
-        sha1="94fca868854457ede6df15c902938468c71d579e">
-        <dex dex="C:\Users\Brian Cai\Dropbox\My Documents\College\CS 2340\CS2340\app\build\intermediates\transforms\dex\debug\folders\1000\10\classes_6ffbee4e46f23852ada660fdd1bcaebf2c5e69b0\classes.dex" />
+        sha1="6003d64df88a6ce5e961fa2bad7f1b9b97689ac1">
+        <dex dex="/Users/whe1996/Documents/school/cs-2340/android/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_9a2f7f006e5fd80054a4957b7f1260940fd099fe/classes.dex" />
     </item>
     <item
         is-multidex="true"
-        jar="C:\Users\Brian Cai\.android\build-cache\4bbab45519fdbb03f19c03f89f937097bb2be00d\output\jars\classes.jar"
+        jar="/Users/whe1996/.android/build-cache/1aff4e22e8f699eec8b396dcb378056026399c02/output/jars/classes.jar"
         jumboMode="true"
         optimize="true"
         revision="25.0.2"
-        sha1="3d13e510077b35fe8e49930a627dd849ad5da0dc">
-        <dex dex="C:\Users\Brian Cai\Dropbox\My Documents\College\CS 2340\CS2340\app\build\intermediates\transforms\dex\debug\folders\1000\10\classes_87e4039a50ec7ffc4dbb9129d69b86c0bb096ff7\classes.dex" />
+        sha1="0bb2f0934fa55799508ba58ffc9ba579b35744b8">
+        <dex dex="/Users/whe1996/Documents/school/cs-2340/android/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_e1fa2aec3fb45e642dce1a8e0eb0b32c549f7689/classes.dex" />
     </item>
     <item
         is-multidex="true"
-        jar="C:\Users\Brian Cai\.android\build-cache\16423db1b2a8fe578f6039fa1591cf6a381e9456\output\jars\classes.jar"
+        jar="/Users/whe1996/.android/build-cache/c8e106c363d0aa4653df7668274173f0150ec819/output/jars/classes.jar"
         jumboMode="true"
         optimize="true"
         revision="25.0.2"
-        sha1="ce9112e08a027c8620ae693983e38cdbb9f6371b">
-        <dex dex="C:\Users\Brian Cai\Dropbox\My Documents\College\CS 2340\CS2340\app\build\intermediates\transforms\dex\debug\folders\1000\10\classes_58bf83d66656214752d0f4b95e55e5a10e804093\classes.dex" />
+        sha1="25f55515117e14a658120a7b01a9ea5170409db4">
+        <dex dex="/Users/whe1996/Documents/school/cs-2340/android/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_17732157a3ec42108c802ee5e0fc3808e9c5ca9a/classes.dex" />
     </item>
     <item
         is-multidex="true"
-        jar="C:\Users\Brian Cai\.android\build-cache\6b92ae422b854f83bb645419eabf81eb3849fac3\output\jars\classes.jar"
+        jar="/Users/whe1996/.android/build-cache/9ff84b2ac96d61b102c71236fe7a00b3c29b8495/output/jars/classes.jar"
         jumboMode="true"
         optimize="true"
         revision="25.0.2"
-        sha1="bd75f9f0296fe220da6d0ad961831b04541c4452">
-        <dex dex="C:\Users\Brian Cai\Dropbox\My Documents\College\CS 2340\CS2340\app\build\intermediates\transforms\dex\debug\folders\1000\10\classes_a386f39d1c745778314cf496f49f1ed51bb8863d\classes.dex" />
-=======
-        <dex dex="/Users/whe1996/Documents/school/cs_2340/android/app/build/intermediates/transforms/dex/debug/folders/1000/10000/instant-run_3b8c306117c6123083142b8d7df1d0b72480ce42/classes.dex" />
->>>>>>> 006a579692374c2009da66a656525d7640257b70
+        sha1="4a26a1154d053ab11aaf4c3967c42a4d66390991">
+        <dex dex="/Users/whe1996/Documents/school/cs-2340/android/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_fcb9a6f0201079ff94ecf05e49ff6d7e63b1b93f/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/whe1996/.android/build-cache/2ff6620c88e87a755e50672e01144391c217b703/output/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="888983f51cf34f57a93ff16832552f2f15937212">
+        <dex dex="/Users/whe1996/Documents/school/cs-2340/android/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_8ef11f78cf7642c1deda54022be0f651a3f11871/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/whe1996/.android/build-cache/26cb6d63995de90e934d28088fda9186fc5b9df1/output/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="44098e691b36776973374ac03afe0225b17f8a74">
+        <dex dex="/Users/whe1996/Documents/school/cs-2340/android/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_21608074f71ca7b4df4f3691a4a1f5695f410a72/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/whe1996/.android/build-cache/98626016ad4931efe255975668637d921c27d8b6/output/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="b327fbe2fad414bc38cf0ce8f7efe1a38f572837">
+        <dex dex="/Users/whe1996/Documents/school/cs-2340/android/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_6bd31771a3cc9a73372e6734b0adbe63969f02d2/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/whe1996/.android/build-cache/a9105b217ebe5b5dfabba9997e0c23b5567a4e2a/output/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="825c2e97a00df4df5b0f3081faa4fd6280cd7c72">
+        <dex dex="/Users/whe1996/Documents/school/cs-2340/android/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_d61c98d5b6af1a1de6071cae4fe733fe77531254/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/whe1996/.android/build-cache/c28d23115a58dab62e8b27832dac0faaa2ae9afa/output/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="bb115a110992b254f767f337da233071f6f940b8">
+        <dex dex="/Users/whe1996/Documents/school/cs-2340/android/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_802ba718a42b579c02a70b28f49b7d93d6548f3e/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/whe1996/.android/build-cache/9a7ca68535d08a52e05d018ff17289ace2958921/output/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="12032271e6be735e811ad529cb08ff066c381640">
+        <dex dex="/Users/whe1996/Documents/school/cs-2340/android/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_c20f4bc6f82d17e9a5aaf085cd253a44c0c70936/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/whe1996/.android/build-cache/f45965898979ace00359a26b3f88988cb1f327d1/output/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="4b42a61cd5924f28e95894e859e6abe57847e2f3">
+        <dex dex="/Users/whe1996/Documents/school/cs-2340/android/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_91c1a0a8798fe660a4fcc2a71eb533777c7e1182/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/whe1996/.android/build-cache/c93d7ad7b85fee6633763419456927bb3ae388d1/output/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="150252b33b00274cc868578ade018fda0d43a3eb">
+        <dex dex="/Users/whe1996/Documents/school/cs-2340/android/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_624d544c4d4ed90b8072cb93d10f55751666cfbf/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/whe1996/.android/build-cache/a3e586f3dd6db201aab49452d207aa3177b8c3d2/output/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="6ef31f1555bb4cc513ec8d52711365a8b89f3600">
+        <dex dex="/Users/whe1996/Documents/school/cs-2340/android/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_d142eb97b6bfea3c84bc4225835e3ae9170304b4/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/whe1996/.android/build-cache/8db7e6eb9553682bb106f79c023971362b606fc7/output/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="a3826817a4de1daa170c33bbc04db24ab6826bd5">
+        <dex dex="/Users/whe1996/Documents/school/cs-2340/android/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_980bdcb752de7824759a1f99bebb55c4da335419/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/whe1996/.android/build-cache/1479f052fa1e7f65b50702acfbbf4a6a6ec285bc/output/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="d7c42c80f6509b9ea4db28ca7859ffae08ec5741">
+        <dex dex="/Users/whe1996/Documents/school/cs-2340/android/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_d71da5cdf91c24a284fdea2d0d916ddea5724437/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/whe1996/.android/build-cache/06d3bccfe5bf43f6af572b327c8d1e8e6b6258b7/output/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="d0a843615f3b5fa3a080497709f5436696149a09">
+        <dex dex="/Users/whe1996/Documents/school/cs-2340/android/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_ecd95087693b25834b301f1adc86ec35ce98afd6/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/whe1996/.android/build-cache/207421412d2d7d6d821918c63da719db3c2a8b73/output/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="bdcc2a9572f18b8c90a3a157cab6cdfc97c6c736">
+        <dex dex="/Users/whe1996/Documents/school/cs-2340/android/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_20f2658808b48cd9be0672d87d00cc7db6a35542/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/whe1996/.android/build-cache/98626016ad4931efe255975668637d921c27d8b6/output/jars/libs/internal_impl-24.0.0.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="b6763651ec29b4c95e7bbe63fc393ffcc8c4c2c5">
+        <dex dex="/Users/whe1996/Documents/school/cs-2340/android/app/build/intermediates/transforms/dex/debug/folders/1000/10/internal_impl-24.0.0_54002a6dae854cdc4b9c0ed6e805e425049b5071/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/whe1996/.android/build-cache/d30641df749e60bfccfd0ff160488a50fdd2971c/output/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="da5c606c36276a12a356e351882044c6b4b9e8d4">
+        <dex dex="/Users/whe1996/Documents/school/cs-2340/android/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_890cc30945c92f4c7ee749f064d56808f8e2f271/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/whe1996/.android/build-cache/d91274b606db21e5b12e6e354e7824acdf8bdce6/output/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="8dfe54fbaf4f2a27d395ddf806d0c011170999e0">
+        <dex dex="/Users/whe1996/Documents/school/cs-2340/android/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_354195a73e15af4818e720ec322a6cdcc010ab52/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/whe1996/.android/build-cache/5f2dd4cd0d5935e4c111b2b65bcf87dc328d64d2/output/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="45f697922e6f072daa12f8a2995dc77ab03c11da">
+        <dex dex="/Users/whe1996/Documents/school/cs-2340/android/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_1d43350d13f872b3aba1528cb98642748309a42c/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/whe1996/.android/build-cache/a9a1917ecdcc10e5f4a4d3632d0c3fe0af410cfc/output/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="cfa47e1b140562d47bc670629d07e209cd8b02c4">
+        <dex dex="/Users/whe1996/Documents/school/cs-2340/android/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_4bb9539c571fea08ac988f23bca5af6b7491534a/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/whe1996/.android/build-cache/a41816f278c3009501d55562188aa6901841d9bb/output/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="efb8cb62d47d157c29d1521daac7eefd4cb881ee">
+        <dex dex="/Users/whe1996/Documents/school/cs-2340/android/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_18f45976d1b42aec0fbbc1ad8ccead09af37b3d5/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/whe1996/.android/build-cache/c4541ed6d1fea165f342551c927de593f574a021/output/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="b136ac09f209c1d91fec7db8518e33d4373c8f39">
+        <dex dex="/Users/whe1996/Documents/school/cs-2340/android/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_1bb3613e53a2ef69cfa3ab489c0de89bcf8df046/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/whe1996/.android/build-cache/0375033fa10b3a9adbc4a98253718cd52bcf3e49/output/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="7d67042688d34474a82fe4ef4c6514ef471377ef">
+        <dex dex="/Users/whe1996/Documents/school/cs-2340/android/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_bde91fbf84ebb669a434934fe3a41f074ebefc9a/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/whe1996/.android/build-cache/eec542ec0564ff172b8a542990d609595c72fddf/output/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="5ee29abfc804ebd51d65a4bde424c0ee74363939">
+        <dex dex="/Users/whe1996/Documents/school/cs-2340/android/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_803f3b694d82c5ba2acf5d413e9f531150cc0b7d/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/whe1996/.android/build-cache/e0f272b20dc99539a466a4a08a90cd39f0e400de/output/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="399f75732ff1ac159f9e73611536f1508bf18d3b">
+        <dex dex="/Users/whe1996/Documents/school/cs-2340/android/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_c8c1550d0f1f9f195e018a4c9d7dd350628e0b32/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/whe1996/.android/build-cache/bbc351e7454db6f239d87ae7fbc5d741344c04f6/output/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="bfd85a88cf976eb2c54507cc914d8e8914c2f71e">
+        <dex dex="/Users/whe1996/Documents/school/cs-2340/android/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_a6e27234871686b23231f8f3a6e67b5a831fe3c9/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/whe1996/.android/build-cache/75008b4586ecc4f0921cc9af5b0102718b3281a3/output/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="19696dc358ac668e341f28c41e3387d61ccdb81d">
+        <dex dex="/Users/whe1996/Documents/school/cs-2340/android/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_a68e9f075e91d8effab9a6efa9b01309686a5136/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/whe1996/.android/build-cache/7bf3c1d1631522ac008257f2036baac9388f6a69/output/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="536fd6afd6e1280607c5d70306eb32d385db7964">
+        <dex dex="/Users/whe1996/Documents/school/cs-2340/android/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_9ceff4b2d1a68c5b2d935e174327091eb0ef340a/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/whe1996/.android/build-cache/153fcf1900e7aeb3ff984f6164266a8809e6e0f5/output/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="ab8343c3aadefce37313ceadd8bc4db1993f2ff0">
+        <dex dex="/Users/whe1996/Documents/school/cs-2340/android/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_532c5101cd5f260beee0173bb5e3f82a8a3b68e6/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/whe1996/.android/build-cache/3384cf10c6f589c6bc9aee6afd05c741e62e77e3/output/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="95519720620b553f63afc789beba9ad582807f7c">
+        <dex dex="/Users/whe1996/Documents/school/cs-2340/android/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_5a8c570150c167bf222983db49a275443cbf9f49/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/whe1996/.android/build-cache/1fdf40e9353d3dfc3d303d5282d4c8a307bf16bc/output/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="abf7c64e0bbaaa931738856734f76646ae62d9a5">
+        <dex dex="/Users/whe1996/Documents/school/cs-2340/android/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_627e855ba0a87dce9556a0dfd60225736a28f1c8/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/whe1996/.android/build-cache/2d408b4b7bcb548522312bacf85f8c9dd2b0faef/output/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="6c74dab42788b458960618238f338d324b6f0656">
+        <dex dex="/Users/whe1996/Documents/school/cs-2340/android/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_e0834c018f5fee347ff9e64081ac378571cd3b97/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/whe1996/.android/build-cache/f026a8e529658b20e7a2bb8577569f94384d83e5/output/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="b6818f5804ca0b5eb089d902458faea4179eca1d">
+        <dex dex="/Users/whe1996/Documents/school/cs-2340/android/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_a66fdd32f8f870912faf67edab528a2d8ade45b7/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/whe1996/.android/build-cache/2097e7258ed7252782e3f5a0b2f57605950f852c/output/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="d81a3b0a16f48b4456f442552b62f4b1a472ce24">
+        <dex dex="/Users/whe1996/Documents/school/cs-2340/android/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_1ddb512f1ee719f3298cdc20f17c8e6dd86a3979/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/whe1996/.android/build-cache/cce8d5fe94e3c28ab97e94464e4d8eeffd1bba29/output/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="b215e312bdc1ee7bfda31674eab5df8bad45c014">
+        <dex dex="/Users/whe1996/Documents/school/cs-2340/android/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_d69ef7998b2a20a3aaf5c423724c217c84934785/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/whe1996/Documents/school/cs-2340/android/app/build/intermediates/incremental-classes/debug/instant-run-bootstrap.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="715c0f27829b62ae59f6d96174cd5c66876104d1">
+        <dex dex="/Users/whe1996/Documents/school/cs-2340/android/app/build/intermediates/transforms/dex/debug/folders/1000/10000/instant-run-bootstrap_b9f1c9eb812f9b0a1309a51155f3f53c47182433/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/whe1996/.android/build-cache/4f98017a7d56ce501d8eb45de39c1b32a9019b2e/output/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="3683531139103cc263b71d8b5ac6062832a8fd30">
+        <dex dex="/Users/whe1996/Documents/school/cs-2340/android/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_fb25b4d1a779f34418b740115711506b137146fb/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/whe1996/.android/build-cache/b8159fd0faec5929daa6eb2c2a1120b02e879c3a/output/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="d4cf6227dd6a2ceff0f7dcf0c324380b7abf2c28">
+        <dex dex="/Users/whe1996/Documents/school/cs-2340/android/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_74fc153e8f3b7c24ce4b91a8a474ea07a874c318/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/whe1996/.android/build-cache/d1e8d9fbd7c37244c9779c1f58f3c53abe678ee4/output/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="cce5792fa30ee8520620f298bf920309423b180f">
+        <dex dex="/Users/whe1996/Documents/school/cs-2340/android/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_588bf2cfcba7a159b0165fce25db11ce85ffcc1f/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/whe1996/.android/build-cache/4abc0d3cc25d37ee5ab011a58739ba147bf80354/output/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="052f5f840f21174a3ecf6544130194e2652cbb73">
+        <dex dex="/Users/whe1996/Documents/school/cs-2340/android/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_289abd9499e516a8f0acf6386cef3d02bb0787bc/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/whe1996/.android/build-cache/3f9dff72a4cec9027f7523d21b103f7735f62a21/output/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="bb004ea36f8802bad30000e286c177691740a322">
+        <dex dex="/Users/whe1996/Documents/school/cs-2340/android/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_d3b5009b63084f8d43e7f037f7db825a62c7b7b6/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/whe1996/.android/build-cache/dac207334482977fa5dffd5c87945ccd1b6b7cc6/output/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="d395c5142f474891c7750f13b6a85d14682f166b">
+        <dex dex="/Users/whe1996/Documents/school/cs-2340/android/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_ed3242f3c7c9c4e5a8614ddeaf7d56bcee467f55/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/whe1996/.android/build-cache/576be55ae947104d3a0a0f0358d76ef676b4d356/output/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="1f9df8b2bfff203397548ee400789154968adfe8">
+        <dex dex="/Users/whe1996/Documents/school/cs-2340/android/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_31dabe14fffcc310623ab2b3eb93f2e00c4c1a51/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/whe1996/.android/build-cache/1d50b0b9dcb029658f975691800e84172bff5070/output/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="125bce1fb2d481b964fabf75f0949957ebe9ecd1">
+        <dex dex="/Users/whe1996/Documents/school/cs-2340/android/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_9cc08a48860ecb00484b2caa52243b5b00530ce2/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/whe1996/.android/build-cache/20fe182b68038f5bcdb407141e840ee50ef7729d/output/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="a1aa1dd9917e887bfe732cc5e561ae6ae8f9a84a">
+        <dex dex="/Users/whe1996/Documents/school/cs-2340/android/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_12ae1464be87d36a67652b8b199d2d3a14e26617/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/whe1996/.android/build-cache/669f7c65170137a54dffab2e80f61eab75067532/output/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="c7ba26433d9e9f4429d83ff65ad79bfc801dc00a">
+        <dex dex="/Users/whe1996/Documents/school/cs-2340/android/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_6d963d8f053574dd01bd0d37cdddc24767a157a7/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/whe1996/.android/build-cache/76425b4fae1eadd1bb81bf8171921e1fc7ce1283/output/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="c7626a9aa507bbbdc16188bc9a9f9bf3370c1ddd">
+        <dex dex="/Users/whe1996/Documents/school/cs-2340/android/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_05eba00e31a41e498bcd34cc59719f2013ee7035/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/whe1996/.android/build-cache/2a8eea2b068fd023ae07c6e568ac8905697b2895/output/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="2a7ffe939ffd830b5d4052f3c1c4c235923790ce">
+        <dex dex="/Users/whe1996/Documents/school/cs-2340/android/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_6d7a26eb095baf187d4755d51d79fed1a1de8e7e/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/whe1996/.android/build-cache/2bbfb050d963b59fa88edc25c9fb74b11bbee81c/output/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="6f233cb35a6ea92364130d2d48791c461ec65983">
+        <dex dex="/Users/whe1996/Documents/school/cs-2340/android/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_5e3c5ce30b093176b9a77362254dcdc44ccbd650/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/whe1996/.android/build-cache/0a6c6db9f4a9754c1ac28506952164874d4ffe72/output/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="da27a32db6af8954ee8061537c7d476fcb1df46f">
+        <dex dex="/Users/whe1996/Documents/school/cs-2340/android/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_9a1be1361c6347aae6e592eede915c2b00370722/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/whe1996/Library/Android/sdk/extras/android/m2repository/com/android/support/support-annotations/25.3.1/support-annotations-25.3.1.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="bf8841d29fa39e077730e7a91222c2ce269fa7c9">
+        <dex dex="/Users/whe1996/Documents/school/cs-2340/android/app/build/intermediates/transforms/dex/debug/folders/1000/10/support-annotations-25.3.1_478b7c95366cd24016a65ed424aa4a4954ffbce3/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/whe1996/.android/build-cache/ca07c0a21f20898bb233537c8ef6aebb63a57faf/output/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="47635644d0d5c103c1dd8360549eb9ba3225c7d3">
+        <dex dex="/Users/whe1996/Documents/school/cs-2340/android/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_54ef143c239b2b6b90b7720639c9cddcbb1d4111/classes.dex" />
     </item>
 
 </items>

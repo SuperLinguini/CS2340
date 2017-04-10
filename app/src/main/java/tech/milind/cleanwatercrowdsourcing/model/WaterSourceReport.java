@@ -1,8 +1,8 @@
 package tech.milind.cleanwatercrowdsourcing.model;
 
+import android.os.Parcel;
+import android.os.Parcelable;
 import android.support.annotation.NonNull;
-
-import com.google.android.gms.maps.model.LatLng;
 
 import java.util.Date;
 
@@ -10,8 +10,7 @@ import java.util.Date;
  * Created by Milind Lingineni on 3/2/2017.
  */
 
-public class WaterSourceReport implements Comparable<WaterSourceReport> {
-    private static int currentID = 1;
+public class WaterSourceReport implements Comparable<WaterSourceReport>, Parcelable {
     public enum typeOfWater {
         Bottled, Well, Stream, Lake, Spring, Other
     }
@@ -32,13 +31,12 @@ public class WaterSourceReport implements Comparable<WaterSourceReport> {
      */
     public WaterSourceReport() {
         date = new Date();
-        reportNumber = currentID++;
     }
 
     /**
      * Constructor for the WaterSourceReport with all inputs
      * @param reportName the report name to be set to the WaterSourceReport
-     * @param reporter
+     * @param reporter the reporter to be set to the WaterSourceReport
      * @param location the new LatLng location to be set to the WaterSourceReport
      * @param type the water type to be set to the WaterSourceReport
      * @param condition the water condition to be set to the WaterSourceReport
@@ -46,7 +44,6 @@ public class WaterSourceReport implements Comparable<WaterSourceReport> {
     public WaterSourceReport(String reportName, String reporter, LatLng location,
                              typeOfWater type, conditionOfWater condition) {
         date = new Date();
-        reportNumber = currentID++;
         this.reportName = reportName;
         this.reporter = reporter;
         this.location = location;
@@ -146,6 +143,7 @@ public class WaterSourceReport implements Comparable<WaterSourceReport> {
      * Sets the date of the WaterSourceReport
      * @param date the new date to be set to the WaterSourceReport
      */
+    @SuppressWarnings("unused")
     public void setDate(Date date) {
         this.date = date;
     }
@@ -178,5 +176,44 @@ public class WaterSourceReport implements Comparable<WaterSourceReport> {
     public String getSnippet() {
         return String.format("#%d %tD %<tR %s/%s", reportNumber, date,
                 type.toString(), condition.toString());
+    }
+
+    @Override
+    public int describeContents() {
+        return 0;
+    }
+
+    @Override
+    public void writeToParcel(Parcel dest, int flags) {
+        dest.writeString(reportName);
+        dest.writeString(reporter);
+        dest.writeInt(reportNumber);
+        dest.writeString(type.name());
+        dest.writeString(condition.name());
+        dest.writeParcelable(location, flags);
+        dest.writeLong(date.getTime());
+    }
+
+    public static final Parcelable.Creator<WaterSourceReport> CREATOR =
+            new Parcelable.Creator<WaterSourceReport>() {
+                @Override
+                public WaterSourceReport createFromParcel(Parcel source) {
+                    return new WaterSourceReport(source);
+                }
+
+                @Override
+                public WaterSourceReport[] newArray(int size) {
+                    return new WaterSourceReport[size];
+                }
+            };
+
+    private WaterSourceReport(Parcel in) {
+        reportName = in.readString();
+        reporter = in.readString();
+        reportNumber = in.readInt();
+        type = typeOfWater.valueOf(in.readString());
+        condition = conditionOfWater.valueOf(in.readString());
+        location = in.readParcelable(LatLng.class.getClassLoader());
+        date = new Date(in.readLong());
     }
 }

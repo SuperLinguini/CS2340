@@ -18,15 +18,15 @@ import com.google.android.gms.common.GooglePlayServicesNotAvailableException;
 import com.google.android.gms.common.GooglePlayServicesRepairableException;
 import com.google.android.gms.location.places.Place;
 import com.google.android.gms.location.places.ui.PlacePicker;
-import com.google.android.gms.maps.model.LatLng;
 
 import tech.milind.cleanwatercrowdsourcing.R;
 import tech.milind.cleanwatercrowdsourcing.model.Model;
 import tech.milind.cleanwatercrowdsourcing.model.WaterSourceReport;
+import tech.milind.cleanwatercrowdsourcing.model.LatLng;
 
 public class SubmitSourceReportActivity extends AppCompatActivity {
     private static final String TAG = "AddResourceReport";
-    final int PLACE_PICKER_REQUEST = 1;
+    final private int PLACE_PICKER_REQUEST = 1;
 
     private Spinner typeSpinner;
     private Spinner conditionSpinner;
@@ -79,15 +79,15 @@ public class SubmitSourceReportActivity extends AppCompatActivity {
                             typeSpinner.getSelectedItem());
                     _waterSourceReport.setCondition((WaterSourceReport.conditionOfWater)
                             conditionSpinner.getSelectedItem());
-                    model.addReport(_waterSourceReport);
+                    model.addWaterSourceReport(_waterSourceReport);
                     Intent output = new Intent();
                     setResult(Activity.RESULT_OK, output);
                     finish();
                 } else {
                     Snackbar snackbar = Snackbar.make(findViewById(R.id.activity_submit_source_report),
                             R.string.sourceReportSubmitError, Snackbar.LENGTH_LONG);
-                    View sbview = snackbar.getView();
-                    sbview.setBackgroundColor(Color.RED);
+                    View sbView = snackbar.getView();
+                    sbView.setBackgroundColor(Color.RED);
                     snackbar.show();
                 }
             }
@@ -102,9 +102,7 @@ public class SubmitSourceReportActivity extends AppCompatActivity {
                 try {
                     startActivityForResult(builder.build(SubmitSourceReportActivity.this),
                             PLACE_PICKER_REQUEST);
-                } catch (GooglePlayServicesRepairableException e) {
-                    Log.e(TAG, "Failed", e);
-                } catch (GooglePlayServicesNotAvailableException e) {
+                } catch (GooglePlayServicesRepairableException | GooglePlayServicesNotAvailableException e) {
                     Log.e(TAG, "Failed", e);
                 }
             }
@@ -116,7 +114,7 @@ public class SubmitSourceReportActivity extends AppCompatActivity {
      * @param input String from TextView
      * @return whether the String is empty
      */
-    public boolean isEmpty(String input) {
+    private boolean isEmpty(String input) {
         return input.isEmpty() || input.length() == 0 || input.equals("") ||
                 input == null;
     }
@@ -130,15 +128,16 @@ public class SubmitSourceReportActivity extends AppCompatActivity {
                 Place place = PlacePicker.getPlace(data, this);
                 EditText editText = (EditText) findViewById(R.id.locationReportEditText);
                 editText.setText("" + place.getLatLng());
-                latLng = place.getLatLng();
+                latLng = new LatLng(place.getLatLng().latitude, place.getLatLng().longitude);
             }
         }
     }
 
     @Override
-    public void onBackPressed() {
+    public boolean onSupportNavigateUp(){
         Intent output = new Intent();
         setResult(Activity.RESULT_CANCELED, output);
-        super.onBackPressed();
+        finish();
+        return true;
     }
 }

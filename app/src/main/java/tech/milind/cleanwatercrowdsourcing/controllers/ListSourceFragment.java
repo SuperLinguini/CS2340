@@ -23,7 +23,7 @@ import tech.milind.cleanwatercrowdsourcing.model.WaterSourceReport;
 
 public class ListSourceFragment extends Fragment {
     private SimpleSourceAdapter mAdapter;
-    final int REQUEST = 1;
+    final private int REQUEST = 1;
 
     @Override
     public View onCreateView(LayoutInflater inflater,
@@ -47,6 +47,8 @@ public class ListSourceFragment extends Fragment {
         if (requestCode == REQUEST) {
             if (resultCode == Activity.RESULT_OK) {
                 mAdapter.notifyItemInserted(mAdapter.reports.size() - 1);
+            } else if (resultCode == EditSourceReportActivity.RESULT_CHANGED) {
+                mAdapter.notifyItemChanged(data.getIntExtra("position", 0));
             }
         }
     }
@@ -62,22 +64,22 @@ public class ListSourceFragment extends Fragment {
         mLayoutManager.setStackFromEnd(true);
         recyclerView.setLayoutManager(mLayoutManager);
         Model model = Model.getInstance();
-        List<WaterSourceReport> reports = model.getReports();
-        mAdapter = new SimpleSourceAdapter(reports);
+        mAdapter = new SimpleSourceAdapter(model.getReports());
         recyclerView.setAdapter(mAdapter);
     }
 
     public class SimpleSourceAdapter extends RecyclerView
             .Adapter<SimpleSourceAdapter.ViewHolder> {
-        private List<WaterSourceReport> reports;
+        final private List<WaterSourceReport> reports;
 
 
         public class ViewHolder extends RecyclerView.ViewHolder {
-            public TextView reportNumAndName;
-            public TextView reportDate;
-            public TextView reportLocation;
-            public TextView reportTypeCondition;
-            public TextView reportReporter;
+            final public View mView;
+            final public TextView reportNumAndName;
+            final public TextView reportDate;
+            final public TextView reportLocation;
+            final public TextView reportTypeCondition;
+            final public TextView reportReporter;
 
             /**
              * Constructor for ViewHolder that links the Views
@@ -85,6 +87,7 @@ public class ListSourceFragment extends Fragment {
              */
             public ViewHolder(View v) {
                 super(v);
+                mView = v;
                 reportNumAndName = (TextView) v.findViewById(R.id.reportNumAndName);
                 reportReporter = (TextView) v.findViewById(R.id.reportReporter);
                 reportDate = (TextView) v.findViewById(R.id.reportDate);
@@ -102,15 +105,26 @@ public class ListSourceFragment extends Fragment {
         }
 
         @Override
-        public void onBindViewHolder(ViewHolder holder, int position) {
-            final Model model = Model.getInstance();
-            WaterSourceReport wrs = reports.get(position);
-            holder.reportDate.setText(String.format("Date: %tD %<tR", wrs.getDate()));
-            holder.reportNumAndName.setText(String.format("#%s %s",
-                    wrs.getReportNumber(), wrs.getReportName()));
-            holder.reportReporter.setText(wrs.getReporter());
-            holder.reportLocation.setText(wrs.getLocation().toString());
-            holder.reportTypeCondition.setText(wrs.getType() + ", " + wrs.getCondition());
+        public void onBindViewHolder(final ViewHolder holder, final int position) {
+            //final Model model = Model.getInstance();
+            if (reports.get(holder.getAdapterPosition()) != null) {
+                final WaterSourceReport wrs = reports.get(holder.getAdapterPosition());
+                holder.reportDate.setText(String.format("Date: %tD %<tR", wrs.getDate()));
+                holder.reportNumAndName.setText(String.format("#%s %s",
+                        wrs.getReportNumber(), wrs.getReportName()));
+                holder.reportReporter.setText(wrs.getReporter());
+                holder.reportLocation.setText(wrs.getLocation().toString());
+                holder.reportTypeCondition.setText(wrs.getType() + ", " + wrs.getCondition());
+                holder.mView.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        Intent i = new Intent(getActivity(), EditSourceReportActivity.class);
+                        i.putExtra("report_object", wrs);
+                        i.putExtra("position", holder.getAdapterPosition());
+                        startActivityForResult(i, REQUEST);
+                    }
+                });
+            }
         }
 
         @Override

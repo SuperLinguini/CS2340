@@ -8,6 +8,7 @@ import android.support.annotation.NonNull;
 import android.support.design.internal.BottomNavigationItemView;
 import android.support.design.internal.BottomNavigationMenuView;
 import android.support.design.widget.BottomNavigationView;
+import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.Menu;
@@ -27,9 +28,13 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         Model model = Model.getInstance();
-        model.addTestData();
+//        model.addTestData();
+        model.loadWaterSourceReports();
 
-        getSupportActionBar().setTitle("Water Availability");
+        if (getSupportActionBar() != null) {
+            getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        }
+
         getSupportFragmentManager().beginTransaction()
                 .add(R.id.fragmentContainer, new AvailabilityFragment())
                 .commit();
@@ -93,6 +98,15 @@ public class MainActivity extends AppCompatActivity {
                                 getSupportActionBar().setTitle("Admin Page");
                             }
                             break;
+                        case R.id.nav_historical:
+                            if(!(getSupportFragmentManager().findFragmentById(R.id.fragmentContainer)
+                                    instanceof FragmentManager)) {
+                                getSupportFragmentManager().beginTransaction()
+                                        .replace(R.id.fragmentContainer, new FragmentManager())
+                                        .commit();
+                                getSupportActionBar().setTitle("Historical Report");
+                            }
+                            break;
                     }
                     return true;
                 }
@@ -103,7 +117,7 @@ public class MainActivity extends AppCompatActivity {
      * Disables shifting for BottomNavigationView nav bar
      * @param view the BottomNavigationView for the app
      */
-    public static void disableShiftMode(BottomNavigationView view) {
+    private static void disableShiftMode(BottomNavigationView view) {
         BottomNavigationMenuView menuView = (BottomNavigationMenuView) view.getChildAt(0);
         try {
             Field shiftingMode = menuView.getClass().getDeclaredField("mShiftingMode");
@@ -148,7 +162,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     /**
-     * shows alert dialog to logout if back button is pressed on homescreen
+     * shows alert dialog to logout if back button is pressed on home screen
      */
     @Override
     public void onBackPressed() {
@@ -158,7 +172,8 @@ public class MainActivity extends AppCompatActivity {
 
         dialogBuilder.setPositiveButton("Yes", new DialogInterface.OnClickListener() {
             public void onClick(DialogInterface dialog, int id) {
-                finish();
+                Intent logoutIntent = new Intent(MainActivity.this, WelcomeActivity.class);
+                startActivity(logoutIntent);
             }
         });
 

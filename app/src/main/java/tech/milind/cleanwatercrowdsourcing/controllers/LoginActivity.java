@@ -18,12 +18,14 @@ import tech.milind.cleanwatercrowdsourcing.R;
 import tech.milind.cleanwatercrowdsourcing.model.*;
 
 public class LoginActivity extends AppCompatActivity {
-    Model model;
-    EditText username;
-    EditText password;
-    Button loginButton;
-    Button cancelButton;
+    private Model model;
+    private EditText username;
+    private EditText password;
+    private Button loginButton;
+    private Button cancelButton;
+    @SuppressWarnings("unused")
     private FirebaseAuth mAuth;
+    @SuppressWarnings("unused")
     private FirebaseAuth.AuthStateListener mAuthListener;
 
 

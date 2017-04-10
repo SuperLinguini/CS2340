@@ -58,7 +58,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="25dp"
-        android:text="TextView"
+        android:text="Water Type"
         android:layout_below="@+id/textInputLayout2"
         android:layout_marginLeft="26dp" />
 
@@ -78,7 +78,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="25dp"
         android:layout_marginLeft="26dp"
-        android:text="TextView"
+        android:text="Water Condition"
         android:layout_below="@+id/spinnerType" />
 
     <Spinner

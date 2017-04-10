@@ -25,7 +25,7 @@ import tech.milind.cleanwatercrowdsourcing.model.WaterQualityReport;
 
 public class FragmentQuality extends Fragment {
     private SimplePurityAdapter mAdapter;
-    final int REQUEST = 1;
+    final private int REQUEST = 1;
 
     @Override
     public View onCreateView(LayoutInflater inflater,
@@ -49,6 +49,8 @@ public class FragmentQuality extends Fragment {
         if (requestCode == REQUEST) {
             if (resultCode == Activity.RESULT_OK) {
                 mAdapter.notifyItemInserted(mAdapter.reports.size() - 1);
+            } else if (resultCode == EditQualityReportActivity.RESULT_CHANGED) {
+                mAdapter.notifyItemChanged(data.getIntExtra("position", 0));
             }
         }
     }
@@ -64,21 +66,22 @@ public class FragmentQuality extends Fragment {
         mLayoutManager.setStackFromEnd(true);
         recyclerView.setLayoutManager(mLayoutManager);
         Model model = Model.getInstance();
-        List<WaterQualityReport> reports = model.getPurityReports();
+        List<WaterQualityReport> reports = model.getQualityReports();
         mAdapter = new SimplePurityAdapter(reports);
         recyclerView.setAdapter(mAdapter);
     }
 
     public class SimplePurityAdapter extends RecyclerView
             .Adapter<FragmentQuality.SimplePurityAdapter.ViewHolder> {
-        private List<WaterQualityReport> reports;
+        final private List<WaterQualityReport> reports;
 
 
         public class ViewHolder extends RecyclerView.ViewHolder {
-            public TextView reportNumAndName;
-            public TextView reportDate;
-            public TextView reportLocation;
-            public TextView reportConditionPPM;
+            final public View mView;
+            final public TextView reportNumAndName;
+            final public TextView reportDate;
+            final public TextView reportLocation;
+            final public TextView reportConditionPPM;
 
             /**
              * Constructor for ViewHolder that links the Views
@@ -86,6 +89,7 @@ public class FragmentQuality extends Fragment {
              */
             public ViewHolder(View v) {
                 super(v);
+                mView = v;
                 reportNumAndName = (TextView) v.findViewById(R.id.purityNumAndName);
                 reportDate = (TextView) v.findViewById(R.id.purityDate);
                 reportLocation = (TextView) v.findViewById(R.id.purityLocation);
@@ -102,15 +106,26 @@ public class FragmentQuality extends Fragment {
         }
 
         @Override
-        public void onBindViewHolder(ViewHolder holder, int position) {
-            final Model model = Model.getInstance();
-            WaterQualityReport wrp = reports.get(position);
-            holder.reportDate.setText(String.format("Date: %tD %<tR", wrp.getDate()));
-            holder.reportNumAndName.setText(String.format("#%s %s", wrp.getReportNumber(),
-                    wrp.getName()));
-            holder.reportLocation.setText(wrp.getLocation().toString());
-            holder.reportConditionPPM.setText(wrp.getCondition() + ", " + wrp.getVirusPPM() + ", "
-                    + wrp.getContaminantPPM());
+        public void onBindViewHolder(final ViewHolder holder, final int position) {
+            //final Model model = Model.getInstance();
+            if (reports.get(holder.getAdapterPosition()) != null) {
+                //final WaterQualityReport wrs = reports.get(holder.getAdapterPosition());
+                WaterQualityReport wrp = reports.get(position);
+                holder.reportDate.setText(String.format("Date: %tD %<tR", wrp.getDate()));
+                holder.reportNumAndName.setText(String.format("#%s %s", wrp.getReportNumber(),
+                        wrp.getReportName()));
+                holder.reportLocation.setText(wrp.getLocation().toString());
+                holder.reportConditionPPM.setText(wrp.getCondition() + ", " + wrp.getVirusPPM() + ", "
+                        + wrp.getContaminantPPM());
+                holder.mView.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        Intent i = new Intent(getActivity(), EditQualityReportActivity.class);
+                        i.putExtra("position", holder.getAdapterPosition());
+                        startActivityForResult(i, REQUEST);
+                    }
+                });
+            }
         }
 
         @Override

@@ -1,11 +1,19 @@
 package tech.milind.cleanwatercrowdsourcing.model;
 
-import com.google.android.gms.maps.model.LatLng;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.GenericTypeIndicator;
+import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
+import java.util.HashSet;
+import java.util.LinkedList;
 import java.util.List;
 import java.util.NoSuchElementException;
 
+@SuppressWarnings("unused")
 public class Model {
 
     private static final Model _instance = new Model();
@@ -14,32 +22,138 @@ public class Model {
     }
 
     private List<WaterSourceReport> reports;
-    private List<WaterQualityReport> purityReports;
-    private Security security;
+    private List<WaterQualityReport> qualityReports;
+    private HistoricalReport historicalReport;
+    private final Security security;
     private User currentUser;
+    private DatabaseReference mDatabase;
 
     private Model() {
-        reports = new ArrayList<>();
-        purityReports = new ArrayList<>();
+        qualityReports = new ArrayList<>();
         security = new Security();
     }
 
     /**
-     * Adds filler test data until we implement persistence
+     * Adds filler test data
      */
     public void addTestData() {
-        reports.add(new WaterSourceReport("Test Report", currentUser.getUsername(), new LatLng(33.77,-84.39),
+        addWaterSourceReport(new WaterSourceReport("Test Report", currentUser.getName(), new LatLng(33.77,-84.39),
                 WaterSourceReport.typeOfWater.Bottled, WaterSourceReport.conditionOfWater.Potable));
-        reports.add(new WaterSourceReport("A Report", currentUser.getUsername(), new LatLng(33.77248,-84.393003),
+        addWaterSourceReport(new WaterSourceReport("A Report", currentUser.getName(), new LatLng(33.77248,-84.393003),
                 WaterSourceReport.typeOfWater.Spring, WaterSourceReport.conditionOfWater.Treatable_Clear));
-        reports.add(new WaterSourceReport("My Report", currentUser.getUsername(), new LatLng(33.76873,-84.37565),
+        addWaterSourceReport(new WaterSourceReport("My Report", currentUser.getName(), new LatLng(33.76873,-84.37565),
                 WaterSourceReport.typeOfWater.Stream, WaterSourceReport.conditionOfWater.Treatable_Muddy));
-        purityReports.add(new WaterQualityReport("Panda Express", new LatLng(43.22, -72.21),
+        addWaterQualityReport(new WaterQualityReport("Panda Express", new LatLng(43.22, -72.21),
                 WaterQualityReport.conditionOfWater.Safe, 40, 50));
-        purityReports.add(new WaterQualityReport("Chick-fil-A", new LatLng(50.23, -68.53),
+        addWaterQualityReport(new WaterQualityReport("Chick-fil-A", new LatLng(50.23, -68.53),
                 WaterQualityReport.conditionOfWater.Treatable, 120, 90));
-        purityReports.add(new WaterQualityReport("Taco Bell", new LatLng(38.7532, -79.293),
+        addWaterQualityReport(new WaterQualityReport("Taco Bell", new LatLng(38.7532, -79.293),
                 WaterQualityReport.conditionOfWater.Unsafe, 340, 380));
+    }
+
+    public void addWaterSourceReport(WaterSourceReport wsr) {
+        if (reports == null) {
+            reports = new LinkedList<>();
+        }
+        wsr.setReportNumber(reports.size());
+        reports.add(wsr);
+        mDatabase.child("waterSourceReports").child(""+wsr.getReportNumber()).setValue(wsr);
+    }
+
+    public void editWaterSourceReport(WaterSourceReport wsr) {
+        mDatabase.child("waterSourceReports").child(""+wsr.getReportNumber()).setValue(wsr);
+    }
+
+    public void addWaterQualityReport(WaterQualityReport wqr) {
+        if (qualityReports == null) {
+            qualityReports = new LinkedList<>();
+        }
+        wqr.setReportNumber(qualityReports.size());
+        qualityReports.add(wqr);
+        mDatabase.child("waterQualityReports").child(""+wqr.getReportNumber()).setValue(wqr);
+    }
+
+    public void editWaterQualityReport(WaterQualityReport wqr) {
+        mDatabase.child("waterQualityReports").child(""+wqr.getReportNumber()).setValue(wqr);
+    }
+
+    public void loadWaterSourceReports() {
+        //.child("date").child("time").orderByValue().limitToLast(100)
+        FirebaseDatabase.getInstance().setPersistenceEnabled(true);
+        mDatabase = FirebaseDatabase.getInstance().getReference();
+        mDatabase.child("waterSourceReports").limitToLast(100).orderByChild("date").addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+                if (reports == null) {
+                    reports = new LinkedList<>();
+                }
+                GenericTypeIndicator<List<WaterSourceReport>> t =
+                        new GenericTypeIndicator<List<WaterSourceReport>>() {};
+                if (reports.size() == 0) {
+                    reports = dataSnapshot.getValue(t);
+                } else {
+                    List<WaterSourceReport> list = dataSnapshot.getValue(t);
+                    HashSet<Integer> set = new HashSet<Integer>();
+                    for (WaterSourceReport wsr: reports) {
+                        set.add(wsr.getReportNumber());
+                    }
+                    for (WaterSourceReport wsr: list) {
+                        if (!set.contains(wsr.getReportNumber())) {
+                            reports.add(wsr);
+                        }
+                    }
+                }
+
+//                reports.removeAll(list);
+//                reports.addAll(list);
+//                Collections.sort(reports);
+//                for(WaterSourceReport r: dataSnapshot.getValue(t)) {
+//                    reports.add(r);
+//                }
+            }
+
+            @Override
+            public void onCancelled(DatabaseError databaseError) {
+
+            }
+        });
+        mDatabase.child("waterQualityReports").limitToLast(100).orderByChild("date").addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+                if (qualityReports == null) {
+                    qualityReports = new LinkedList<>();
+                }
+                GenericTypeIndicator<List<WaterQualityReport>> t =
+                        new GenericTypeIndicator<List<WaterQualityReport>>() {};
+                if (qualityReports.size() == 0) {
+                    qualityReports = dataSnapshot.getValue(t);
+                } else {
+                    List<WaterQualityReport> list = dataSnapshot.getValue(t);
+                    HashSet<Integer> set = new HashSet<Integer>();
+                    for (WaterQualityReport wqr: qualityReports) {
+                        set.add(wqr.getReportNumber());
+                    }
+                    for (WaterQualityReport wqr: list) {
+                        if (!set.contains(wqr.getReportNumber())) {
+                            qualityReports.add(wqr);
+                        }
+                    }
+                }
+            }
+
+            @Override
+            public void onCancelled(DatabaseError databaseError) {
+
+            }
+        });
+    }
+
+    /**
+     * Gets the Firebase database reference
+     * @return the Firebase database reference
+     */
+    public DatabaseReference getmDatabase() {
+        return mDatabase;
     }
 
     /**
@@ -70,7 +184,22 @@ public class Model {
      * Gets the WaterQualityReport list used in the application
      * @return the WaterQualityReport list
      */
-    public List<WaterQualityReport> getPurityReports() { return purityReports; }
+    public List<WaterQualityReport> getQualityReports() { return qualityReports; }
+
+    /** gets the HistoricalReport used in this application
+     * @return the Historical Report
+     */
+    public HistoricalReport getHistoricalReport() {
+        return historicalReport;
+    }
+
+    /**
+     * Sets the historicalReport to the report passed in
+     * @param historicalReport the historical report to set
+     */
+    public void setHistoricalReport(HistoricalReport historicalReport) {
+        this.historicalReport = historicalReport;
+    }
 
     /**
      * Checks if the username and password entered is a valid user
@@ -105,6 +234,14 @@ public class Model {
     }
 
     /**
+     * Gets the Security object used in the application
+     * @return the Security object
+     */
+    public Security getSecurity() {
+        return security;
+    }
+
+    /**
      * Add a report to the WaterSourceReport list
      * @param report WaterSourceReport to add
      */
@@ -116,5 +253,6 @@ public class Model {
      * Add a report to the WaterQualityReport list
      * @param report WaterQualityReport to add
      */
-    public void addPurityReport(WaterQualityReport report) {purityReports.add(report);}
+    public void addPurityReport(WaterQualityReport report) {
+        qualityReports.add(report);}
 }

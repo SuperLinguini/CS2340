@@ -2,8 +2,6 @@ package tech.milind.cleanwatercrowdsourcing.model;
 
 import android.support.annotation.NonNull;
 
-import com.google.android.gms.maps.model.LatLng;
-
 import java.util.Date;
 
 
@@ -12,14 +10,13 @@ import java.util.Date;
  */
 
 public class WaterQualityReport implements Comparable<WaterQualityReport> {
-    private static int currentID = 1;
     public enum conditionOfWater {
         Safe, Treatable, Unsafe;
     }
 
-    private Date date;
+    final private Date date;
     private int reportNumber;
-    private String name;
+    private String reportName;
     private LatLng location;
     private conditionOfWater condition;
     private int virusPPM;
@@ -30,20 +27,18 @@ public class WaterQualityReport implements Comparable<WaterQualityReport> {
      */
     public WaterQualityReport() {
         date = new Date();
-        reportNumber = currentID++;
     }
 
     /**
      * Constructor for the WaterQualityReport with all inputs
-     * @param name the name to be set to the WaterQualityReport
+     * @param reportName the name to be set to the WaterQualityReport
      * @param location the new LatLng location to be set to the WaterQualityReport
      * @param condition the water condition to be set to the WaterQualityReport
      */
-    public WaterQualityReport(String name, LatLng location,
+    public WaterQualityReport(String reportName, LatLng location,
                               conditionOfWater condition, int virus, int contam) {
         date = new Date();
-        reportNumber = currentID++;
-        this.name = name;
+        this.reportName = reportName;
         this.location = location;
         this.condition = condition;
         this.virusPPM = virus;
@@ -70,8 +65,8 @@ public class WaterQualityReport implements Comparable<WaterQualityReport> {
      * Gets the name of the WaterQualityReport
      * @return the name of the WaterQualityReport
      */
-    public String getName() {
-        return name;
+    public String getReportName() {
+        return reportName;
     }
 
     /**
@@ -110,8 +105,8 @@ public class WaterQualityReport implements Comparable<WaterQualityReport> {
      * Sets the name of the WaterQualityReport
      * @param name the new name to be set to the WaterQualityReport
      */
-    public void setName(String name) {
-        this.name = name;
+    public void setReportName(String name) {
+        this.reportName = name;
     }
 
     /**
@@ -144,6 +139,14 @@ public class WaterQualityReport implements Comparable<WaterQualityReport> {
      */
     public void setContaminantPPM(int contaminantPPM) {
         this.contaminantPPM = contaminantPPM;
+    }
+
+    /**
+     * Sets the report number of the WaterSourceReport
+     * @param reportNumber the new report number to be set to the WaterSourceReport
+     */
+    public void setReportNumber(int reportNumber) {
+        this.reportNumber = reportNumber;
     }
 
     @Override
