@@ -12,28 +12,20 @@ import android.widget.Button;
 import android.widget.TextView;
 
 public class ViewProfileActivity extends AppCompatActivity {
-    private Model model;
-    private User currentUser;
-
-    private Button editButton;
-    private TextView homeAddressText;
-    private TextView emailAddressText;
-    private TextView userTypeText;
-    private TextView nameText;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.profile_landing);
-        model = Model.getInstance();
-        currentUser = model.getCurrentUser();
+        Model model = Model.getInstance();
+        User currentUser = model.getCurrentUser();
 
 
-        editButton = (Button) findViewById(R.id.edit_profile);
-        nameText = (TextView) findViewById(R.id.txt_view_name);
-        homeAddressText = (TextView) findViewById(R.id.txt_view_home_address);
-        emailAddressText = (TextView) findViewById(R.id.txt_view_email_address);
-        userTypeText = (TextView) findViewById(R.id.txt_view_user_type);
+        Button editButton = (Button) findViewById(R.id.edit_profile);
+        TextView nameText = (TextView) findViewById(R.id.txt_view_name);
+        TextView homeAddressText = (TextView) findViewById(R.id.txt_view_home_address);
+        TextView emailAddressText = (TextView) findViewById(R.id.txt_view_email_address);
+        TextView userTypeText = (TextView) findViewById(R.id.txt_view_user_type);
 
         if (currentUser.getName().equals("")) {
             nameText.setText("(Please add your name)");

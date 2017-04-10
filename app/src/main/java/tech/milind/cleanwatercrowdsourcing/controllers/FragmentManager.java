@@ -37,7 +37,6 @@ public class FragmentManager extends Fragment {
     final private String[] xAxisLabels= {"Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"};
     private LineChart chart;
     private HistoricalReport hr;
-    private List<WaterQualityReport> qualityReports;
     final private Model model = Model.getInstance();
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -125,7 +124,7 @@ public class FragmentManager extends Fragment {
      */
     private void displayChart() {
         hr = model.getHistoricalReport();
-        qualityReports = model.getQualityReports();
+        List<WaterQualityReport> qualityReports = model.getQualityReports();
         double[] qualityAverages = getQualityAverages(getPurityReportsInRadius(qualityReports));
         ArrayList<Entry> entries = new ArrayList<Entry>();
         for(int i = 0; i < qualityAverages.length; i++){
