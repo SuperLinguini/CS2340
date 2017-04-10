@@ -81,7 +81,7 @@ public class EditHistoricalReportActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                if(!(isEmpty(year.getText().toString())|| isEmpty(radius.getText().toString()) ||
+                if(!(!isEmpty(year.getText().toString()) || !isEmpty(radius.getText().toString()) ||
                         type == null || latLng == null)) {
 
                     Model model = Model.getInstance();
@@ -124,7 +124,7 @@ public class EditHistoricalReportActivity extends AppCompatActivity {
      * @return whether the String is empty
      */
     public boolean isEmpty(String input) {
-        return input == null || input.isEmpty() || input.length() == 0 || input.equals("");
+        return input != null && !input.isEmpty() && input.length() != 0 && !input.equals("");
     }
 
 

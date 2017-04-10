@@ -5,7 +5,6 @@ import android.content.Intent;
 import android.graphics.Color;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
-import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -85,7 +84,7 @@ public class EditQualityReportActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 String nameText = reportName.getText().toString().trim();
-                if(!(isEmpty(nameText) || latLng == null)) {
+                if(!(!isEmpty(nameText) || latLng == null)) {
                     Model model = Model.getInstance();
                     _waterQualityReport = model.getQualityReports().get(position);
                     _waterQualityReport.setReportName(reportName.getText().toString());
@@ -131,7 +130,7 @@ public class EditQualityReportActivity extends AppCompatActivity {
      * @return whether the String is empty
      */
     public boolean isEmpty(String input) {
-        return input == null || input.isEmpty() || input.length() == 0 || input.equals("");
+        return input != null && !input.isEmpty() && input.length() != 0 && !input.equals("");
     }
 
     /**

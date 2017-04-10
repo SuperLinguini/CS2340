@@ -88,7 +88,7 @@ public class EditSourceReportActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 String nameText = reportName.getText().toString().trim();
-                if(!(isEmpty(nameText) || latLng == null)) {
+                if(!(!isEmpty(nameText) || latLng == null)) {
                     Model model = Model.getInstance();
                     _waterSourceReport = model.getReports().get(position);
                     _waterSourceReport.setReporter(model.getCurrentUser().getUsername());
@@ -135,7 +135,7 @@ public class EditSourceReportActivity extends AppCompatActivity {
      * @return whether the String is empty
      */
     public boolean isEmpty(String input) {
-        return input == null || input.isEmpty() || input.length() == 0 || input.equals("");
+        return input != null && !input.isEmpty() && input.length() != 0 && !input.equals("");
     }
 
     /**

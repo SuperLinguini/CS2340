@@ -6,7 +6,6 @@ import android.graphics.Color;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
-import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
@@ -75,7 +74,7 @@ public class SubmitQualityReportActivity extends AppCompatActivity {
                 String nameText = name.getText().toString().trim();
                 int virus = Integer.parseInt(virusPPM.getText().toString());
                 int contamination = Integer.parseInt(contaminationPPM.getText().toString());
-                if(!(isEmpty(nameText) || latLng == null)) {
+                if(!(!isEmpty(nameText) || latLng == null)) {
                         _waterQualityReport = new WaterQualityReport();
                     _waterQualityReport.setReportName(name.getText().toString());
                     _waterQualityReport.setLocation(latLng);
@@ -120,7 +119,7 @@ public class SubmitQualityReportActivity extends AppCompatActivity {
      * @return whether the String is empty
      */
     public boolean isEmpty(String input) {
-        return input == null || input.isEmpty() || input.length() == 0 || input.equals("");
+        return input != null && !input.isEmpty() && input.length() != 0 && !input.equals("");
     }
 
     /**
