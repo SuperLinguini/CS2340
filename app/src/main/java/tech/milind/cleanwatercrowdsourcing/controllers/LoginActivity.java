@@ -18,22 +18,17 @@ import tech.milind.cleanwatercrowdsourcing.R;
 import tech.milind.cleanwatercrowdsourcing.model.*;
 
 public class LoginActivity extends AppCompatActivity {
-    Model model;
-    EditText username;
-    EditText password;
-    Button loginButton;
-    Button cancelButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
 
-        model = Model.getInstance();
-        username = (EditText) findViewById(R.id.editTextUsername);
-        password = (EditText) findViewById(R.id.editTextPassword);
-        loginButton = (Button) findViewById(R.id.buttonLogin);
-        cancelButton = (Button) findViewById(R.id.buttonCancel);
+        final Model model = Model.getInstance();
+        final EditText username = (EditText) findViewById(R.id.editTextUsername);
+        final EditText password = (EditText) findViewById(R.id.editTextPassword);
+        Button loginButton = (Button) findViewById(R.id.buttonLogin);
+        Button cancelButton = (Button) findViewById(R.id.buttonCancel);
         FirebaseAuth mAuth = FirebaseAuth.getInstance();
 
 
