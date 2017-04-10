@@ -45,10 +45,12 @@ public class EditSourceReportActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_edit_source_report);
 
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        if (getSupportActionBar() != null) {
+            getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        }
 
         Intent i = getIntent();
-        WaterSourceReport wrs = (WaterSourceReport) i.getParcelableExtra("report_object");
+        WaterSourceReport wrs = i.getParcelableExtra("report_object");
         position = i.getIntExtra("position", position);
 
         reportName = (EditText) findViewById(R.id.nameReportEditTextEdit);
@@ -133,8 +135,7 @@ public class EditSourceReportActivity extends AppCompatActivity {
      * @return whether the String is empty
      */
     public boolean isEmpty(String input) {
-        return input.isEmpty() || input.length() == 0 || input.equals("") ||
-                input == null;
+        return input == null || input.isEmpty() || input.length() == 0 || input.equals("");
     }
 
     /**

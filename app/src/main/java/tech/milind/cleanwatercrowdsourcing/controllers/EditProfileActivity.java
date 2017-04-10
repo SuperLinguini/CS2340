@@ -45,19 +45,19 @@ public class EditProfileActivity extends AppCompatActivity {
         userTypeAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         userTypeSpinner.setAdapter(userTypeAdapter);
 
-        if (currentUser.getName() == "") {
+        if (currentUser.getName().equals("")) {
             nameField.setHint("Enter text here");
         } else {
             nameField.setText(currentUser.getName());
         }
 
-        if (currentUser.getHomeAddress() == "") {
+        if (currentUser.getHomeAddress().equals("")) {
             homeAddressField.setHint("Enter text here.");
         } else {
             homeAddressField.setText(currentUser.getHomeAddress());
         }
 
-        if (currentUser.getEmailAddress() == "") {
+        if (currentUser.getEmailAddress().equals("")) {
             emailAddressField.setHint("Enter text here.");
         } else {
             emailAddressField.setText(currentUser.getEmailAddress());

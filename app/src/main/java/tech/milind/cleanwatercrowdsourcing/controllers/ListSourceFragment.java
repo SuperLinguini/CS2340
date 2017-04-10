@@ -106,7 +106,7 @@ public class ListSourceFragment extends Fragment {
 
         @Override
         public void onBindViewHolder(final ViewHolder holder, final int position) {
-            final Model model = Model.getInstance();
+            //final Model model = Model.getInstance();
             if (reports.get(holder.getAdapterPosition()) != null) {
                 final WaterSourceReport wrs = reports.get(holder.getAdapterPosition());
                 holder.reportDate.setText(String.format("Date: %tD %<tR", wrs.getDate()));

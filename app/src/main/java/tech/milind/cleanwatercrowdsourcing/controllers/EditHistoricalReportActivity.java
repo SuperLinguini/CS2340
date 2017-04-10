@@ -124,8 +124,7 @@ public class EditHistoricalReportActivity extends AppCompatActivity {
      * @return whether the String is empty
      */
     public boolean isEmpty(String input) {
-        return input.isEmpty() || input.length() == 0 || input.equals("") ||
-                input == null;
+        return input == null || input.isEmpty() || input.length() == 0 || input.equals("");
     }
 
 
