@@ -74,7 +74,7 @@ public class SubmitQualityReportActivity extends AppCompatActivity {
                 String nameText = name.getText().toString().trim();
                 int virus = Integer.parseInt(virusPPM.getText().toString());
                 int contamination = Integer.parseInt(contaminationPPM.getText().toString());
-                if(!(!isEmpty(nameText) || latLng == null)) {
+                if(!(isEmpty(nameText) || latLng == null)) {
                         _waterQualityReport = new WaterQualityReport();
                     _waterQualityReport.setReportName(name.getText().toString());
                     _waterQualityReport.setLocation(latLng);
@@ -119,7 +119,7 @@ public class SubmitQualityReportActivity extends AppCompatActivity {
      * @return whether the String is empty
      */
     public boolean isEmpty(String input) {
-        return input != null && !input.isEmpty() && input.length() != 0 && !input.equals("");
+        return input == null || input.isEmpty() || input.length() == 0 || input.equals("");
     }
 
     /**
