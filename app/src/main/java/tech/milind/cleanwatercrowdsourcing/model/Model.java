@@ -13,6 +13,7 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.NoSuchElementException;
 
+@SuppressWarnings("unused")
 public class Model {
 
     private static final Model _instance = new Model();
@@ -23,7 +24,7 @@ public class Model {
     private List<WaterSourceReport> reports;
     private List<WaterQualityReport> qualityReports;
     private HistoricalReport historicalReport;
-    private Security security;
+    private final Security security;
     private User currentUser;
     private DatabaseReference mDatabase;
 

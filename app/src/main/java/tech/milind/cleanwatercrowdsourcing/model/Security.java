@@ -9,7 +9,7 @@ import java.util.NoSuchElementException;
 
 public class Security {
 
-    private HashMap<String, User> userList;
+    final private HashMap<String, User> userList;
 
     public Security() {
         userList = new HashMap<>(50);

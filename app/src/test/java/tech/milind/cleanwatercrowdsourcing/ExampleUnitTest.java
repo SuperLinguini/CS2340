@@ -15,11 +15,10 @@ import tech.milind.cleanwatercrowdsourcing.model.*;
  * @see <a href="http://d.android.com/tools/testing">Testing documentation</a>
  */
 public class ExampleUnitTest {
-    private static final int TIMEOUT = 200;
     private Security security;
 
     @Rule
-    public ExpectedException thrown = ExpectedException.none();
+    public final ExpectedException thrown = ExpectedException.none();
 
     @Before
     public void setUp() {

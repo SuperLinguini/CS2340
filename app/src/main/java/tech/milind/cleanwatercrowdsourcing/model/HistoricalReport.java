@@ -10,9 +10,9 @@ public class HistoricalReport {
     }
 
     private LatLng location;
-    private int year;
-    private double radius;
-    private purityType type;
+    final private int year;
+    final private double radius;
+    final private purityType type;
 
     /**
      * Constructor for the Historical Report with all inputs
@@ -40,6 +40,7 @@ public class HistoricalReport {
      * Sets the location for the Historical report
      * @param location the location to be set
      */
+    @SuppressWarnings("unused")
     public void setLocation(LatLng location) {
         this.location = location;
     }

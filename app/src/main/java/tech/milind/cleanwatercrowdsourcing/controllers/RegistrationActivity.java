@@ -12,11 +12,11 @@ import tech.milind.cleanwatercrowdsourcing.model.*;
 import tech.milind.cleanwatercrowdsourcing.R;
 
 public class RegistrationActivity extends AppCompatActivity {
-    Model model;
-    EditText username;
-    EditText password;
-    Button registerButton;
-    Button cancelButton;
+    private Model model;
+    private EditText username;
+    private EditText password;
+    private Button registerButton;
+    private Button cancelButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

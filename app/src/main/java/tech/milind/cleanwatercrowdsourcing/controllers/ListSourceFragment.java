@@ -23,7 +23,7 @@ import tech.milind.cleanwatercrowdsourcing.model.WaterSourceReport;
 
 public class ListSourceFragment extends Fragment {
     private SimpleSourceAdapter mAdapter;
-    final int REQUEST = 1;
+    final private int REQUEST = 1;
 
     @Override
     public View onCreateView(LayoutInflater inflater,
@@ -70,16 +70,16 @@ public class ListSourceFragment extends Fragment {
 
     public class SimpleSourceAdapter extends RecyclerView
             .Adapter<SimpleSourceAdapter.ViewHolder> {
-        private List<WaterSourceReport> reports;
+        final private List<WaterSourceReport> reports;
 
 
         public class ViewHolder extends RecyclerView.ViewHolder {
-            public View mView;
-            public TextView reportNumAndName;
-            public TextView reportDate;
-            public TextView reportLocation;
-            public TextView reportTypeCondition;
-            public TextView reportReporter;
+            final public View mView;
+            final public TextView reportNumAndName;
+            final public TextView reportDate;
+            final public TextView reportLocation;
+            final public TextView reportTypeCondition;
+            final public TextView reportReporter;
 
             /**
              * Constructor for ViewHolder that links the Views
