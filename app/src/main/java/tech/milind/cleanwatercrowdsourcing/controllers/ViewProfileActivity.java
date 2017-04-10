@@ -43,7 +43,7 @@ public class ViewProfileActivity extends AppCompatActivity {
         }
 
         if (currentUser.getHomeAddress() == "") {
-            homeAddressText.setText("(Plaese add your home address)");
+            homeAddressText.setText("(Please add your home address)");
         } else {
             homeAddressText.setText(currentUser.getHomeAddress());
         }

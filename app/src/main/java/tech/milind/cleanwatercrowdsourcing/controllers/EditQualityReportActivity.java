@@ -99,8 +99,8 @@ public class EditQualityReportActivity extends AppCompatActivity {
                 } else {
                     Snackbar snackbar = Snackbar.make(findViewById(R.id.activity_edit_quality_report),
                             R.string.sourceReportSubmitError, Snackbar.LENGTH_LONG);
-                    View sbview = snackbar.getView();
-                    sbview.setBackgroundColor(Color.RED);
+                    View sbView = snackbar.getView();
+                    sbView.setBackgroundColor(Color.RED);
                     snackbar.show();
                 }
             }
@@ -115,9 +115,7 @@ public class EditQualityReportActivity extends AppCompatActivity {
                 try {
                     startActivityForResult(builder.build(EditQualityReportActivity.this),
                             PLACE_PICKER_REQUEST);
-                } catch (GooglePlayServicesRepairableException e) {
-                    Log.e(TAG, "Failed", e);
-                } catch (GooglePlayServicesNotAvailableException e) {
+                } catch (GooglePlayServicesRepairableException | GooglePlayServicesNotAvailableException e) {
                     Log.e(TAG, "Failed", e);
                 }
             }

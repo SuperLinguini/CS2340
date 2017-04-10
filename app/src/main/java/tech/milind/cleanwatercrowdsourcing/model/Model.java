@@ -194,7 +194,7 @@ public class Model {
 
     /**
      * Sets the historicalReport to the report passed in
-     * @param historicalReport
+     * @param historicalReport the historical report to be set
      */
     public void setHistoricalReport(HistoricalReport historicalReport) {
         this.historicalReport = historicalReport;

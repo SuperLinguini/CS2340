@@ -34,8 +34,8 @@ public enum UserType {
     }
 
     /**
-     * finds the Usertype given the Usertype value
-     * @param type the usertype value
+     * finds the UserType given the Usertype value
+     * @param type the UserType value
      * @return The UserType U if the value is found or null if value is not found
      */
     public static UserType findUserType(String type) {
@@ -49,7 +49,7 @@ public enum UserType {
 
     /**
      * makes a list of the UserType values
-     * @return the list of the Usertype values
+     * @return the list of the UserType values
      */
     public static List<String> toList() {
         List<String> list = new ArrayList<String>(4);

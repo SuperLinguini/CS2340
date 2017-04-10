@@ -36,7 +36,7 @@ public class EditProfileActivity extends AppCompatActivity {
         saveButton = (Button) findViewById(R.id.save_profile);
         cancelButton = (Button) findViewById(R.id.cancel_profile);
         nameField = (EditText) findViewById(R.id.edit_name);
-        homeAddressField = (EditText) findViewById(R.id.edit_home_adress);
+        homeAddressField = (EditText) findViewById(R.id.edit_home_address);
         emailAddressField = (EditText) findViewById(R.id.edit_email_address);
         userTypeSpinner = (Spinner) findViewById(R.id.spinner_user_type);
 

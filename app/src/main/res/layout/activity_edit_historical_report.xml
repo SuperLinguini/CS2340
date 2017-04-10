@@ -77,13 +77,13 @@
         android:layout_marginLeft="20dp"
         android:layout_marginTop="25dp"
         android:layout_below="@id/textInputLayoutYear"
-        android:text="Select Purirty Type"/>
+        android:text="Select Purity Type"/>
     <RadioGroup
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         android:layout_marginTop="10dp"
-        android:id="@+id/HistradioGroup"
+        android:id="@+id/HistRadioGroup"
         android:layout_marginLeft="20dp"
         android:layout_below="@id/rgtv">
 
@@ -107,7 +107,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
         android:layout_centerInParent="true"
-        android:layout_below="@id/HistradioGroup"
+        android:layout_below="@id/HistRadioGroup"
         android:text="Create Graph"/>
 
 

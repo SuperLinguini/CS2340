@@ -158,7 +158,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     /**
-     * shows alert dialog to logout if back button is pressed on homescreen
+     * shows alert dialog to logout if back button is pressed on home screen
      */
     @Override
     public void onBackPressed() {
