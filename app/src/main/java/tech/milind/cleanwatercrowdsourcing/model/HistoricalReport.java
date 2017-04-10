@@ -6,7 +6,7 @@ package tech.milind.cleanwatercrowdsourcing.model;
 
 public class HistoricalReport {
     public enum purityType {
-        Contaminant, Virus;
+        Contaminant, Virus
     }
 
     private LatLng location;

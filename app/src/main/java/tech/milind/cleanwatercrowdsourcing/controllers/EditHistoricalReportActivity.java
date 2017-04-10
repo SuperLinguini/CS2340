@@ -32,10 +32,8 @@ public class EditHistoricalReportActivity extends AppCompatActivity {
     private EditText year;
     private EditText radius;
     private EditText location;
-    private RadioGroup qualityType;
     private HistoricalReport.purityType type;
     private LatLng latLng;
-    private Button button;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -45,8 +43,8 @@ public class EditHistoricalReportActivity extends AppCompatActivity {
         HistoricalReport existingHr = model.getHistoricalReport();
         year = (EditText) findViewById(R.id.yearHistEditText);
         radius = (EditText) findViewById(R.id.radiusHistEditText);
-        qualityType = (RadioGroup) findViewById(R.id.HistRadioGroup);
-        button = (Button) findViewById(R.id.HistButton);
+        RadioGroup qualityType = (RadioGroup) findViewById(R.id.HistradioGroup);
+        Button button = (Button) findViewById(R.id.HistButton);
         location = (EditText) findViewById(R.id.locationHistReportEditText);
         location.setEnabled(false);
 
@@ -81,7 +79,7 @@ public class EditHistoricalReportActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                if(!(isEmpty(year.getText().toString())|| isEmpty(radius.getText().toString()) ||
+                if(!(isEmpty(year.getText().toString()) || isEmpty(radius.getText().toString()) ||
                         type == null || latLng == null)) {
 
                     Model model = Model.getInstance();

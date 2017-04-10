@@ -18,16 +18,11 @@ import tech.milind.cleanwatercrowdsourcing.R;
 import tech.milind.cleanwatercrowdsourcing.model.*;
 
 public class LoginActivity extends AppCompatActivity {
-    private Model model;
-    private EditText username;
-    private EditText password;
-    private Button loginButton;
-    private Button cancelButton;
-    @SuppressWarnings("unused")
-    private FirebaseAuth mAuth;
-    @SuppressWarnings("unused")
-    private FirebaseAuth.AuthStateListener mAuthListener;
-
+    Model model;
+    EditText username;
+    EditText password;
+    Button loginButton;
+    Button cancelButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -39,10 +34,10 @@ public class LoginActivity extends AppCompatActivity {
         password = (EditText) findViewById(R.id.editTextPassword);
         loginButton = (Button) findViewById(R.id.buttonLogin);
         cancelButton = (Button) findViewById(R.id.buttonCancel);
-        mAuth = FirebaseAuth.getInstance();
+        FirebaseAuth mAuth = FirebaseAuth.getInstance();
 
 
-        mAuthListener = new FirebaseAuth.AuthStateListener() {
+        FirebaseAuth.AuthStateListener mAuthListener = new FirebaseAuth.AuthStateListener() {
             @Override
             public void onAuthStateChanged(@NonNull FirebaseAuth firebaseAuth) {
                 FirebaseUser user = firebaseAuth.getCurrentUser();
