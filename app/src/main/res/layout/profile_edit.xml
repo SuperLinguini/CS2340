@@ -39,8 +39,9 @@
         android:layout_width="wrap_content"
         android:textAppearance="@android:style/TextAppearance.Material.Medium"
         android:layout_marginTop="5dp"
-        android:layout_below="@+id/edit_home_address"
-        android:layout_alignStart="@+id/textView" />
+        android:layout_below="@+id/edit_home_adress"
+        android:layout_alignStart="@+id/textView"
+        android:labelFor="@id/edit_name"/>
 
     <EditText
         android:layout_width="match_parent"
@@ -52,7 +53,8 @@
         android:layout_alignStart="@+id/textView"
         android:layout_alignEnd="@+id/cancel_profile"
         android:layout_marginTop="5dp"
-        android:layout_marginBottom="5dp"/>
+        android:layout_marginBottom="5dp"
+        android:labelFor="@id/edit_home_adress"/>
 
     <EditText
         android:layout_width="match_parent"
@@ -61,7 +63,7 @@
         android:ems="10"
         android:layout_alignStart="@+id/textView"
         android:layout_alignEnd="@+id/cancel_profile"
-        android:id="@+id/edit_home_address"
+        android:id="@+id/edit_home_adress"
         android:layout_below="@id/text_home_address"
         android:layout_marginTop="5dp"
         android:layout_marginBottom="5dp" />
@@ -74,12 +76,13 @@
         android:layout_height="wrap_content"
         android:layout_width="wrap_content"
         android:layout_below="@+id/edit_email_address"
-        android:layout_alignStart="@+id/textView" />
+        android:layout_alignStart="@+id/textView"
+        android:labelFor="@id/edit_email_address"/>
 
     <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:inputType="textEmailAddress"
+        android:inputType="textPersonName"
         android:ems="10"
         android:layout_below="@+id/text_email_address"
         android:layout_alignStart="@+id/textView"

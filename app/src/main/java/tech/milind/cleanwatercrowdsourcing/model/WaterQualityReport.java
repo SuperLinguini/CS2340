@@ -3,6 +3,7 @@ package tech.milind.cleanwatercrowdsourcing.model;
 import android.support.annotation.NonNull;
 
 import java.util.Date;
+import java.util.Locale;
 
 
 /**
@@ -159,7 +160,7 @@ public class WaterQualityReport implements Comparable<WaterQualityReport> {
      * @return the String details for the map pin snippet
      */
     public String getSnippet() {
-        return String.format("#%d %tD %<tR %s/%s/%s", reportNumber, date,
+        return String.format(Locale.getDefault(),"#%d %tD %<tR %s/%s/%s", reportNumber, date,
                 condition.toString(), virusPPM, contaminantPPM);
     }
 }

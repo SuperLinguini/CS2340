@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent" android:layout_height="match_parent">
 <RelativeLayout
-android:layout_width="match_parent" android:layout_height="match_parent"
+android:layout_width="wrap_content" android:layout_height="wrap_content"
 android:descendantFocusability="beforeDescendants"
 android:focusableInTouchMode="true"
 android:id="@+id/activity_submit_purity_report">
@@ -89,7 +89,8 @@ android:id="@+id/activity_submit_purity_report">
     android:layout_below="@+id/textViewVirusPurityReport"
     android:layout_marginRight="60dp"
     android:layout_alignParentStart="true"
-    android:id="@+id/textInputLayoutPurity3">
+    android:id="@+id/textInputLayoutPurity3"
+    android:labelFor="@id/virusPurityReportEditText">
 
     <EditText
         android:id="@+id/virusPurityReportEditText"
@@ -116,7 +117,8 @@ android:id="@+id/activity_submit_purity_report">
     android:layout_below="@+id/textViewContamPurityReport"
     android:layout_marginRight="60dp"
     android:layout_alignParentStart="true"
-    android:id="@+id/textInputLayoutPurity4">
+    android:id="@+id/textInputLayoutPurity4"
+    android:labelFor="@id/contamPurityReportEditText">
 
     <EditText
         android:id="@+id/contamPurityReportEditText"

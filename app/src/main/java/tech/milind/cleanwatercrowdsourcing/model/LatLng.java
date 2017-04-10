@@ -3,6 +3,8 @@ package tech.milind.cleanwatercrowdsourcing.model;
 import android.os.Parcel;
 import android.os.Parcelable;
 
+import java.util.Locale;
+
 /**
  * Created by SuperLinguini on 3/27/2017.
  */
@@ -38,7 +40,7 @@ public class LatLng implements Parcelable {
 
     @Override
     public String toString() {
-        return String.format("Lat/Lng: (%.3f, %.3f)", latitude, longitude);
+        return String.format(Locale.getDefault(), "Lat/Lng: (%.3f, %.3f)", latitude, longitude);
     }
 
     LatLng(Parcel in) {

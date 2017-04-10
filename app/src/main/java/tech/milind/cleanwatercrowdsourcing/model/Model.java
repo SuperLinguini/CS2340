@@ -93,7 +93,7 @@ public class Model {
                     reports = dataSnapshot.getValue(t);
                 } else {
                     List<WaterSourceReport> list = dataSnapshot.getValue(t);
-                    HashSet<Integer> set = new HashSet<Integer>();
+                    HashSet<Integer> set = new HashSet<>();
                     for (WaterSourceReport wsr: reports) {
                         set.add(wsr.getReportNumber());
                     }
@@ -129,7 +129,7 @@ public class Model {
                     qualityReports = dataSnapshot.getValue(t);
                 } else {
                     List<WaterQualityReport> list = dataSnapshot.getValue(t);
-                    HashSet<Integer> set = new HashSet<Integer>();
+                    HashSet<Integer> set = new HashSet<>();
                     for (WaterQualityReport wqr: qualityReports) {
                         set.add(wqr.getReportNumber());
                     }
@@ -195,7 +195,7 @@ public class Model {
 
     /**
      * Sets the historicalReport to the report passed in
-     * @param historicalReport the historical report to set
+     * @param historicalReport The historical report to be set
      */
     public void setHistoricalReport(HistoricalReport historicalReport) {
         this.historicalReport = historicalReport;

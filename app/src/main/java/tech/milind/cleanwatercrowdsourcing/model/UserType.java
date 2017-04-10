@@ -52,7 +52,7 @@ public enum UserType {
      * @return the list of the UserType values
      */
     public static List<String> toList() {
-        List<String> list = new ArrayList<String>(4);
+        List<String> list = new ArrayList<>(4);
         for (UserType u : UserType.values()) {
             list.add(u.type);
         }
