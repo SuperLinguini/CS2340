@@ -5,7 +5,7 @@
         android:id="@+id/nav_home"
         android:enabled="true"
         android:icon="@mipmap/ic_home_white_24dp"
-        android:title="Home"
+        android:title="@string/home"
         app:showAsAction="always" />
     <item
         android:id="@+id/nav_source"
@@ -17,12 +17,12 @@
         android:id="@+id/nav_purity"
         android:enabled="true"
         android:icon="@mipmap/ic_purity"
-        android:title="Purity"
+        android:title="@string/purity"
         app:showAsAction="always" />
     <item
         android:id="@+id/nav_historical"
         android:enabled="true"
         android:icon="@mipmap/ic_timeline_black_24dp"
-        android:title="Trends"
+        android:title="@string/trends"
         app:showAsAction="always" />
 </menu>

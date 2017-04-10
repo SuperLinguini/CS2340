@@ -20,7 +20,7 @@
             android:layout_height="wrap_content"
             android:layout_marginLeft="20dp"
             android:layout_marginRight="20dp"
-            android:hint="Name"
+            android:hint="@string/name"
             android:inputType="text" />
     </android.support.design.widget.TextInputLayout>
 
@@ -38,7 +38,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginLeft="20dp"
-            android:hint="Location"
+            android:hint="@string/location"
             android:inputType="none" />
     </android.support.design.widget.TextInputLayout>
 
@@ -58,7 +58,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="25dp"
-        android:text="Water Type"
+        android:text="@string/water_type"
         android:layout_below="@+id/textInputLayout2Edit"
         android:layout_marginLeft="26dp" />
 
@@ -78,7 +78,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="25dp"
         android:layout_marginLeft="26dp"
-        android:text="Water Condition"
+        android:text="@string/water_condition"
         android:layout_below="@+id/spinnerTypeEdit" />
 
     <Spinner
@@ -97,7 +97,7 @@
         android:layout_below="@+id/spinnerConditionEdit"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="23dp"
-        android:text="Submit" />
+        android:text="@string/submit" />
 
 
 </RelativeLayout>
