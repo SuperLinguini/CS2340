@@ -15,8 +15,6 @@ public class RegistrationActivity extends AppCompatActivity {
     private Model model;
     private EditText username;
     private EditText password;
-    private Button registerButton;
-    private Button cancelButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,8 +24,8 @@ public class RegistrationActivity extends AppCompatActivity {
         model = Model.getInstance();
         username = (EditText) findViewById(R.id.editTextUsername);
         password = (EditText) findViewById(R.id.editTextPassword);
-        registerButton = (Button) findViewById(R.id.buttonRegister);
-        cancelButton = (Button) findViewById(R.id.buttonCancel);
+        Button registerButton = (Button) findViewById(R.id.buttonRegister);
+        Button cancelButton = (Button) findViewById(R.id.buttonCancel);
 
         registerButton.setOnClickListener(new View.OnClickListener() {
             @Override
