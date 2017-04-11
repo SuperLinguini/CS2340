@@ -10,7 +10,4 @@
     <string name="SubmitWaterPurityReport">Submit Water Purity Report</string>
     <string name="purityReportSubmitError">Missing one or more fields.</string>
     <string name="nav_source">Source</string>
-
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>
