@@ -27,7 +27,7 @@ import tech.milind.cleanwatercrowdsourcing.model.Model;
 
 public class EditHistoricalReportActivity extends AppCompatActivity {
     private static final String TAG = "EditHistoricalReport";
-    final int PLACE_PICKER_REQUEST = 1;
+    final private int PLACE_PICKER_REQUEST = 1;
 
     private EditText year;
     private EditText radius;
@@ -79,7 +79,7 @@ public class EditHistoricalReportActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                if(!(isEmpty(year.getText().toString())|| isEmpty(radius.getText().toString()) ||
+                if(!(isEmpty(year.getText().toString()) || isEmpty(radius.getText().toString()) ||
                         type == null || latLng == null)) {
 
                     Model model = Model.getInstance();
@@ -121,8 +121,9 @@ public class EditHistoricalReportActivity extends AppCompatActivity {
      * @param input String from TextView
      * @return whether the String is empty
      */
-    public boolean isEmpty(String input) {
-        return input == null || input.isEmpty() || input.length() == 0 || input.equals("");
+    private boolean isEmpty(String input) {
+        return input.isEmpty() || input.length() == 0 || input.equals("") ||
+                input == null;
     }
 
 

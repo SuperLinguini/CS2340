@@ -14,7 +14,7 @@ public class WaterQualityReport implements Comparable<WaterQualityReport> {
         Safe, Treatable, Unsafe
     }
 
-    private Date date;
+    final private Date date;
     private int reportNumber;
     private String reportName;
     private LatLng location;

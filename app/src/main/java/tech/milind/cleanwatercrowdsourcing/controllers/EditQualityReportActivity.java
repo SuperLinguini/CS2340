@@ -5,7 +5,6 @@ import android.content.Intent;
 import android.graphics.Color;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
-import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -30,7 +29,7 @@ import tech.milind.cleanwatercrowdsourcing.model.WaterQualityReport;
 
 public class EditQualityReportActivity extends AppCompatActivity {
     private static final String TAG = "AddQualityReport";
-    final int PLACE_PICKER_REQUEST = 1;
+    final private int PLACE_PICKER_REQUEST = 1;
     final static int RESULT_CHANGED = 24;
 
     private Spinner conditionSpinner;
@@ -130,7 +129,7 @@ public class EditQualityReportActivity extends AppCompatActivity {
      * @param input String from TextView
      * @return whether the String is empty
      */
-    public boolean isEmpty(String input) {
+    private boolean isEmpty(String input) {
         return input == null || input.isEmpty() || input.length() == 0 || input.equals("");
     }
 

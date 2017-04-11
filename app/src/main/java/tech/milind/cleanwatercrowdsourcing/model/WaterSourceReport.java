@@ -143,6 +143,7 @@ public class WaterSourceReport implements Comparable<WaterSourceReport>, Parcela
      * Sets the date of the WaterSourceReport
      * @param date the new date to be set to the WaterSourceReport
      */
+    @SuppressWarnings("unused")
     public void setDate(Date date) {
         this.date = date;
     }
