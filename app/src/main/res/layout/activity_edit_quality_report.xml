@@ -89,8 +89,7 @@
             android:layout_below="@+id/textViewVirusPurityReportEdit"
             android:layout_marginRight="60dp"
             android:layout_alignParentStart="true"
-            android:id="@+id/textInputLayoutPurity3Edit"
-            android:labelFor="@id/virusPurityReportEditTextEdit">
+            android:id="@+id/textInputLayoutPurity3Edit">
 
             <EditText
                 android:id="@+id/virusPurityReportEditTextEdit"
@@ -117,8 +116,7 @@
             android:layout_below="@+id/textViewContamPurityReportEdit"
             android:layout_marginRight="60dp"
             android:layout_alignParentStart="true"
-            android:id="@+id/textInputLayoutPurity4Edit"
-            android:labelFor="@id/contamPurityReportEditTextEdit">
+            android:id="@+id/textInputLayoutPurity4Edit">
 
             <EditText
                 android:id="@+id/contamPurityReportEditTextEdit"

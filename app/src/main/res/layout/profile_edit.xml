@@ -63,7 +63,7 @@
         android:ems="10"
         android:layout_alignStart="@+id/textView"
         android:layout_alignEnd="@+id/cancel_profile"
-        android:id="@+id/edit_home_adress"
+        android:id="@+id/edit_home_address"
         android:layout_below="@id/text_home_address"
         android:layout_marginTop="5dp"
         android:layout_marginBottom="5dp" />
