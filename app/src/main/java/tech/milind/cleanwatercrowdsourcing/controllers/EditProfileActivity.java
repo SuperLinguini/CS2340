@@ -18,8 +18,6 @@ public class EditProfileActivity extends AppCompatActivity {
     private Model model;
     private User currentUser;
 
-    private Button saveButton;
-    private Button cancelButton;
     private EditText nameField;
     private EditText homeAddressField;
     private EditText emailAddressField;
@@ -33,15 +31,15 @@ public class EditProfileActivity extends AppCompatActivity {
         model = Model.getInstance();
         currentUser = model.getCurrentUser();
 
-        saveButton = (Button) findViewById(R.id.save_profile);
-        cancelButton = (Button) findViewById(R.id.cancel_profile);
+        Button saveButton = (Button) findViewById(R.id.save_profile);
+        Button cancelButton = (Button) findViewById(R.id.cancel_profile);
         nameField = (EditText) findViewById(R.id.edit_name);
         homeAddressField = (EditText) findViewById(R.id.edit_home_adress);
         emailAddressField = (EditText) findViewById(R.id.edit_email_address);
         userTypeSpinner = (Spinner) findViewById(R.id.spinner_user_type);
 
         ArrayAdapter<String> userTypeAdapter
-                = new ArrayAdapter(this, android.R.layout.simple_spinner_item, UserType.toList());
+                = new ArrayAdapter<>(this, android.R.layout.simple_spinner_item, UserType.toList());
         userTypeAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         userTypeSpinner.setAdapter(userTypeAdapter);
 

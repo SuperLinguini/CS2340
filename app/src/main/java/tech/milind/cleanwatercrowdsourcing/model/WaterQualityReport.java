@@ -11,7 +11,7 @@ import java.util.Date;
 
 public class WaterQualityReport implements Comparable<WaterQualityReport> {
     public enum conditionOfWater {
-        Safe, Treatable, Unsafe;
+        Safe, Treatable, Unsafe
     }
 
     private Date date;

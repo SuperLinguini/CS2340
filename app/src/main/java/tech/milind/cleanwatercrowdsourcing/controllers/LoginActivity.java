@@ -23,9 +23,6 @@ public class LoginActivity extends AppCompatActivity {
     EditText password;
     Button loginButton;
     Button cancelButton;
-    private FirebaseAuth mAuth;
-    private FirebaseAuth.AuthStateListener mAuthListener;
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,10 +34,10 @@ public class LoginActivity extends AppCompatActivity {
         password = (EditText) findViewById(R.id.editTextPassword);
         loginButton = (Button) findViewById(R.id.buttonLogin);
         cancelButton = (Button) findViewById(R.id.buttonCancel);
-        mAuth = FirebaseAuth.getInstance();
+        FirebaseAuth mAuth = FirebaseAuth.getInstance();
 
 
-        mAuthListener = new FirebaseAuth.AuthStateListener() {
+        FirebaseAuth.AuthStateListener mAuthListener = new FirebaseAuth.AuthStateListener() {
             @Override
             public void onAuthStateChanged(@NonNull FirebaseAuth firebaseAuth) {
                 FirebaseUser user = firebaseAuth.getCurrentUser();
