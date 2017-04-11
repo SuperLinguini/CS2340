@@ -79,30 +79,32 @@ public class Model {
 
     public void loadWaterSourceReports() {
         //.child("date").child("time").orderByValue().limitToLast(100)
-        FirebaseDatabase.getInstance().setPersistenceEnabled(true);
-        mDatabase = FirebaseDatabase.getInstance().getReference();
-        mDatabase.child("waterSourceReports").limitToLast(100).orderByChild("date").addValueEventListener(new ValueEventListener() {
-            @Override
-            public void onDataChange(DataSnapshot dataSnapshot) {
-                if (reports == null) {
-                    reports = new LinkedList<>();
-                }
-                GenericTypeIndicator<List<WaterSourceReport>> t =
-                        new GenericTypeIndicator<List<WaterSourceReport>>() {};
-                if (reports.size() == 0) {
-                    reports = dataSnapshot.getValue(t);
-                } else {
-                    List<WaterSourceReport> list = dataSnapshot.getValue(t);
-                    HashSet<Integer> set = new HashSet<>();
-                    for (WaterSourceReport wsr: reports) {
-                        set.add(wsr.getReportNumber());
+        if (mDatabase == null) {
+            FirebaseDatabase.getInstance().setPersistenceEnabled(true);
+            mDatabase = FirebaseDatabase.getInstance().getReference();
+            mDatabase.child("waterSourceReports").limitToLast(100).orderByChild("date").addValueEventListener(new ValueEventListener() {
+                @Override
+                public void onDataChange(DataSnapshot dataSnapshot) {
+                    if (reports == null) {
+                        reports = new LinkedList<>();
                     }
-                    for (WaterSourceReport wsr: list) {
-                        if (!set.contains(wsr.getReportNumber())) {
-                            reports.add(wsr);
+                    GenericTypeIndicator<List<WaterSourceReport>> t =
+                            new GenericTypeIndicator<List<WaterSourceReport>>() {
+                            };
+                    if (reports.size() == 0) {
+                        reports = dataSnapshot.getValue(t);
+                    } else {
+                        List<WaterSourceReport> list = dataSnapshot.getValue(t);
+                        HashSet<Integer> set = new HashSet<>();
+                        for (WaterSourceReport wsr : reports) {
+                            set.add(wsr.getReportNumber());
+                        }
+                        for (WaterSourceReport wsr : list) {
+                            if (!set.contains(wsr.getReportNumber())) {
+                                reports.add(wsr);
+                            }
                         }
                     }
-                }
 
 //                reports.removeAll(list);
 //                reports.addAll(list);
@@ -110,42 +112,44 @@ public class Model {
 //                for(WaterSourceReport r: dataSnapshot.getValue(t)) {
 //                    reports.add(r);
 //                }
-            }
-
-            @Override
-            public void onCancelled(DatabaseError databaseError) {
-
-            }
-        });
-        mDatabase.child("waterQualityReports").limitToLast(100).orderByChild("date").addValueEventListener(new ValueEventListener() {
-            @Override
-            public void onDataChange(DataSnapshot dataSnapshot) {
-                if (qualityReports == null) {
-                    qualityReports = new LinkedList<>();
                 }
-                GenericTypeIndicator<List<WaterQualityReport>> t =
-                        new GenericTypeIndicator<List<WaterQualityReport>>() {};
-                if (qualityReports.size() == 0) {
-                    qualityReports = dataSnapshot.getValue(t);
-                } else {
-                    List<WaterQualityReport> list = dataSnapshot.getValue(t);
-                    HashSet<Integer> set = new HashSet<>();
-                    for (WaterQualityReport wqr: qualityReports) {
-                        set.add(wqr.getReportNumber());
+
+                @Override
+                public void onCancelled(DatabaseError databaseError) {
+
+                }
+            });
+            mDatabase.child("waterQualityReports").limitToLast(100).orderByChild("date").addValueEventListener(new ValueEventListener() {
+                @Override
+                public void onDataChange(DataSnapshot dataSnapshot) {
+                    if (qualityReports == null) {
+                        qualityReports = new LinkedList<>();
                     }
-                    for (WaterQualityReport wqr: list) {
-                        if (!set.contains(wqr.getReportNumber())) {
-                            qualityReports.add(wqr);
+                    GenericTypeIndicator<List<WaterQualityReport>> t =
+                            new GenericTypeIndicator<List<WaterQualityReport>>() {
+                            };
+                    if (qualityReports.size() == 0) {
+                        qualityReports = dataSnapshot.getValue(t);
+                    } else {
+                        List<WaterQualityReport> list = dataSnapshot.getValue(t);
+                        HashSet<Integer> set = new HashSet<>();
+                        for (WaterQualityReport wqr : qualityReports) {
+                            set.add(wqr.getReportNumber());
+                        }
+                        for (WaterQualityReport wqr : list) {
+                            if (!set.contains(wqr.getReportNumber())) {
+                                qualityReports.add(wqr);
+                            }
                         }
                     }
                 }
-            }
 
-            @Override
-            public void onCancelled(DatabaseError databaseError) {
+                @Override
+                public void onCancelled(DatabaseError databaseError) {
 
-            }
-        });
+                }
+            });
+        }
     }
 
     /**
@@ -254,5 +258,8 @@ public class Model {
      * @param report WaterQualityReport to add
      */
     public void addPurityReport(WaterQualityReport report) {
+        if(report == null) {
+            throw new NullPointerException();
+        }
         qualityReports.add(report);}
 }

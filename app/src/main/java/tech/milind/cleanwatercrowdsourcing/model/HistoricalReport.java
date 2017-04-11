@@ -1,5 +1,10 @@
 package tech.milind.cleanwatercrowdsourcing.model;
 
+import android.location.Location;
+
+import java.util.ArrayList;
+import java.util.List;
+
 /**
  * Created by kiran on 4/4/2017.
  */
@@ -67,6 +72,58 @@ public class HistoricalReport {
      */
     public purityType getType() {
         return type;
+    }
+
+    /**
+     * Finds the reports that are within the specified radius
+     * @param reports the list of all water quality reports
+     * @return the list of all the reports within the specified radius
+     */
+    public List<WaterQualityReport> getPurityReportsInRadius(List<WaterQualityReport> reports) {
+        List<WaterQualityReport> reportsInRadius = new ArrayList<>();
+        Location center = new Location("center");
+        center.setLatitude(this.getLocation().getLatitude());
+        center.setLongitude(this.getLocation().getLongitude());
+        for(WaterQualityReport report: reports) {
+            Location loc = new Location("Report Location");
+            loc.setLatitude(report.getLocation().getLatitude());
+            loc.setLongitude(report.getLocation().getLongitude());
+            double rad = this.getRadius();
+            double distanceInMiles = center.distanceTo(loc) / 1609.34;
+            int yr = this.getYear();
+            int reportYear = report.getDate().getYear() + 1900;
+            if (distanceInMiles <= rad && reportYear == yr) {
+                reportsInRadius.add(report);
+
+            }
+        }
+        return reportsInRadius;
+    }
+
+    /**
+     * Gets the average quality per month
+     * @param reports the reports that are within the specified radius
+     * @return an array of size 12 with each element being the average quality for that month
+     */
+    public double[] getQualityAverages(List<WaterQualityReport> reports) {
+        int[] numPerMonth = new int[12];
+        int[] qualitySum = new int[12];
+        double[] qualityAverages = new double[12];
+        for(WaterQualityReport report: reports) {
+            int month = report.getDate().getMonth();
+            int ppm = (this.getType() == HistoricalReport.purityType.Virus )?
+                    report.getVirusPPM() : report.getContaminantPPM();
+            numPerMonth[month]++;
+            qualitySum[month] += ppm;
+        }
+        for(int i = 0; i < qualityAverages.length; i++) {
+            if (qualitySum[i] == 0 && numPerMonth[i] == 0) {
+                qualityAverages[i] = 0;
+            } else {
+                qualityAverages[i] = qualitySum[i] / ((double) numPerMonth[i]);
+            }
+        }
+        return qualityAverages;
     }
 
 }
