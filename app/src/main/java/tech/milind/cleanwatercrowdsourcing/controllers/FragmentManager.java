@@ -6,11 +6,9 @@ import android.location.Location;
 import android.support.design.widget.FloatingActionButton;
 import android.support.v4.app.Fragment;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Toast;
 
 import com.github.mikephil.charting.charts.LineChart;
 import com.github.mikephil.charting.components.AxisBase;
@@ -132,9 +130,9 @@ public class FragmentManager extends Fragment {
         for(int i = 0; i < qualityAverages.length; i++){
             entries.add(new Entry((float)i, (float)qualityAverages[i]));
         }
-        LineDataSet dataset = new LineDataSet(entries,hr.getType().name()+" PPM");
-        LineData chartdata = new LineData(dataset);
-        chart.setData(chartdata);
+        LineDataSet dataSet = new LineDataSet(entries,hr.getType().name()+" PPM");
+        LineData chartData = new LineData(dataSet);
+        chart.setData(chartData);
         XAxis xAxis = chart.getXAxis();
         xAxis.setPosition(XAxis.XAxisPosition.BOTTOM);
         xAxis.setValueFormatter(new IAxisValueFormatter() {
@@ -143,9 +141,9 @@ public class FragmentManager extends Fragment {
                 return xAxisLabels[(int)value];
             }
         });
-        dataset.setColors(ColorTemplate.COLORFUL_COLORS);
+        dataSet.setColors(ColorTemplate.COLORFUL_COLORS);
 
-        dataset.setDrawFilled(true);
+        dataSet.setDrawFilled(true);
 
         chart.animateY(5000);
 

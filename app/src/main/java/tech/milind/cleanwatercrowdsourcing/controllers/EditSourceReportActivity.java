@@ -98,9 +98,6 @@ public class EditSourceReportActivity extends AppCompatActivity {
                             typeSpinner.getSelectedItem());
                     _waterSourceReport.setCondition((WaterSourceReport.conditionOfWater)
                             conditionSpinner.getSelectedItem());
-//                    model.getmDatabase().child("waterSourceReport")
-//                            .child("" + (_waterSourceReport.getReportNumber() - 1))
-//                            .setValue(_waterSourceReport);
                     model.editWaterSourceReport(_waterSourceReport);
                     Intent output = new Intent();
                     output.putExtra("position", position);
@@ -109,8 +106,8 @@ public class EditSourceReportActivity extends AppCompatActivity {
                 } else {
                     Snackbar snackbar = Snackbar.make(findViewById(R.id.activity_edit_source_report),
                             R.string.sourceReportSubmitError, Snackbar.LENGTH_LONG);
-                    View sbview = snackbar.getView();
-                    sbview.setBackgroundColor(Color.RED);
+                    View sbView = snackbar.getView();
+                    sbView.setBackgroundColor(Color.RED);
                     snackbar.show();
                 }
             }
@@ -125,9 +122,7 @@ public class EditSourceReportActivity extends AppCompatActivity {
                 try {
                     startActivityForResult(builder.build(EditSourceReportActivity.this),
                             PLACE_PICKER_REQUEST);
-                } catch (GooglePlayServicesRepairableException e) {
-                    Log.e(TAG, "Failed", e);
-                } catch (GooglePlayServicesNotAvailableException e) {
+                } catch (GooglePlayServicesRepairableException | GooglePlayServicesNotAvailableException e) {
                     Log.e(TAG, "Failed", e);
                 }
             }

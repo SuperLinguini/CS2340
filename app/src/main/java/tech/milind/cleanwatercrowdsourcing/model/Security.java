@@ -40,14 +40,14 @@ public class Security {
      * @param password password of the new User
      * @return The user object that was just added to the hashmap
      * @throws NoSuchElementException if username already exists in hashmap
-     * @throws IllegalArgumentException if the username does not contain atleast one character
+     * @throws IllegalArgumentException if the username does not contain at least one character
      */
     public User addUser(String username, String password) {
         if (userList.containsKey(username)) {
             throw new NoSuchElementException("User already existed");
         }
         if (username.length()==0) {
-            throw new IllegalArgumentException("Username must contain atleast one " +
+            throw new IllegalArgumentException("Username must contain at least one " +
                     "character. Please try again.");
         }
         User newUser = new User(username, password);
@@ -56,7 +56,7 @@ public class Security {
     }
 
     /**
-     * Removes the user from the userlist given the username of the user
+     * Removes the user from the user list given the username of the user
      * @param username the username of the user that is to be removed
      */
     public void removeUser(String username) {

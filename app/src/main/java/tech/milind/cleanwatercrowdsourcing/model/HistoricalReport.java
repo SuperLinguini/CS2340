@@ -54,14 +54,14 @@ public class HistoricalReport {
 
     /**
      * Gets the radius for the report
-     * @return the redius for the report
+     * @return the radius for the report
      */
     public double getRadius() {
         return radius;
     }
 
     /**
-     * gets the purtiy type for the report
+     * gets the purity type for the report
      * @return the purity type for the report
      */
     public purityType getType() {

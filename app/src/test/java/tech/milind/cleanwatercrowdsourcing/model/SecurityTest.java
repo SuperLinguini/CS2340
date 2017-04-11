@@ -47,7 +47,7 @@ public class SecurityTest {
             fail("Expected an NoSuchElementException to be thrown");
         }
         catch (IllegalArgumentException e) {
-            assertEquals("Username must contain atleast one character. Please try again.",
+            assertEquals("Username must contain at least one character. Please try again.",
                     e.getMessage());
         }
         User user2 = security.addUser("another_user", "");

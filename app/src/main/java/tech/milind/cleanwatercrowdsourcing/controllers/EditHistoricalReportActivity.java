@@ -4,7 +4,6 @@ import android.app.Activity;
 
 import android.content.Intent;
 import android.graphics.Color;
-import android.location.Location;
 import android.os.Bundle;
 import android.support.annotation.IdRes;
 import android.support.design.widget.FloatingActionButton;
@@ -21,14 +20,10 @@ import com.google.android.gms.common.GooglePlayServicesRepairableException;
 import com.google.android.gms.location.places.Place;
 import com.google.android.gms.location.places.ui.PlacePicker;
 
-import java.util.ArrayList;
-import java.util.List;
-
 import tech.milind.cleanwatercrowdsourcing.R;
 import tech.milind.cleanwatercrowdsourcing.model.HistoricalReport;
 import tech.milind.cleanwatercrowdsourcing.model.LatLng;
 import tech.milind.cleanwatercrowdsourcing.model.Model;
-import tech.milind.cleanwatercrowdsourcing.model.WaterQualityReport;
 
 public class EditHistoricalReportActivity extends AppCompatActivity {
     private static final String TAG = "EditHistoricalReport";
@@ -98,8 +93,8 @@ public class EditHistoricalReportActivity extends AppCompatActivity {
                 } else {
                     Snackbar snackbar = Snackbar.make(findViewById(R.id.activity_edit_historical_report),
                             R.string.sourceReportSubmitError, Snackbar.LENGTH_LONG);
-                    View sbview = snackbar.getView();
-                    sbview.setBackgroundColor(Color.RED);
+                    View sbView = snackbar.getView();
+                    sbView.setBackgroundColor(Color.RED);
                     snackbar.show();
                 }
             }
@@ -114,9 +109,7 @@ public class EditHistoricalReportActivity extends AppCompatActivity {
                 try {
                     startActivityForResult(builder.build(EditHistoricalReportActivity.this),
                             PLACE_PICKER_REQUEST);
-                } catch (GooglePlayServicesRepairableException e) {
-                    Log.e(TAG, "Failed", e);
-                } catch (GooglePlayServicesNotAvailableException e) {
+                } catch (GooglePlayServicesRepairableException | GooglePlayServicesNotAvailableException e) {
                     Log.e(TAG, "Failed", e);
                 }
             }
