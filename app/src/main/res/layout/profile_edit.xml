@@ -3,7 +3,7 @@
     android:layout_width="match_parent" android:layout_height="match_parent">
 
     <Button
-        android:text="Cancel"
+        android:text="@string/cancel"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignBottom="@+id/textView"
@@ -12,7 +12,7 @@
         android:id="@+id/cancel_profile" />
 
     <TextView
-        android:text="Name"
+        android:text="@string/name"
         android:id="@+id/text_name"
         android:textAppearance="@android:style/TextAppearance.Material.Medium"
         android:layout_marginTop="14dp"
@@ -22,7 +22,7 @@
         android:layout_alignStart="@+id/textView" />
 
     <TextView
-        android:text="Home Address:"
+        android:text="@string/home_address"
         android:id="@+id/text_home_address"
         android:layout_height="wrap_content"
         android:layout_width="wrap_content"
@@ -33,7 +33,7 @@
         android:layout_marginBottom="5dp" />
 
     <TextView
-        android:text="Email Address:"
+        android:text="@string/email_address"
         android:id="@+id/text_email_address"
         android:layout_height="wrap_content"
         android:layout_width="wrap_content"
@@ -69,7 +69,7 @@
         android:layout_marginBottom="5dp" />
 
     <TextView
-        android:text="Title"
+        android:text="@string/title"
         android:id="@+id/text_title"
         android:textAppearance="@android:style/TextAppearance.Material.Medium"
         android:layout_marginTop="5dp"
@@ -92,7 +92,7 @@
         android:layout_marginBottom="5dp"/>
 
     <Button
-        android:text="Save"
+        android:text="@string/save"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/save_profile"
@@ -113,7 +113,7 @@
         android:layout_marginTop="5dp"/>
 
     <TextView
-        android:text="User Profile"
+        android:text="@string/user_profile"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="23dp"

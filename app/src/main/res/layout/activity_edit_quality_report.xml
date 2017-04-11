@@ -22,7 +22,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="20dp"
                 android:layout_marginRight="20dp"
-                android:hint="Name"
+                android:hint="@string/name"
                 android:inputType="text" />
         </android.support.design.widget.TextInputLayout>
 
@@ -40,7 +40,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="20dp"
-                android:hint="Location"
+                android:hint="@string/location"
                 android:inputType="none" />
         </android.support.design.widget.TextInputLayout>
 
@@ -61,7 +61,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="25dp"
             android:layout_marginLeft="26dp"
-            android:text="Water Condition"
+            android:text="@string/water_condition"
             android:layout_below="@+id/textInputLayoutPurity2Edit" />
 
         <Spinner
@@ -79,7 +79,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
             android:layout_marginLeft="26dp"
-            android:text="Virus PPM"
+            android:text="@string/virus_ppm"
             android:layout_below="@+id/spinnerPurityConditionEdit" />
 
         <android.support.design.widget.TextInputLayout
@@ -106,7 +106,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
             android:layout_marginLeft="26dp"
-            android:text="Contamination PPM"
+            android:text="@string/contaminant_ppm"
             android:layout_below="@+id/textInputLayoutPurity3Edit"/>
 
         <android.support.design.widget.TextInputLayout
@@ -134,7 +134,7 @@
             android:layout_below="@+id/textInputLayoutPurity4Edit"
             android:layout_centerHorizontal="true"
             android:layout_marginTop="23dp"
-            android:text="Submit" />
+            android:text="@string/submit" />
 
     </RelativeLayout>
 </ScrollView>

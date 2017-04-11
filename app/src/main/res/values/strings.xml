@@ -10,4 +10,40 @@
     <string name="SubmitWaterPurityReport">Submit Water Purity Report</string>
     <string name="purityReportSubmitError">Missing one or more fields.</string>
     <string name="nav_source">Source</string>
+    <string name="location">Location</string>
+    <string name="radius">Radius</string>
+    <string name="year">Year</string>
+    <string name="select_purity_type">Select Purity Type</string>
+    <string name="virus_ppm">Virus PPM</string>
+    <string name="contaminant_ppm">Contaminant PPM</string>
+    <string name="create_graph">Create Graph</string>
+    <string name="name">Name</string>
+    <string name="water_condition">Water Condition</string>
+    <string name="submit">Submit</string>
+    <string name="water_type">Water Type</string>
+    <string name="admin_fragment">Admin Fragment</string>
+    <string name="logout">Logout</string>
+    <string name="profile">Profile</string>
+    <string name="home">Home</string>
+    <string name="purity">Purity</string>
+    <string name="admin">Admin</string>
+    <string name="trends">Trends</string>
+    <string name="title">Title</string>
+    <string name="save">Save</string>
+    <string name="edit">Edit</string>
+
+    <string name="home_address">Home Address: </string>
+    <string name="email_address">Email Address: </string>
+    <string name="user_profile">User Profile</string>
+
+
+
+
+
+
+
+
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>
