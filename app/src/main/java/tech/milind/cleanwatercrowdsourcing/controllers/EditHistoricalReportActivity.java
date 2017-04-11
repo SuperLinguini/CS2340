@@ -20,20 +20,25 @@ import com.google.android.gms.common.GooglePlayServicesRepairableException;
 import com.google.android.gms.location.places.Place;
 import com.google.android.gms.location.places.ui.PlacePicker;
 
+
+
 import tech.milind.cleanwatercrowdsourcing.R;
 import tech.milind.cleanwatercrowdsourcing.model.HistoricalReport;
 import tech.milind.cleanwatercrowdsourcing.model.LatLng;
 import tech.milind.cleanwatercrowdsourcing.model.Model;
 
+
 public class EditHistoricalReportActivity extends AppCompatActivity {
     private static final String TAG = "EditHistoricalReport";
-    final private int PLACE_PICKER_REQUEST = 1;
+    final int PLACE_PICKER_REQUEST = 1;
 
     private EditText year;
     private EditText radius;
     private EditText location;
+    private RadioGroup qualityType;
     private HistoricalReport.purityType type;
     private LatLng latLng;
+    private Button button;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -43,8 +48,8 @@ public class EditHistoricalReportActivity extends AppCompatActivity {
         HistoricalReport existingHr = model.getHistoricalReport();
         year = (EditText) findViewById(R.id.yearHistEditText);
         radius = (EditText) findViewById(R.id.radiusHistEditText);
-        RadioGroup qualityType = (RadioGroup) findViewById(R.id.HistRadioGroup);
-        Button button = (Button) findViewById(R.id.HistButton);
+        qualityType = (RadioGroup) findViewById(R.id.HistRadioGroup);
+        button = (Button) findViewById(R.id.HistButton);
         location = (EditText) findViewById(R.id.locationHistReportEditText);
         location.setEnabled(false);
 
@@ -79,7 +84,7 @@ public class EditHistoricalReportActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                if(!(isEmpty(year.getText().toString()) || isEmpty(radius.getText().toString()) ||
+                if(!(isEmpty(year.getText().toString())|| isEmpty(radius.getText().toString()) ||
                         type == null || latLng == null)) {
 
                     Model model = Model.getInstance();
@@ -93,8 +98,8 @@ public class EditHistoricalReportActivity extends AppCompatActivity {
                 } else {
                     Snackbar snackbar = Snackbar.make(findViewById(R.id.activity_edit_historical_report),
                             R.string.sourceReportSubmitError, Snackbar.LENGTH_LONG);
-                    View sbView = snackbar.getView();
-                    sbView.setBackgroundColor(Color.RED);
+                    View sbview = snackbar.getView();
+                    sbview.setBackgroundColor(Color.RED);
                     snackbar.show();
                 }
             }
@@ -109,7 +114,9 @@ public class EditHistoricalReportActivity extends AppCompatActivity {
                 try {
                     startActivityForResult(builder.build(EditHistoricalReportActivity.this),
                             PLACE_PICKER_REQUEST);
-                } catch (GooglePlayServicesRepairableException | GooglePlayServicesNotAvailableException e) {
+                } catch (GooglePlayServicesRepairableException e) {
+                    Log.e(TAG, "Failed", e);
+                } catch (GooglePlayServicesNotAvailableException e) {
                     Log.e(TAG, "Failed", e);
                 }
             }
@@ -121,9 +128,8 @@ public class EditHistoricalReportActivity extends AppCompatActivity {
      * @param input String from TextView
      * @return whether the String is empty
      */
-    private boolean isEmpty(String input) {
-        return input.isEmpty() || input.length() == 0 || input.equals("") ||
-                input == null;
+    public boolean isEmpty(String input) {
+        return input == null || input.isEmpty() || input.length() == 0 || input.equals("");
     }
 
 

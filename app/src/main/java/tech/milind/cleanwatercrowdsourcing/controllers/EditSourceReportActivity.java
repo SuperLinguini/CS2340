@@ -65,7 +65,7 @@ public class EditSourceReportActivity extends AppCompatActivity {
         List<WaterSourceReport.typeOfWater> types =
                 Arrays.asList(WaterSourceReport.typeOfWater.values());
         ArrayAdapter<WaterSourceReport.typeOfWater> typeOfWaterArrayAdapter =
-                new ArrayAdapter<WaterSourceReport.typeOfWater>(this,
+                new ArrayAdapter<>(this,
                         android.R.layout.simple_spinner_dropdown_item, types);
         typeOfWaterArrayAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         typeSpinner.setAdapter(typeOfWaterArrayAdapter);
@@ -74,7 +74,7 @@ public class EditSourceReportActivity extends AppCompatActivity {
         List<WaterSourceReport.conditionOfWater> conditions =
                 Arrays.asList(WaterSourceReport.conditionOfWater.values());
         ArrayAdapter<WaterSourceReport.conditionOfWater> conditionOfWaterArrayAdapter =
-                new ArrayAdapter<WaterSourceReport.conditionOfWater>(this,
+                new ArrayAdapter<>(this,
                         android.R.layout.simple_spinner_dropdown_item, conditions);
         conditionOfWaterArrayAdapter.setDropDownViewResource(android.R.layout
                 .simple_spinner_dropdown_item);

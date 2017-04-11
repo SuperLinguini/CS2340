@@ -3,7 +3,7 @@
     android:layout_width="match_parent" android:layout_height="match_parent">
 
     <Button
-        android:text="Edit"
+        android:text="@string/edit"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignBottom="@+id/textView"
@@ -18,7 +18,7 @@
         android:layout_alignStart="@+id/textView"
         android:layout_below="@+id/textView"
         android:layout_marginTop="20dp"
-        android:text="Name"
+        android:text="@string/name"
         android:textAppearance="@android:style/TextAppearance.Material.Medium" />
 
     <TextView
@@ -29,7 +29,7 @@
         android:layout_below="@+id/txt_view_name"
         android:layout_marginBottom="5dp"
         android:layout_marginTop="20dp"
-        android:text="Home Address:"
+        android:text="@string/home_address"
         android:textAppearance="@android:style/TextAppearance.Material.Medium" />
 
     <TextView
@@ -39,7 +39,7 @@
         android:layout_alignStart="@+id/textView"
         android:layout_below="@+id/txt_view_home_address"
         android:layout_marginTop="20dp"
-        android:text="Email Address:"
+        android:text="@string/email_address"
         android:textAppearance="@android:style/TextAppearance.Material.Medium" />
 
     <TextView
@@ -64,7 +64,6 @@
         android:layout_marginBottom="15dp"
         android:layout_marginTop="5dp"
         android:ems="10"
-        android:inputType="textPersonName"
         android:textAppearance="@style/TextAppearance.AppCompat.Small" />
 
     <TextView
@@ -74,7 +73,7 @@
         android:layout_alignStart="@+id/textView"
         android:layout_below="@+id/txt_view_email_address"
         android:layout_marginTop="20dp"
-        android:text="Title"
+        android:text="@string/title"
         android:textAppearance="@android:style/TextAppearance.Material.Medium" />
 
     <TextView
@@ -101,7 +100,7 @@
         android:textAppearance="@style/TextAppearance.AppCompat.Small" />
 
     <TextView
-        android:text="User Profile"
+        android:text="@string/user_profile"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="23dp"

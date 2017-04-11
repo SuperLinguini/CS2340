@@ -9,7 +9,6 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-
 import com.github.mikephil.charting.charts.LineChart;
 import com.github.mikephil.charting.components.AxisBase;
 import com.github.mikephil.charting.components.XAxis;
@@ -33,11 +32,12 @@ import tech.milind.cleanwatercrowdsourcing.model.WaterQualityReport;
  */
 
 public class FragmentManager extends Fragment {
-    final private int REQUEST = 1;
-    final private String[] xAxisLabels= {"Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"};
+    final int REQUEST = 1;
+    final String[] xAxisLabels= {"Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"};
     private LineChart chart;
     private HistoricalReport hr;
-    final private Model model = Model.getInstance();
+    private List<WaterQualityReport> qualityReports;
+    Model model = Model.getInstance();
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_manager,container, false);
@@ -77,7 +77,7 @@ public class FragmentManager extends Fragment {
      * @return the list of all the reports within the specified radius
      */
     private List<WaterQualityReport> getPurityReportsInRadius(List<WaterQualityReport> reports) {
-        List<WaterQualityReport> reportsInRadius = new ArrayList<WaterQualityReport>();
+        List<WaterQualityReport> reportsInRadius = new ArrayList<>();
         Location center = new Location("center");
         center.setLatitude(hr.getLocation().getLatitude());
         center.setLongitude(hr.getLocation().getLongitude());
@@ -124,15 +124,15 @@ public class FragmentManager extends Fragment {
      */
     private void displayChart() {
         hr = model.getHistoricalReport();
-        List<WaterQualityReport> qualityReports = model.getQualityReports();
+        qualityReports = model.getQualityReports();
         double[] qualityAverages = getQualityAverages(getPurityReportsInRadius(qualityReports));
-        ArrayList<Entry> entries = new ArrayList<Entry>();
+        ArrayList<Entry> entries = new ArrayList<>();
         for(int i = 0; i < qualityAverages.length; i++){
             entries.add(new Entry((float)i, (float)qualityAverages[i]));
         }
-        LineDataSet dataSet = new LineDataSet(entries,hr.getType().name()+" PPM");
-        LineData chartData = new LineData(dataSet);
-        chart.setData(chartData);
+        LineDataSet dataset = new LineDataSet(entries,hr.getType().name()+" PPM");
+        LineData chartdata = new LineData(dataset);
+        chart.setData(chartdata);
         XAxis xAxis = chart.getXAxis();
         xAxis.setPosition(XAxis.XAxisPosition.BOTTOM);
         xAxis.setValueFormatter(new IAxisValueFormatter() {
@@ -141,9 +141,9 @@ public class FragmentManager extends Fragment {
                 return xAxisLabels[(int)value];
             }
         });
-        dataSet.setColors(ColorTemplate.COLORFUL_COLORS);
+        dataset.setColors(ColorTemplate.COLORFUL_COLORS);
 
-        dataSet.setDrawFilled(true);
+        dataset.setDrawFilled(true);
 
         chart.animateY(5000);
 

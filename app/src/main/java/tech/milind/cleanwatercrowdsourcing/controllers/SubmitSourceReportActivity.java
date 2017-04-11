@@ -26,7 +26,7 @@ import tech.milind.cleanwatercrowdsourcing.model.LatLng;
 
 public class SubmitSourceReportActivity extends AppCompatActivity {
     private static final String TAG = "AddResourceReport";
-    final private int PLACE_PICKER_REQUEST = 1;
+    final int PLACE_PICKER_REQUEST = 1;
 
     private Spinner typeSpinner;
     private Spinner conditionSpinner;
@@ -39,7 +39,10 @@ public class SubmitSourceReportActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_submit_source_report);
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
+        if (getSupportActionBar() != null) {
+            getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        }
 
         name = (EditText) findViewById(R.id.nameReportEditText);
 
@@ -50,14 +53,14 @@ public class SubmitSourceReportActivity extends AppCompatActivity {
         conditionSpinner = (Spinner) findViewById(R.id.spinnerCondition);
 
         ArrayAdapter<WaterSourceReport.typeOfWater> typeOfWaterArrayAdapter =
-                new ArrayAdapter<WaterSourceReport.typeOfWater>(this,
+                new ArrayAdapter<>(this,
                         android.R.layout.simple_spinner_dropdown_item,
                         WaterSourceReport.typeOfWater.values());
         typeOfWaterArrayAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         typeSpinner.setAdapter(typeOfWaterArrayAdapter);
 
         ArrayAdapter<WaterSourceReport.conditionOfWater> conditionOfWaterArrayAdapter =
-                new ArrayAdapter<WaterSourceReport.conditionOfWater>(this,
+                new ArrayAdapter<>(this,
                         android.R.layout.simple_spinner_dropdown_item,
                         WaterSourceReport.conditionOfWater.values());
         conditionOfWaterArrayAdapter.setDropDownViewResource(android.R.layout
@@ -86,8 +89,8 @@ public class SubmitSourceReportActivity extends AppCompatActivity {
                 } else {
                     Snackbar snackbar = Snackbar.make(findViewById(R.id.activity_submit_source_report),
                             R.string.sourceReportSubmitError, Snackbar.LENGTH_LONG);
-                    View sbView = snackbar.getView();
-                    sbView.setBackgroundColor(Color.RED);
+                    View sbview = snackbar.getView();
+                    sbview.setBackgroundColor(Color.RED);
                     snackbar.show();
                 }
             }
@@ -102,8 +105,10 @@ public class SubmitSourceReportActivity extends AppCompatActivity {
                 try {
                     startActivityForResult(builder.build(SubmitSourceReportActivity.this),
                             PLACE_PICKER_REQUEST);
-                } catch (GooglePlayServicesRepairableException | GooglePlayServicesNotAvailableException e) {
+                } catch (GooglePlayServicesRepairableException e) {
                     Log.e(TAG, "Failed", e);
+                } catch (GooglePlayServicesNotAvailableException e) {
+                    e.printStackTrace();
                 }
             }
         });
@@ -114,9 +119,8 @@ public class SubmitSourceReportActivity extends AppCompatActivity {
      * @param input String from TextView
      * @return whether the String is empty
      */
-    private boolean isEmpty(String input) {
-        return input.isEmpty() || input.length() == 0 || input.equals("") ||
-                input == null;
+    public boolean isEmpty(String input) {
+        return input == null || input.isEmpty() || input.length() == 0 || input.equals("");
     }
 
     /**

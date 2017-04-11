@@ -54,7 +54,7 @@ public class SubmitQualityReportActivity extends AppCompatActivity {
         mEdit.setEnabled(false);
 
         final ArrayAdapter<WaterQualityReport.conditionOfWater> conditionOfWaterArrayAdapter =
-                new ArrayAdapter<WaterQualityReport.conditionOfWater>(this,
+                new ArrayAdapter<>(this,
                         android.R.layout.simple_spinner_dropdown_item,
                         WaterQualityReport.conditionOfWater.values());
         conditionOfWaterArrayAdapter.setDropDownViewResource(android.R.layout

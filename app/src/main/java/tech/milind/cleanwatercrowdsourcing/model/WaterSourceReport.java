@@ -5,6 +5,7 @@ import android.os.Parcelable;
 import android.support.annotation.NonNull;
 
 import java.util.Date;
+import java.util.Locale;
 
 /**
  * Created by Milind Lingineni on 3/2/2017.
@@ -174,7 +175,7 @@ public class WaterSourceReport implements Comparable<WaterSourceReport>, Parcela
      * @return the String details for the map pin snippet
      */
     public String getSnippet() {
-        return String.format("#%d %tD %<tR %s/%s", reportNumber, date,
+        return String.format(Locale.getDefault(),"#%d %tD %<tR %s/%s", reportNumber, date,
                 type.toString(), condition.toString());
     }
 
