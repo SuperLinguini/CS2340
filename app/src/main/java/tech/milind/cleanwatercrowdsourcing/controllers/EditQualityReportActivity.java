@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.graphics.Color;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
+import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -46,7 +47,9 @@ public class EditQualityReportActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_edit_quality_report);
 
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        if (getSupportActionBar() != null) {
+            getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        }
 
         Intent i = getIntent();
         position = i.getIntExtra("position", position);
@@ -89,8 +92,8 @@ public class EditQualityReportActivity extends AppCompatActivity {
                     _waterQualityReport.setLocation(new LatLng(latLng.getLatitude(), latLng.getLongitude()));
                     _waterQualityReport.setCondition((WaterQualityReport.conditionOfWater)
                             conditionSpinner.getSelectedItem());
-                    _waterQualityReport.setVirusPPM((int) Integer.parseInt(virusPPM.getText().toString()));
-                    _waterQualityReport.setContaminantPPM((int) Integer.parseInt(contamPPM.getText().toString()));
+                    _waterQualityReport.setVirusPPM(Integer.parseInt(virusPPM.getText().toString()));
+                    _waterQualityReport.setContaminantPPM(Integer.parseInt(contamPPM.getText().toString()));
                     model.editWaterQualityReport(_waterQualityReport);
                     Intent output = new Intent();
                     output.putExtra("position", position);
@@ -130,8 +133,7 @@ public class EditQualityReportActivity extends AppCompatActivity {
      * @return whether the String is empty
      */
     public boolean isEmpty(String input) {
-        return input.isEmpty() || input.length() == 0 || input.equals("") ||
-                input == null;
+        return input == null || input.isEmpty() || input.length() == 0 || input.equals("");
     }
 
     /**

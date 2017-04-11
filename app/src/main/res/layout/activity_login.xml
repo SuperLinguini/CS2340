@@ -67,6 +67,5 @@
         android:layout_alignBottom="@+id/buttonLogin"
         android:layout_alignParentEnd="true"
         android:layout_marginEnd="41dp"
-        android:onClick="onCancelPressed"
         android:text="@string/cancel" />
 </RelativeLayout>

@@ -35,20 +35,20 @@ public class ViewProfileActivity extends AppCompatActivity {
         emailAddressText = (TextView) findViewById(R.id.txt_view_email_address);
         userTypeText = (TextView) findViewById(R.id.txt_view_user_type);
 
-        if (currentUser.getName() == "") {
+        if (currentUser.getName().equals("")) {
             nameText.setText("(Please add your name)");
         } else {
             nameText.setText(currentUser.getName());
 
         }
 
-        if (currentUser.getHomeAddress() == "") {
+        if (currentUser.getHomeAddress().equals("")) {
             homeAddressText.setText("(Plaese add your home address)");
         } else {
             homeAddressText.setText(currentUser.getHomeAddress());
         }
 
-        if (currentUser.getEmailAddress() == "") {
+        if (currentUser.getEmailAddress().equals("")) {
             emailAddressText.setText("(Please add your email address)");
         } else {
             emailAddressText.setText(currentUser.getEmailAddress());

@@ -8,6 +8,7 @@ import android.support.annotation.NonNull;
 import android.support.design.internal.BottomNavigationItemView;
 import android.support.design.internal.BottomNavigationMenuView;
 import android.support.design.widget.BottomNavigationView;
+import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.Menu;
@@ -30,7 +31,10 @@ public class MainActivity extends AppCompatActivity {
 //        model.addTestData();
         model.loadWaterSourceReports();
 
-        getSupportActionBar().setTitle("Water Availability");
+        if (getSupportActionBar() != null) {
+            getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        }
+
         getSupportFragmentManager().beginTransaction()
                 .add(R.id.fragmentContainer, new AvailabilityFragment())
                 .commit();

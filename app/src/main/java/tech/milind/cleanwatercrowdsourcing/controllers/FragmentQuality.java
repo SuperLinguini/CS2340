@@ -107,9 +107,9 @@ public class FragmentQuality extends Fragment {
 
         @Override
         public void onBindViewHolder(final ViewHolder holder, final int position) {
-            final Model model = Model.getInstance();
+            //final Model model = Model.getInstance();
             if (reports.get(holder.getAdapterPosition()) != null) {
-                final WaterQualityReport wrs = reports.get(holder.getAdapterPosition());
+                //final WaterQualityReport wrs = reports.get(holder.getAdapterPosition());
                 WaterQualityReport wrp = reports.get(position);
                 holder.reportDate.setText(String.format("Date: %tD %<tR", wrp.getDate()));
                 holder.reportNumAndName.setText(String.format("#%s %s", wrp.getReportNumber(),
