@@ -43,7 +43,7 @@ public class EditHistoricalReportActivity extends AppCompatActivity {
         HistoricalReport existingHr = model.getHistoricalReport();
         year = (EditText) findViewById(R.id.yearHistEditText);
         radius = (EditText) findViewById(R.id.radiusHistEditText);
-        RadioGroup qualityType = (RadioGroup) findViewById(R.id.HistradioGroup);
+        RadioGroup qualityType = (RadioGroup) findViewById(R.id.HistRadioGroup);
         Button button = (Button) findViewById(R.id.HistButton);
         location = (EditText) findViewById(R.id.locationHistReportEditText);
         location.setEnabled(false);
