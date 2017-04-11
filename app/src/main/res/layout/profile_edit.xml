@@ -39,7 +39,7 @@
         android:layout_width="wrap_content"
         android:textAppearance="@android:style/TextAppearance.Material.Medium"
         android:layout_marginTop="5dp"
-        android:layout_below="@+id/edit_home_adress"
+        android:layout_below="@+id/edit_home_address"
         android:layout_alignStart="@+id/textView"
         android:labelFor="@id/edit_name"/>
 
