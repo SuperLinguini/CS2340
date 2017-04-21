@@ -1,9 +1,12 @@
 package tech.milind.cleanwatercrowdsourcing.model;
 
+import android.os.Parcel;
+import android.os.Parcelable;
+
 import java.util.ArrayList;
 import java.util.List;
 
-public enum UserType {
+public enum UserType implements Parcelable{
     USER("User", 0),
     WORKER("Worker", 1),
     MANAGER("Manager", 2),
@@ -47,6 +50,15 @@ public enum UserType {
         return null;
     }
 
+    public static UserType findUserTypebyLevel(int i) {
+        for (UserType u : UserType.values()) {
+            if (u.getLevel() == i) {
+                return u;
+            }
+        }
+        return null;
+    }
+
     /**
      * makes a list of the UserType values
      * @return the list of the UserType values
@@ -59,4 +71,26 @@ public enum UserType {
         return list;
     }
 
+    @Override
+    public int describeContents() {
+        return 0;
+    }
+
+    @Override
+    public void writeToParcel(Parcel dest, int flags) {
+        dest.writeString(type);
+    }
+
+    public static final Parcelable.Creator<UserType> CREATOR =
+            new Parcelable.Creator<UserType>() {
+                @Override
+                public UserType createFromParcel(Parcel source) {
+                    return UserType.findUserType(source.readString());
+                }
+
+                @Override
+                public UserType[] newArray(int size) {
+                    return new UserType[size];
+                }
+            };
 }

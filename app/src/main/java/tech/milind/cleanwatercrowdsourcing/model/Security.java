@@ -1,6 +1,9 @@
 package tech.milind.cleanwatercrowdsourcing.model;
 
+import java.util.ArrayList;
+import java.util.Collections;
 import java.util.HashMap;
+import java.util.List;
 import java.util.NoSuchElementException;
 
 /**
@@ -13,7 +16,13 @@ public class Security {
 
     public Security() {
         userList = new HashMap<>(50);
-        userList.put("user", new User("user", "pass"));
+        for (int i = 0; i < 5; i++) {
+            String username = String.format("user%2d", i).replace(" ", "0");
+            User u = new User(username, "pass");
+            u.setName(String.format("User %2d", i));
+            u.setUserType(UserType.findUserTypebyLevel(i%3));
+            userList.put(username, u);
+        }
         User manager = new User("a", "a");
         manager.setName("Milind");
         manager.setUserType(UserType.ADMIN);
@@ -63,5 +72,16 @@ public class Security {
         userList.remove(username);
     }
 
+    public List<User> getUserList() {
+        List<User> list = new ArrayList<>();
+        for (String userName : userList.keySet()) {
+            User u = userList.get(userName);
+            if (u.getUserType() != UserType.ADMIN) {
+                list.add(u);
+            }
+        }
+        Collections.sort(list);
+        return list;
+    }
 
 }

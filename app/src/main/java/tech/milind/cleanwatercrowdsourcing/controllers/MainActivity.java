@@ -1,5 +1,6 @@
 package tech.milind.cleanwatercrowdsourcing.controllers;
 
+import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
@@ -40,19 +41,23 @@ public class MainActivity extends AppCompatActivity {
 
         BottomNavigationView bottomNavigationView = (BottomNavigationView) findViewById(R.id.nav_bar);
 
-        switch(model.getCurrentUser().getUserType()) {
-            case USER:
-                bottomNavigationView.inflateMenu(R.menu.navbar_user);
-                break;
-            case WORKER:
-                bottomNavigationView.inflateMenu(R.menu.navbar_worker);
-                break;
-            case MANAGER:
-                bottomNavigationView.inflateMenu(R.menu.navbar_manager);
-                break;
-            case ADMIN:
-                bottomNavigationView.inflateMenu(R.menu.navbar_admin);
-                break;
+        if (model.getCurrentUser().isBanned()) {
+            bottomNavigationView.inflateMenu(R.menu.navbar_banned);
+        } else {
+            switch(model.getCurrentUser().getUserType()) {
+                case USER:
+                    bottomNavigationView.inflateMenu(R.menu.navbar_user);
+                    break;
+                case WORKER:
+                    bottomNavigationView.inflateMenu(R.menu.navbar_worker);
+                    break;
+                case MANAGER:
+                    bottomNavigationView.inflateMenu(R.menu.navbar_manager);
+                    break;
+                case ADMIN:
+                    bottomNavigationView.inflateMenu(R.menu.navbar_admin);
+                    break;
+            }
         }
 
         disableShiftMode(bottomNavigationView);

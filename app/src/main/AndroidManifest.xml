@@ -60,7 +60,11 @@
         </activity>
         <activity android:name=".controllers.EditSourceReportActivity"/>
         <activity android:name=".controllers.EditQualityReportActivity"/>
-
+        <activity android:name=".controllers.EditUserActivity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="tech.milind.cleanwatercrowdsourcing.controllers.MainActivity" />
+        </activity>
     </application>
 
 </manifest>
