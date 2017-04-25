@@ -95,14 +95,23 @@ public class LoginActivity extends AppCompatActivity {
                 } else {
                     // not signed in
                 }
+                boolean found = false;
                 try {
                     model.getSecurity().findUser(email);
+                    found = true;
                 } catch (NoSuchElementException e) {
                     model.register(email, pass);
                 }
-                Intent i = new Intent(this, EditProfileActivity.class);
-                startActivity(i);
-                finish();
+                if (found) {
+                    Intent i = new Intent(this, MainActivity.class);
+                    startActivity(i);
+                    finish();
+                } else {
+                    Intent i = new Intent(this, EditProfileActivity.class);
+                    startActivity(i);
+                    finish();
+                }
+
                 return;
             } else {
                 // Sign in failed

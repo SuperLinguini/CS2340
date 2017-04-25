@@ -187,7 +187,7 @@ public class MainActivity extends AppCompatActivity {
 
         dialogBuilder.setPositiveButton("Yes", new DialogInterface.OnClickListener() {
             public void onClick(DialogInterface dialog, int id) {
-                Intent logoutIntent = new Intent(MainActivity.this, WelcomeActivity.class);
+                Intent logoutIntent = new Intent(MainActivity.this, LoginActivity.class);
                 startActivity(logoutIntent);
             }
         });
