@@ -12,60 +12,26 @@
     android:focusableInTouchMode="true"
     tools:context="tech.milind.cleanwatercrowdsourcing.controllers.LoginActivity">
 
-    <android.support.design.widget.TextInputLayout
-        android:id="@+id/input_login_username"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="68dp">
 
-        <EditText
-            android:id="@+id/editTextUsername"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentTop="true"
-            android:layout_centerHorizontal="true"
-            android:ems="10"
-            android:hint="@string/username"
-            android:inputType="textPersonName" />
-
-    </android.support.design.widget.TextInputLayout>
-
-    <android.support.design.widget.TextInputLayout
-        android:id="@+id/input_login_password"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="78dp"
-        android:layout_alignStart="@+id/input_login_username"
-        android:layout_below="@+id/input_login_username">
-
-        <EditText
-            android:id="@+id/editTextPassword"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:ems="10"
-            android:hint="@string/password"
-            android:inputType="textPassword" />
-    </android.support.design.widget.TextInputLayout>
 
     <Button
         android:id="@+id/buttonLogin"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentStart="true"
-        android:layout_below="@+id/input_login_password"
-        android:layout_marginStart="45dp"
-        android:layout_marginTop="68dp"
-        android:text="@string/login" />
+        android:text="@string/login"
+        android:layout_marginTop="61dp"
+        android:layout_below="@+id/textView2"
+        android:layout_centerHorizontal="true" />
 
-    <Button
-        android:id="@+id/buttonCancel"
+    <TextView
+        android:id="@+id/textView2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignBottom="@+id/buttonLogin"
-        android:layout_alignParentEnd="true"
-        android:layout_marginEnd="41dp"
-        android:text="@string/cancel" />
+        android:textSize="35dp"
+        android:gravity="center"
+        android:text="Clean Water Crowdsourcing"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="22dp" />
+
 </RelativeLayout>

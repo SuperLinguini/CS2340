@@ -36,14 +36,13 @@
     <string name="email_address">Email Address: </string>
     <string name="user_profile">User Profile</string>
 
+    <string name="sign_in_cancelled">Sign in cancelled.</string>
+    <string name="no_internet_connection">No internet connection.</string>
+    <string name="unknown_error">Login error.</string>
+    <string name="unknown_sign_in_response">Login error.</string>
+    <string name="update_successful">User profile updated.</string>
 
-
-
-
-
-
-
-
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="facebook_application_id" translatable="false">1333732413341662</string>
+    <!-- Facebook Application ID, prefixed by 'fb'.  Enables Chrome Custom tabs. -->
+    <string name="facebook_login_protocol_scheme" translatable="false">fb1333732413341662</string>
 </resources>
