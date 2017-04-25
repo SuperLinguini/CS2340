@@ -15,6 +15,10 @@ import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 
+import com.firebase.ui.auth.AuthUI;
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
+
 import java.lang.reflect.Field;
 
 import tech.milind.cleanwatercrowdsourcing.R;
@@ -154,8 +158,15 @@ public class MainActivity extends AppCompatActivity {
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
             case R.id.logout:
-                Intent logoutIntent = new Intent(MainActivity.this, WelcomeActivity.class);
-                startActivity(logoutIntent);
+                AuthUI.getInstance()
+                        .signOut(this)
+                        .addOnCompleteListener(new OnCompleteListener<Void>() {
+                            public void onComplete(@NonNull Task<Void> task) {
+                                // user is now signed out
+                                startActivity(new Intent(MainActivity.this, LoginActivity.class));
+                                finish();
+                            }
+                        });
                 break;
             case R.id.profile:
                 Intent viewProfileIntent = new Intent(MainActivity.this, ViewProfileActivity.class);

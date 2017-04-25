@@ -95,7 +95,11 @@ public class LoginActivity extends AppCompatActivity {
                 } else {
                     // not signed in
                 }
-                model.register(email, pass);
+                try {
+                    model.getSecurity().findUser(email);
+                } catch (NoSuchElementException e) {
+                    model.register(email, pass);
+                }
                 Intent i = new Intent(this, EditProfileActivity.class);
                 startActivity(i);
                 finish();
