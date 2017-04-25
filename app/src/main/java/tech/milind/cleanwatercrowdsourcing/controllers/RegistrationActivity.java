@@ -31,7 +31,7 @@ public class RegistrationActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 try {
-                    model.register(username.getText().toString(), password.getText().toString());
+//                    model.register(username.getText().toString(), password.getText().toString());
                     Intent i = new Intent(RegistrationActivity.this, EditProfileActivity.class);
                     i.putExtra("New user", true);
                     startActivity(i);
